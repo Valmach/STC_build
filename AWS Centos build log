@@ -1,0 +1,2121 @@
+C:\Users\aceta\Desktop\Packer>packer validate AWS_centos6.7
+Template validated successfully.
+
+C:\Users\aceta\Desktop\Packer>packer build AWS_centos6.7
+SVT Server output will be in this color.
+
+==> SVT Server: Prevalidating AMI Name: CentOS-6.71525072592
+    SVT Server: Found Image ID: ami-ac5f2fcc
+==> SVT Server: Creating temporary keypair: packer_5ae6c2d1-26b6-413e-4628-58bf4b225b06
+==> SVT Server: Creating temporary security group for this instance: packer_5ae6c2d3-3b6c-1abf-e2be-180151c4ac23
+==> SVT Server: Authorizing access to port 22 from 0.0.0.0/0 in the temporary security group...
+==> SVT Server: Launching a source AWS instance...
+==> SVT Server: Adding tags to source instance
+    SVT Server: Adding tag: "Name": "Packer Builder"
+    SVT Server: Instance ID: i-013b50489f83afcf6
+==> SVT Server: Waiting for instance (i-013b50489f83afcf6) to become ready...
+==> SVT Server: Waiting for SSH to become available...
+==> SVT Server: Connected to SSH!
+==> SVT Server: Provisioning with shell script: C:\Users\aceta\AppData\Local\Temp\packer-shell200783227
+    SVT Server: Loaded plugins: fastestmirror, presto
+    SVT Server: Setting up Install Process
+    SVT Server: epel-release-latest-6.noarch.rpm                         |  14 kB     00:00
+    SVT Server: Examining /var/tmp/yum-root-qJQc3J/epel-release-latest-6.noarch.rpm: epel-release-6-8.noarch
+    SVT Server: Marking /var/tmp/yum-root-qJQc3J/epel-release-latest-6.noarch.rpm to be installed
+    SVT Server: base                                                     | 3.7 kB     00:00
+    SVT Server: base/primary_db                                          | 4.7 MB     00:00
+    SVT Server: extras                                                   | 3.4 kB     00:00
+    SVT Server: extras/primary_db                                        |  30 kB     00:00
+    SVT Server: updates                                                  | 3.4 kB     00:00
+    SVT Server: updates/primary_db                                       | 7.0 MB     00:00
+    SVT Server: Resolving Dependencies
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package epel-release.noarch 0:6-8 will be installed
+    SVT Server: --> Finished Dependency Resolution
+    SVT Server:
+    SVT Server: Dependencies Resolved
+    SVT Server:
+    SVT Server: ================================================================================
+    SVT Server:  Package          Arch       Version    Repository                         Size
+    SVT Server: ================================================================================
+    SVT Server: Installing:
+    SVT Server:  [1mepel-release    (B[m noarch     6-8        /epel-release-latest-6.noarch      22 k
+    SVT Server:
+    SVT Server: Transaction Summary
+    SVT Server: ================================================================================
+    SVT Server: Install       1 Package(s)
+    SVT Server:
+    SVT Server: Total size: 22 k
+    SVT Server: Installed size: 22 k
+    SVT Server: Downloading Packages:
+    SVT Server: Running rpm_check_debug
+    SVT Server: Running Transaction Test
+    SVT Server: Transaction Test Succeeded
+    SVT Server: Running Transaction
+    SVT Server:   Installing : epel-release-6-8.noarch                                      1/1
+    SVT Server:   Verifying  : epel-release-6-8.noarch                                      1/1
+    SVT Server:
+    SVT Server: Installed:
+    SVT Server:   epel-release.noarch 0:6-8
+    SVT Server:
+    SVT Server: Complete!
+    SVT Server: Loaded plugins: fastestmirror, presto
+    SVT Server: Cleaning repos: base epel extras updates
+    SVT Server: Cleaning up Everything
+    SVT Server: 0 delta-package files removed, by presto
+    SVT Server: Loaded plugins: fastestmirror, presto
+    SVT Server: Setting up Install Process
+    SVT Server: Determining fastest mirrors
+    SVT Server: epel/metalink                                            |  14 kB     00:00
+    SVT Server:  * base: mirrors.cat.pdx.edu
+    SVT Server:  * epel: mirror.sfo12.us.leaseweb.net
+    SVT Server:  * extras: mirrors.sonic.net
+    SVT Server:  * updates: mirror.sjc02.svwh.net
+    SVT Server: base                                                     | 3.7 kB     00:00
+    SVT Server: base/primary_db                                          | 4.7 MB     00:00
+    SVT Server: epel                                                     | 4.7 kB     00:00
+    SVT Server: epel/primary_db                                          | 6.0 MB     00:00
+    SVT Server: extras                                                   | 3.4 kB     00:00
+    SVT Server: extras/primary_db                                        |  30 kB     00:00
+    SVT Server: updates                                                  | 3.4 kB     00:00
+    SVT Server: updates/primary_db                                       | 7.0 MB     00:00
+    SVT Server: Resolving Dependencies
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package tomcat.noarch 0:7.0.85-1.el6 will be installed
+    SVT Server: epel/filelists_db                                        | 7.9 MB     00:00
+    SVT Server: --> Processing Dependency: tomcat-lib = 7.0.85-1.el6 for package: tomcat-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: java >= 1:1.6.0 for package: tomcat-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: /lib/lsb/init-functions for package: tomcat-7.0.85-1.el6.noarch
+    SVT Server: base/filelists_db                                        | 6.4 MB     00:00
+    SVT Server: extras/filelists_db                                      |  26 kB     00:00
+    SVT Server: updates/filelists_db                                     | 4.3 MB     00:00
+    SVT Server: --> Processing Dependency: /lib/lsb/init-functions for package: tomcat-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: jakarta-commons-collections for package: tomcat-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: jakarta-commons-daemon for package: tomcat-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: jakarta-commons-dbcp for package: tomcat-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: jakarta-commons-logging for package: tomcat-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: jakarta-commons-pool for package: tomcat-7.0.85-1.el6.noarch
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package jakarta-commons-collections.noarch 0:3.2.1-3.5.el6_7 will be installed
+    SVT Server: ---> Package jakarta-commons-daemon.x86_64 1:1.0.1-8.9.el6 will be installed
+    SVT Server: --> Processing Dependency: java-gcj-compat for package: 1:jakarta-commons-daemon-1.0.1-8.9.el6.x86_64
+    SVT Server: --> Processing Dependency: java-gcj-compat for package: 1:jakarta-commons-daemon-1.0.1-8.9.el6.x86_64
+    SVT Server: --> Processing Dependency: libgcj_bc.so.1()(64bit) for package: 1:jakarta-commons-daemon-1.0.1-8.9.el6.x86_64
+    SVT Server: ---> Package jakarta-commons-dbcp.noarch 0:1.2.1-13.9.el6 will be installed
+    SVT Server: ---> Package jakarta-commons-logging.noarch 0:1.0.4-10.el6 will be installed
+    SVT Server: ---> Package jakarta-commons-pool.x86_64 0:1.3-12.7.el6 will be installed
+    SVT Server: ---> Package java-1.8.0-openjdk.x86_64 1:1.8.0.161-3.b14.el6_9 will be installed
+    SVT Server: --> Processing Dependency: java-1.8.0-openjdk-headless = 1:1.8.0.161-3.b14.el6_9 for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: xorg-x11-fonts-Type1 for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libpng12.so.0(PNG12_0)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libjvm.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libjpeg.so.62(LIBJPEG_6.2)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libjli.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libjava.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libasound.so.2(ALSA_0.9.0rc4)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libasound.so.2(ALSA_0.9)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: fontconfig for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libpng12.so.0()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libjpeg.so.62()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libjli.so()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libjava.so()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libgif.so.4()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libawt.so()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libasound.so.2()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libXtst.so.6()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libXrender.so.1()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libXi.so.6()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libXext.so.6()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libX11.so.6()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: ---> Package redhat-lsb-core.x86_64 0:4.0-7.el6.centos will be installed
+    SVT Server: --> Processing Dependency: perl-Test-Simple for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: perl-Test-Harness for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: perl-ExtUtils-MakeMaker for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: perl-CGI for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /usr/bin/time for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /usr/bin/perl for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /usr/bin/pax for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /usr/bin/patch for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /usr/bin/msgfmt for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /usr/bin/batch for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /usr/bin/at for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /bin/mailx for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /bin/gettext for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: --> Processing Dependency: /bin/ed for package: redhat-lsb-core-4.0-7.el6.centos.x86_64
+    SVT Server: ---> Package tomcat-lib.noarch 0:7.0.85-1.el6 will be installed
+    SVT Server: --> Processing Dependency: tomcat-el-2.2-api = 7.0.85-1.el6 for package: tomcat-lib-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: tomcat-jsp-2.2-api = 7.0.85-1.el6 for package: tomcat-lib-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: tomcat-servlet-3.0-api = 7.0.85-1.el6 for package: tomcat-lib-7.0.85-1.el6.noarch
+    SVT Server: --> Processing Dependency: ecj for package: tomcat-lib-7.0.85-1.el6.noarch
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package alsa-lib.x86_64 0:1.1.0-4.el6 will be installed
+    SVT Server: ---> Package at.x86_64 0:3.1.10-49.el6 will be installed
+    SVT Server: ---> Package ecj.x86_64 1:4.5.2-3.el6 will be installed
+    SVT Server: ---> Package ed.x86_64 0:1.1-3.3.el6 will be installed
+    SVT Server: ---> Package fontconfig.x86_64 0:2.8.0-5.el6 will be installed
+    SVT Server: --> Processing Dependency: freetype >= 2.1.4 for package: fontconfig-2.8.0-5.el6.x86_64
+    SVT Server: --> Processing Dependency: libfreetype.so.6()(64bit) for package: fontconfig-2.8.0-5.el6.x86_64
+    SVT Server: ---> Package gettext.x86_64 0:0.17-18.el6 will be installed
+    SVT Server: --> Processing Dependency: libgomp.so.1(GOMP_1.0)(64bit) for package: gettext-0.17-18.el6.x86_64
+    SVT Server: --> Processing Dependency: cvs for package: gettext-0.17-18.el6.x86_64
+    SVT Server: --> Processing Dependency: libgomp.so.1()(64bit) for package: gettext-0.17-18.el6.x86_64
+    SVT Server: ---> Package giflib.x86_64 0:4.1.6-3.1.el6 will be installed
+    SVT Server: --> Processing Dependency: libSM.so.6()(64bit) for package: giflib-4.1.6-3.1.el6.x86_64
+    SVT Server: --> Processing Dependency: libICE.so.6()(64bit) for package: giflib-4.1.6-3.1.el6.x86_64
+    SVT Server: ---> Package java-1.5.0-gcj.x86_64 0:1.5.0.0-29.1.el6 will be installed
+    SVT Server: --> Processing Dependency: jpackage-utils >= 1.7.3 for package: java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64
+    SVT Server: --> Processing Dependency: sinjdoc for package: java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64
+    SVT Server: ---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.161-3.b14.el6_9 will be installed
+    SVT Server: --> Processing Dependency: tzdata-java >= 2014f-1 for package: 1:java-1.8.0-openjdk-headless-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: --> Processing Dependency: nss >= 3.28.4 for package: 1:java-1.8.0-openjdk-headless-1.8.0.161-3.b14.el6_9.x86_64
+    SVT Server: ---> Package libX11.x86_64 0:1.6.4-3.el6 will be installed
+    SVT Server: --> Processing Dependency: libX11-common = 1.6.4-3.el6 for package: libX11-1.6.4-3.el6.x86_64
+    SVT Server: --> Processing Dependency: libxcb.so.1()(64bit) for package: libX11-1.6.4-3.el6.x86_64
+    SVT Server: ---> Package libXext.x86_64 0:1.3.3-1.el6 will be installed
+    SVT Server: ---> Package libXi.x86_64 0:1.7.8-1.el6 will be installed
+    SVT Server: ---> Package libXrender.x86_64 0:0.9.10-1.el6 will be installed
+    SVT Server: ---> Package libXtst.x86_64 0:1.2.3-1.el6 will be installed
+    SVT Server: ---> Package libgcj.x86_64 0:4.4.7-18.el6_9.2 will be installed
+    SVT Server: --> Processing Dependency: zip >= 2.1 for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libart_lgpl >= 2.1.0 for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: gtk2 >= 2.4.0 for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libpangoft2-1.0.so.0()(64bit) for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libpangocairo-1.0.so.0()(64bit) for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libpango-1.0.so.0()(64bit) for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libgtk-x11-2.0.so.0()(64bit) for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libgdk_pixbuf-2.0.so.0()(64bit) for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libgdk-x11-2.0.so.0()(64bit) for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libcairo.so.2()(64bit) for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libatk-1.0.so.0()(64bit) for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: libXrandr.so.2()(64bit) for package: libgcj-4.4.7-18.el6_9.2.x86_64
+    SVT Server: ---> Package libjpeg-turbo.x86_64 0:1.2.1-3.el6_5 will be installed
+    SVT Server: ---> Package libpng.x86_64 2:1.2.49-2.el6_7 will be installed
+    SVT Server: ---> Package mailx.x86_64 0:12.4-8.el6_6 will be installed
+    SVT Server: ---> Package patch.x86_64 0:2.6-6.el6 will be installed
+    SVT Server: ---> Package pax.x86_64 0:3.4-10.1.el6 will be installed
+    SVT Server: ---> Package perl.x86_64 4:5.10.1-144.el6 will be installed
+    SVT Server: --> Processing Dependency: perl-libs = 4:5.10.1-144.el6 for package: 4:perl-5.10.1-144.el6.x86_64
+    SVT Server: --> Processing Dependency: perl-libs for package: 4:perl-5.10.1-144.el6.x86_64
+    SVT Server: --> Processing Dependency: perl(version) for package: 4:perl-5.10.1-144.el6.x86_64
+    SVT Server: --> Processing Dependency: perl(Pod::Simple) for package: 4:perl-5.10.1-144.el6.x86_64
+    SVT Server: --> Processing Dependency: perl(Module::Pluggable) for package: 4:perl-5.10.1-144.el6.x86_64
+    SVT Server: --> Processing Dependency: libperl.so()(64bit) for package: 4:perl-5.10.1-144.el6.x86_64
+    SVT Server: ---> Package perl-CGI.x86_64 0:3.51-144.el6 will be installed
+    SVT Server: ---> Package perl-ExtUtils-MakeMaker.x86_64 0:6.55-144.el6 will be installed
+    SVT Server: --> Processing Dependency: perl-devel for package: perl-ExtUtils-MakeMaker-6.55-144.el6.x86_64
+    SVT Server: ---> Package perl-Test-Harness.x86_64 0:3.17-144.el6 will be installed
+    SVT Server: ---> Package perl-Test-Simple.x86_64 0:0.92-144.el6 will be installed
+    SVT Server: ---> Package time.x86_64 0:1.7-38.el6 will be installed
+    SVT Server: ---> Package tomcat-el-2.2-api.noarch 0:7.0.85-1.el6 will be installed
+    SVT Server: ---> Package tomcat-jsp-2.2-api.noarch 0:7.0.85-1.el6 will be installed
+    SVT Server: ---> Package tomcat-servlet-3.0-api.noarch 0:7.0.85-1.el6 will be installed
+    SVT Server: ---> Package xorg-x11-fonts-Type1.noarch 0:7.2-11.el6 will be installed
+    SVT Server: --> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.2-11.el6.noarch
+    SVT Server: --> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.2-11.el6.noarch
+    SVT Server: --> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.2-11.el6.noarch
+    SVT Server: --> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.2-11.el6.noarch
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package atk.x86_64 0:1.30.0-1.el6 will be installed
+    SVT Server: ---> Package cairo.x86_64 0:1.8.8-6.el6_6 will be installed
+    SVT Server: --> Processing Dependency: libpixman-1.so.0()(64bit) for package: cairo-1.8.8-6.el6_6.x86_64
+    SVT Server: ---> Package cvs.x86_64 0:1.11.23-16.el6 will be installed
+    SVT Server: ---> Package freetype.x86_64 0:2.3.11-17.el6 will be installed
+    SVT Server: ---> Package gdk-pixbuf2.x86_64 0:2.24.1-6.el6_7 will be installed
+    SVT Server: --> Processing Dependency: libtiff.so.3()(64bit) for package: gdk-pixbuf2-2.24.1-6.el6_7.x86_64
+    SVT Server: --> Processing Dependency: libjasper.so.1()(64bit) for package: gdk-pixbuf2-2.24.1-6.el6_7.x86_64
+    SVT Server: ---> Package gtk2.x86_64 0:2.24.23-9.el6 will be installed
+    SVT Server: --> Processing Dependency: hicolor-icon-theme for package: gtk2-2.24.23-9.el6.x86_64
+    SVT Server: --> Processing Dependency: libcups.so.2()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    SVT Server: --> Processing Dependency: libXinerama.so.1()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    SVT Server: --> Processing Dependency: libXfixes.so.3()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    SVT Server: --> Processing Dependency: libXdamage.so.1()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    SVT Server: --> Processing Dependency: libXcursor.so.1()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    SVT Server: --> Processing Dependency: libXcomposite.so.1()(64bit) for package: gtk2-2.24.23-9.el6.x86_64
+    SVT Server: ---> Package jpackage-utils.noarch 0:1.7.5-3.16.el6 will be installed
+    SVT Server: ---> Package libICE.x86_64 0:1.0.6-1.el6 will be installed
+    SVT Server: ---> Package libSM.x86_64 0:1.2.1-2.el6 will be installed
+    SVT Server: ---> Package libX11-common.noarch 0:1.6.4-3.el6 will be installed
+    SVT Server: ---> Package libXrandr.x86_64 0:1.5.1-1.el6 will be installed
+    SVT Server: ---> Package libart_lgpl.x86_64 0:2.3.20-5.1.el6 will be installed
+    SVT Server: ---> Package libgomp.x86_64 0:4.4.7-18.el6_9.2 will be installed
+    SVT Server: ---> Package libxcb.x86_64 0:1.12-4.el6 will be installed
+    SVT Server: --> Processing Dependency: libXau.so.6()(64bit) for package: libxcb-1.12-4.el6.x86_64
+    SVT Server: ---> Package nss.x86_64 0:3.19.1-8.el6_7 will be updated
+    SVT Server: --> Processing Dependency: nss = 3.19.1-8.el6_7 for package: nss-sysinit-3.19.1-8.el6_7.x86_64
+    SVT Server: --> Processing Dependency: nss(x86-64) = 3.19.1-8.el6_7 for package: nss-tools-3.19.1-8.el6_7.x86_64
+    SVT Server: ---> Package nss.x86_64 0:3.28.4-4.el6_9 will be an update
+    SVT Server: --> Processing Dependency: nss-util >= 3.28.3 for package: nss-3.28.4-4.el6_9.x86_64
+    SVT Server: --> Processing Dependency: nspr >= 4.13.0 for package: nss-3.28.4-4.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libnssutil3.so(NSSUTIL_3.24)(64bit) for package: nss-3.28.4-4.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libnssutil3.so(NSSUTIL_3.21)(64bit) for package: nss-3.28.4-4.el6_9.x86_64
+    SVT Server: ---> Package pango.x86_64 0:1.28.1-11.el6 will be installed
+    SVT Server: --> Processing Dependency: libthai >= 0.1.9 for package: pango-1.28.1-11.el6.x86_64
+    SVT Server: --> Processing Dependency: libthai.so.0(LIBTHAI_0.1)(64bit) for package: pango-1.28.1-11.el6.x86_64
+    SVT Server: --> Processing Dependency: libthai.so.0()(64bit) for package: pango-1.28.1-11.el6.x86_64
+    SVT Server: --> Processing Dependency: libXft.so.2()(64bit) for package: pango-1.28.1-11.el6.x86_64
+    SVT Server: ---> Package perl-Module-Pluggable.x86_64 1:3.90-144.el6 will be installed
+    SVT Server: ---> Package perl-Pod-Simple.x86_64 1:3.13-144.el6 will be installed
+    SVT Server: --> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.13-144.el6.x86_64
+    SVT Server: ---> Package perl-devel.x86_64 4:5.10.1-144.el6 will be installed
+    SVT Server: --> Processing Dependency: perl(ExtUtils::ParseXS) for package: 4:perl-devel-5.10.1-144.el6.x86_64
+    SVT Server: --> Processing Dependency: glibc-devel for package: 4:perl-devel-5.10.1-144.el6.x86_64
+    SVT Server: --> Processing Dependency: gdbm-devel for package: 4:perl-devel-5.10.1-144.el6.x86_64
+    SVT Server: --> Processing Dependency: db4-devel for package: 4:perl-devel-5.10.1-144.el6.x86_64
+    SVT Server: ---> Package perl-libs.x86_64 4:5.10.1-144.el6 will be installed
+    SVT Server: ---> Package perl-version.x86_64 3:0.77-144.el6 will be installed
+    SVT Server: ---> Package sinjdoc.x86_64 0:0.5-9.1.el6 will be installed
+    SVT Server: --> Processing Dependency: java_cup >= 0.10 for package: sinjdoc-0.5-9.1.el6.x86_64
+    SVT Server: ---> Package ttmkfdir.x86_64 0:3.0.9-32.1.el6 will be installed
+    SVT Server: ---> Package tzdata-java.noarch 0:2018d-1.el6 will be installed
+    SVT Server: ---> Package xorg-x11-font-utils.x86_64 1:7.2-11.el6 will be installed
+    SVT Server: --> Processing Dependency: libfontenc.so.1()(64bit) for package: 1:xorg-x11-font-utils-7.2-11.el6.x86_64
+    SVT Server: --> Processing Dependency: libXfont.so.1()(64bit) for package: 1:xorg-x11-font-utils-7.2-11.el6.x86_64
+    SVT Server: ---> Package zip.x86_64 0:3.0-1.el6_7.1 will be installed
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package cups-libs.x86_64 1:1.4.2-78.el6_9 will be installed
+    SVT Server: --> Processing Dependency: libgnutls.so.26(GNUTLS_1_4)(64bit) for package: 1:cups-libs-1.4.2-78.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libgnutls.so.26()(64bit) for package: 1:cups-libs-1.4.2-78.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libavahi-common.so.3()(64bit) for package: 1:cups-libs-1.4.2-78.el6_9.x86_64
+    SVT Server: --> Processing Dependency: libavahi-client.so.3()(64bit) for package: 1:cups-libs-1.4.2-78.el6_9.x86_64
+    SVT Server: ---> Package db4-devel.x86_64 0:4.7.25-22.el6 will be installed
+    SVT Server: --> Processing Dependency: db4-cxx = 4.7.25-22.el6 for package: db4-devel-4.7.25-22.el6.x86_64
+    SVT Server: --> Processing Dependency: db4 = 4.7.25-22.el6 for package: db4-devel-4.7.25-22.el6.x86_64
+    SVT Server: --> Processing Dependency: libdb_cxx-4.7.so()(64bit) for package: db4-devel-4.7.25-22.el6.x86_64
+    SVT Server: ---> Package gdbm-devel.x86_64 0:1.8.0-39.el6 will be installed
+    SVT Server: --> Processing Dependency: gdbm = 1.8.0-39.el6 for package: gdbm-devel-1.8.0-39.el6.x86_64
+    SVT Server: ---> Package glibc-devel.x86_64 0:2.12-1.209.el6_9.2 will be installed
+    SVT Server: --> Processing Dependency: glibc-headers = 2.12-1.209.el6_9.2 for package: glibc-devel-2.12-1.209.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: glibc = 2.12-1.209.el6_9.2 for package: glibc-devel-2.12-1.209.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: glibc-headers for package: glibc-devel-2.12-1.209.el6_9.2.x86_64
+    SVT Server: ---> Package hicolor-icon-theme.noarch 0:0.11-1.1.el6 will be installed
+    SVT Server: ---> Package jasper-libs.x86_64 0:1.900.1-21.el6_9 will be installed
+    SVT Server: ---> Package java_cup.x86_64 1:0.10k-5.el6 will be installed
+    SVT Server: ---> Package libXau.x86_64 0:1.0.6-4.el6 will be installed
+    SVT Server: ---> Package libXcomposite.x86_64 0:0.4.3-4.el6 will be installed
+    SVT Server: ---> Package libXcursor.x86_64 0:1.1.14-2.1.el6 will be installed
+    SVT Server: ---> Package libXdamage.x86_64 0:1.1.3-4.el6 will be installed
+    SVT Server: ---> Package libXfixes.x86_64 0:5.0.3-1.el6 will be installed
+    SVT Server: ---> Package libXfont.x86_64 0:1.5.1-2.el6 will be installed
+    SVT Server: ---> Package libXft.x86_64 0:2.3.2-1.el6 will be installed
+    SVT Server: ---> Package libXinerama.x86_64 0:1.1.3-2.1.el6 will be installed
+    SVT Server: ---> Package libfontenc.x86_64 0:1.1.2-3.el6 will be installed
+    SVT Server: ---> Package libthai.x86_64 0:0.1.12-3.el6 will be installed
+    SVT Server: ---> Package libtiff.x86_64 0:3.9.4-21.el6_8 will be installed
+    SVT Server: ---> Package nspr.x86_64 0:4.10.8-2.el6_7 will be updated
+    SVT Server: ---> Package nspr.x86_64 0:4.13.1-1.el6 will be an update
+    SVT Server: ---> Package nss-sysinit.x86_64 0:3.19.1-8.el6_7 will be updated
+    SVT Server: ---> Package nss-sysinit.x86_64 0:3.28.4-4.el6_9 will be an update
+    SVT Server: ---> Package nss-tools.x86_64 0:3.19.1-8.el6_7 will be updated
+    SVT Server: ---> Package nss-tools.x86_64 0:3.28.4-4.el6_9 will be an update
+    SVT Server: ---> Package nss-util.x86_64 0:3.19.1-2.el6_7 will be updated
+    SVT Server: ---> Package nss-util.x86_64 0:3.28.4-1.el6_9 will be an update
+    SVT Server: ---> Package perl-ExtUtils-ParseXS.x86_64 1:2.2003.0-144.el6 will be installed
+    SVT Server: ---> Package perl-Pod-Escapes.x86_64 1:1.04-144.el6 will be installed
+    SVT Server: ---> Package pixman.x86_64 0:0.32.8-1.el6 will be installed
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package avahi-libs.x86_64 0:0.6.25-17.el6 will be installed
+    SVT Server: ---> Package db4.x86_64 0:4.7.25-20.el6_7 will be updated
+    SVT Server: --> Processing Dependency: db4 = 4.7.25-20.el6_7 for package: db4-utils-4.7.25-20.el6_7.x86_64
+    SVT Server: ---> Package db4.x86_64 0:4.7.25-22.el6 will be an update
+    SVT Server: ---> Package db4-cxx.x86_64 0:4.7.25-22.el6 will be installed
+    SVT Server: ---> Package gdbm.x86_64 0:1.8.0-38.el6 will be updated
+    SVT Server: ---> Package gdbm.x86_64 0:1.8.0-39.el6 will be an update
+    SVT Server: ---> Package glibc.x86_64 0:2.12-1.166.el6_7.7 will be updated
+    SVT Server: --> Processing Dependency: glibc = 2.12-1.166.el6_7.7 for package: glibc-common-2.12-1.166.el6_7.7.x86_64
+    SVT Server: ---> Package glibc.x86_64 0:2.12-1.209.el6_9.2 will be an update
+    SVT Server: ---> Package glibc-headers.x86_64 0:2.12-1.209.el6_9.2 will be installed
+    SVT Server: --> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers-2.12-1.209.el6_9.2.x86_64
+    SVT Server: --> Processing Dependency: kernel-headers for package: glibc-headers-2.12-1.209.el6_9.2.x86_64
+    SVT Server: ---> Package gnutls.x86_64 0:2.12.23-21.el6 will be installed
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package db4-utils.x86_64 0:4.7.25-20.el6_7 will be updated
+    SVT Server: ---> Package db4-utils.x86_64 0:4.7.25-22.el6 will be an update
+    SVT Server: ---> Package glibc-common.x86_64 0:2.12-1.166.el6_7.7 will be updated
+    SVT Server: ---> Package glibc-common.x86_64 0:2.12-1.209.el6_9.2 will be an update
+    SVT Server: ---> Package kernel-headers.x86_64 0:2.6.32-696.23.1.el6 will be installed
+    SVT Server: --> Finished Dependency Resolution
+    SVT Server:
+    SVT Server: Dependencies Resolved
+    SVT Server:
+    SVT Server: ================================================================================
+    SVT Server:  Package                      Arch    Version                    Repository
+    SVT Server:                                                                            Size
+    SVT Server: ================================================================================
+    SVT Server: Installing:
+    SVT Server:  tomcat                       noarch  7.0.85-1.el6               epel      92 k
+    SVT Server: Installing for dependencies:
+    SVT Server:  alsa-lib                     x86_64  1.1.0-4.el6                base     389 k
+    SVT Server:  at                           x86_64  3.1.10-49.el6              base      61 k
+    SVT Server:  atk                          x86_64  1.30.0-1.el6               base     195 k
+    SVT Server:  avahi-libs                   x86_64  0.6.25-17.el6              base      55 k
+    SVT Server:  cairo                        x86_64  1.8.8-6.el6_6              base     309 k
+    SVT Server:  cups-libs                    x86_64  1:1.4.2-78.el6_9           updates  322 k
+    SVT Server:  cvs                          x86_64  1.11.23-16.el6             base     712 k
+    SVT Server:  db4-cxx                      x86_64  4.7.25-22.el6              base     589 k
+    SVT Server:  db4-devel                    x86_64  4.7.25-22.el6              base     6.6 M
+    SVT Server:  ecj                          x86_64  1:4.5.2-3.el6              base     3.9 M
+    SVT Server:  ed                           x86_64  1.1-3.3.el6                base      72 k
+    SVT Server:  fontconfig                   x86_64  2.8.0-5.el6                base     186 k
+    SVT Server:  freetype                     x86_64  2.3.11-17.el6              base     361 k
+    SVT Server:  gdbm-devel                   x86_64  1.8.0-39.el6               base      26 k
+    SVT Server:  gdk-pixbuf2                  x86_64  2.24.1-6.el6_7             base     501 k
+    SVT Server:  gettext                      x86_64  0.17-18.el6                base     1.8 M
+    SVT Server:  giflib                       x86_64  4.1.6-3.1.el6              base      37 k
+    SVT Server:  glibc-devel                  x86_64  2.12-1.209.el6_9.2         updates  991 k
+    SVT Server:  glibc-headers                x86_64  2.12-1.209.el6_9.2         updates  620 k
+    SVT Server:  gnutls                       x86_64  2.12.23-21.el6             base     389 k
+    SVT Server:  gtk2                         x86_64  2.24.23-9.el6              base     3.2 M
+    SVT Server:  hicolor-icon-theme           noarch  0.11-1.1.el6               base      40 k
+    SVT Server:  jakarta-commons-collections  noarch  3.2.1-3.5.el6_7            base     527 k
+    SVT Server:  jakarta-commons-daemon       x86_64  1:1.0.1-8.9.el6            base      45 k
+    SVT Server:  jakarta-commons-dbcp         noarch  1.2.1-13.9.el6             base     118 k
+    SVT Server:  jakarta-commons-logging      noarch  1.0.4-10.el6               base      52 k
+    SVT Server:  jakarta-commons-pool         x86_64  1.3-12.7.el6               base     122 k
+    SVT Server:  jasper-libs                  x86_64  1.900.1-21.el6_9           updates  138 k
+    SVT Server:  java-1.5.0-gcj               x86_64  1.5.0.0-29.1.el6           base     139 k
+    SVT Server:  java-1.8.0-openjdk           x86_64  1:1.8.0.161-3.b14.el6_9    updates  205 k
+    SVT Server:  java-1.8.0-openjdk-headless  x86_64  1:1.8.0.161-3.b14.el6_9    updates   32 M
+    SVT Server:  java_cup                     x86_64  1:0.10k-5.el6              base     197 k
+    SVT Server:  jpackage-utils               noarch  1.7.5-3.16.el6             base      60 k
+    SVT Server:  kernel-headers               x86_64  2.6.32-696.23.1.el6        updates  4.5 M
+    SVT Server:  libICE                       x86_64  1.0.6-1.el6                base      53 k
+    SVT Server:  libSM                        x86_64  1.2.1-2.el6                base      37 k
+    SVT Server:  libX11                       x86_64  1.6.4-3.el6                base     587 k
+    SVT Server:  libX11-common                noarch  1.6.4-3.el6                base     171 k
+    SVT Server:  libXau                       x86_64  1.0.6-4.el6                base      24 k
+    SVT Server:  libXcomposite                x86_64  0.4.3-4.el6                base      20 k
+    SVT Server:  libXcursor                   x86_64  1.1.14-2.1.el6             base      28 k
+    SVT Server:  libXdamage                   x86_64  1.1.3-4.el6                base      18 k
+    SVT Server:  libXext                      x86_64  1.3.3-1.el6                base      35 k
+    SVT Server:  libXfixes                    x86_64  5.0.3-1.el6                base      17 k
+    SVT Server:  libXfont                     x86_64  1.5.1-2.el6                base     145 k
+    SVT Server:  libXft                       x86_64  2.3.2-1.el6                base      55 k
+    SVT Server:  libXi                        x86_64  1.7.8-1.el6                base      38 k
+    SVT Server:  libXinerama                  x86_64  1.1.3-2.1.el6              base      13 k
+    SVT Server:  libXrandr                    x86_64  1.5.1-1.el6                base      25 k
+    SVT Server:  libXrender                   x86_64  0.9.10-1.el6               base      24 k
+    SVT Server:  libXtst                      x86_64  1.2.3-1.el6                base      19 k
+    SVT Server:  libart_lgpl                  x86_64  2.3.20-5.1.el6             base      65 k
+    SVT Server:  libfontenc                   x86_64  1.1.2-3.el6                base      29 k
+    SVT Server:  libgcj                       x86_64  4.4.7-18.el6_9.2           updates   19 M
+    SVT Server:  libgomp                      x86_64  4.4.7-18.el6_9.2           updates  134 k
+    SVT Server:  libjpeg-turbo                x86_64  1.2.1-3.el6_5              base     174 k
+    SVT Server:  libpng                       x86_64  2:1.2.49-2.el6_7           base     182 k
+    SVT Server:  libthai                      x86_64  0.1.12-3.el6               base     183 k
+    SVT Server:  libtiff                      x86_64  3.9.4-21.el6_8             base     346 k
+    SVT Server:  libxcb                       x86_64  1.12-4.el6                 base     180 k
+    SVT Server:  mailx                        x86_64  12.4-8.el6_6               base     235 k
+    SVT Server:  pango                        x86_64  1.28.1-11.el6              base     351 k
+    SVT Server:  patch                        x86_64  2.6-6.el6                  base      90 k
+    SVT Server:  pax                          x86_64  3.4-10.1.el6               base      69 k
+    SVT Server:  perl                         x86_64  4:5.10.1-144.el6           base      10 M
+    SVT Server:  perl-CGI                     x86_64  3.51-144.el6               base     210 k
+    SVT Server:  perl-ExtUtils-MakeMaker      x86_64  6.55-144.el6               base     294 k
+    SVT Server:  perl-ExtUtils-ParseXS        x86_64  1:2.2003.0-144.el6         base      46 k
+    SVT Server:  perl-Module-Pluggable        x86_64  1:3.90-144.el6             base      41 k
+    SVT Server:  perl-Pod-Escapes             x86_64  1:1.04-144.el6             base      33 k
+    SVT Server:  perl-Pod-Simple              x86_64  1:3.13-144.el6             base     213 k
+    SVT Server:  perl-Test-Harness            x86_64  3.17-144.el6               base     232 k
+    SVT Server:  perl-Test-Simple             x86_64  0.92-144.el6               base     113 k
+    SVT Server:  perl-devel                   x86_64  4:5.10.1-144.el6           base     424 k
+    SVT Server:  perl-libs                    x86_64  4:5.10.1-144.el6           base     579 k
+    SVT Server:  perl-version                 x86_64  3:0.77-144.el6             base      52 k
+    SVT Server:  pixman                       x86_64  0.32.8-1.el6               base     243 k
+    SVT Server:  redhat-lsb-core              x86_64  4.0-7.el6.centos           base      25 k
+    SVT Server:  sinjdoc                      x86_64  0.5-9.1.el6                base     705 k
+    SVT Server:  time                         x86_64  1.7-38.el6                 base      26 k
+    SVT Server:  tomcat-el-2.2-api            noarch  7.0.85-1.el6               epel      79 k
+    SVT Server:  tomcat-jsp-2.2-api           noarch  7.0.85-1.el6               epel      93 k
+    SVT Server:  tomcat-lib                   noarch  7.0.85-1.el6               epel     3.8 M
+    SVT Server:  tomcat-servlet-3.0-api       noarch  7.0.85-1.el6               epel     210 k
+    SVT Server:  ttmkfdir                     x86_64  3.0.9-32.1.el6             base      43 k
+    SVT Server:  tzdata-java                  noarch  2018d-1.el6                updates  184 k
+    SVT Server:  xorg-x11-font-utils          x86_64  1:7.2-11.el6               base      75 k
+    SVT Server:  xorg-x11-fonts-Type1         noarch  7.2-11.el6                 base     520 k
+    SVT Server:  zip                          x86_64  3.0-1.el6_7.1              base     259 k
+    SVT Server: Updating for dependencies:
+    SVT Server:  db4                          x86_64  4.7.25-22.el6              base     564 k
+    SVT Server:  db4-utils                    x86_64  4.7.25-22.el6              base     131 k
+    SVT Server:  gdbm                         x86_64  1.8.0-39.el6               base      29 k
+    SVT Server:  glibc                        x86_64  2.12-1.209.el6_9.2         updates  3.8 M
+    SVT Server:  glibc-common                 x86_64  2.12-1.209.el6_9.2         updates   14 M
+    SVT Server:  nspr                         x86_64  4.13.1-1.el6               base     114 k
+    SVT Server:  nss                          x86_64  3.28.4-4.el6_9             updates  879 k
+    SVT Server:  nss-sysinit                  x86_64  3.28.4-4.el6_9             updates   51 k
+    SVT Server:  nss-tools                    x86_64  3.28.4-4.el6_9             updates  447 k
+    SVT Server:  nss-util                     x86_64  3.28.4-1.el6_9             updates   68 k
+    SVT Server:
+    SVT Server: Transaction Summary
+    SVT Server: ================================================================================
+    SVT Server: Install      90 Package(s)
+    SVT Server: Upgrade      10 Package(s)
+    SVT Server:
+    SVT Server: Total download size: 120 M
+    SVT Server: Downloading Packages:
+    SVT Server: Setting up and reading Presto delta metadata
+    SVT Server: epel/prestodelta                                         |  639 B     00:00
+    SVT Server: updates/prestodelta                                      | 245 kB     00:00
+    SVT Server: Processing delta metadata
+    SVT Server: Package(s) data still to download: 120 M
+    SVT Server: (1/100): alsa-lib-1.1.0-4.el6.x86_64.rpm                 | 389 kB     00:00
+    SVT Server: (2/100): at-3.1.10-49.el6.x86_64.rpm                     |  61 kB     00:00
+    SVT Server: (3/100): atk-1.30.0-1.el6.x86_64.rpm                     | 195 kB     00:00
+    SVT Server: (4/100): avahi-libs-0.6.25-17.el6.x86_64.rpm             |  55 kB     00:00
+    SVT Server: (5/100): cairo-1.8.8-6.el6_6.x86_64.rpm                  | 309 kB     00:00
+    SVT Server: (6/100): cups-libs-1.4.2-78.el6_9.x86_64.rpm             | 322 kB     00:00
+    SVT Server: (7/100): cvs-1.11.23-16.el6.x86_64.rpm                   | 712 kB     00:00
+    SVT Server: (8/100): db4-4.7.25-22.el6.x86_64.rpm                    | 564 kB     00:00
+    SVT Server: (9/100): db4-cxx-4.7.25-22.el6.x86_64.rpm                | 589 kB     00:00
+    SVT Server: (10/100): db4-devel-4.7.25-22.el6.x86_64.rpm             | 6.6 MB     00:00
+    SVT Server: (11/100): db4-utils-4.7.25-22.el6.x86_64.rpm             | 131 kB     00:00
+    SVT Server: (12/100): ecj-4.5.2-3.el6.x86_64.rpm                     | 3.9 MB     00:00
+    SVT Server: (13/100): ed-1.1-3.3.el6.x86_64.rpm                      |  72 kB     00:00
+    SVT Server: (14/100): fontconfig-2.8.0-5.el6.x86_64.rpm              | 186 kB     00:00
+    SVT Server: (15/100): freetype-2.3.11-17.el6.x86_64.rpm              | 361 kB     00:00
+    SVT Server: (16/100): gdbm-1.8.0-39.el6.x86_64.rpm                   |  29 kB     00:00
+    SVT Server: (17/100): gdbm-devel-1.8.0-39.el6.x86_64.rpm             |  26 kB     00:00
+    SVT Server: (18/100): gdk-pixbuf2-2.24.1-6.el6_7.x86_64.rpm          | 501 kB     00:00
+    SVT Server: (19/100): gettext-0.17-18.el6.x86_64.rpm                 | 1.8 MB     00:00
+    SVT Server: (20/100): giflib-4.1.6-3.1.el6.x86_64.rpm                |  37 kB     00:00
+    SVT Server: (21/100): glibc-2.12-1.209.el6_9.2.x86_64.rpm            | 3.8 MB     00:00
+    SVT Server: (22/100): glibc-common-2.12-1.209.el6_9.2.x86_64.rpm     |  14 MB     00:00
+    SVT Server: (23/100): glibc-devel-2.12-1.209.el6_9.2.x86_64.rpm      | 991 kB     00:00
+    SVT Server: (24/100): glibc-headers-2.12-1.209.el6_9.2.x86_64.rpm    | 620 kB     00:00
+    SVT Server: (25/100): gnutls-2.12.23-21.el6.x86_64.rpm               | 389 kB     00:00
+    SVT Server: (26/100): gtk2-2.24.23-9.el6.x86_64.rpm                  | 3.2 MB     00:00
+    SVT Server: (27/100): hicolor-icon-theme-0.11-1.1.el6.noarch.rpm     |  40 kB     00:00
+    SVT Server: (28/100): jakarta-commons-collections-3.2.1-3.5.el6_7.no | 527 kB     00:00
+    SVT Server: (29/100): jakarta-commons-daemon-1.0.1-8.9.el6.x86_64.rp |  45 kB     00:00
+    SVT Server: (30/100): jakarta-commons-dbcp-1.2.1-13.9.el6.noarch.rpm | 118 kB     00:00
+    SVT Server: (31/100): jakarta-commons-logging-1.0.4-10.el6.noarch.rp |  52 kB     00:00
+    SVT Server: (32/100): jakarta-commons-pool-1.3-12.7.el6.x86_64.rpm   | 122 kB     00:00
+    SVT Server: (33/100): jasper-libs-1.900.1-21.el6_9.x86_64.rpm        | 138 kB     00:00
+    SVT Server: (34/100): java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64.rpm     | 139 kB     00:00
+    SVT Server: (35/100): java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_6 | 205 kB     00:00
+    SVT Server: (36/100): java-1.8.0-openjdk-headless-1.8.0.161-3.b14.el |  32 MB     00:00
+    SVT Server: (37/100): java_cup-0.10k-5.el6.x86_64.rpm                | 197 kB     00:00
+    SVT Server: (38/100): jpackage-utils-1.7.5-3.16.el6.noarch.rpm       |  60 kB     00:00
+    SVT Server: (39/100): kernel-headers-2.6.32-696.23.1.el6.x86_64.rpm  | 4.5 MB     00:00
+    SVT Server: (40/100): libICE-1.0.6-1.el6.x86_64.rpm                  |  53 kB     00:00
+    SVT Server: (41/100): libSM-1.2.1-2.el6.x86_64.rpm                   |  37 kB     00:00
+    SVT Server: (42/100): libX11-1.6.4-3.el6.x86_64.rpm                  | 587 kB     00:00
+    SVT Server: (43/100): libX11-common-1.6.4-3.el6.noarch.rpm           | 171 kB     00:00
+    SVT Server: (44/100): libXau-1.0.6-4.el6.x86_64.rpm                  |  24 kB     00:00
+    SVT Server: (45/100): libXcomposite-0.4.3-4.el6.x86_64.rpm           |  20 kB     00:00
+    SVT Server: (46/100): libXcursor-1.1.14-2.1.el6.x86_64.rpm           |  28 kB     00:00
+    SVT Server: (47/100): libXdamage-1.1.3-4.el6.x86_64.rpm              |  18 kB     00:00
+    SVT Server: (48/100): libXext-1.3.3-1.el6.x86_64.rpm                 |  35 kB     00:00
+    SVT Server: (49/100): libXfixes-5.0.3-1.el6.x86_64.rpm               |  17 kB     00:00
+    SVT Server: (50/100): libXfont-1.5.1-2.el6.x86_64.rpm                | 145 kB     00:00
+    SVT Server: (51/100): libXft-2.3.2-1.el6.x86_64.rpm                  |  55 kB     00:00
+    SVT Server: (52/100): libXi-1.7.8-1.el6.x86_64.rpm                   |  38 kB     00:00
+    SVT Server: (53/100): libXinerama-1.1.3-2.1.el6.x86_64.rpm           |  13 kB     00:00
+    SVT Server: (54/100): libXrandr-1.5.1-1.el6.x86_64.rpm               |  25 kB     00:00
+    SVT Server: (55/100): libXrender-0.9.10-1.el6.x86_64.rpm             |  24 kB     00:00
+    SVT Server: (56/100): libXtst-1.2.3-1.el6.x86_64.rpm                 |  19 kB     00:00
+    SVT Server: (57/100): libart_lgpl-2.3.20-5.1.el6.x86_64.rpm          |  65 kB     00:00
+    SVT Server: (58/100): libfontenc-1.1.2-3.el6.x86_64.rpm              |  29 kB     00:00
+    SVT Server: (59/100): libgcj-4.4.7-18.el6_9.2.x86_64.rpm             |  19 MB     00:00
+    SVT Server: (60/100): libgomp-4.4.7-18.el6_9.2.x86_64.rpm            | 134 kB     00:00
+    SVT Server: (61/100): libjpeg-turbo-1.2.1-3.el6_5.x86_64.rpm         | 174 kB     00:00
+    SVT Server: (62/100): libpng-1.2.49-2.el6_7.x86_64.rpm               | 182 kB     00:00
+    SVT Server: (63/100): libthai-0.1.12-3.el6.x86_64.rpm                | 183 kB     00:00
+    SVT Server: (64/100): libtiff-3.9.4-21.el6_8.x86_64.rpm              | 346 kB     00:00
+    SVT Server: (65/100): libxcb-1.12-4.el6.x86_64.rpm                   | 180 kB     00:00
+    SVT Server: (66/100): mailx-12.4-8.el6_6.x86_64.rpm                  | 235 kB     00:00
+    SVT Server: (67/100): nspr-4.13.1-1.el6.x86_64.rpm                   | 114 kB     00:00
+    SVT Server: (68/100): nss-3.28.4-4.el6_9.x86_64.rpm                  | 879 kB     00:00
+    SVT Server: (69/100): nss-sysinit-3.28.4-4.el6_9.x86_64.rpm          |  51 kB     00:00
+    SVT Server: (70/100): nss-tools-3.28.4-4.el6_9.x86_64.rpm            | 447 kB     00:00
+    SVT Server: (71/100): nss-util-3.28.4-1.el6_9.x86_64.rpm             |  68 kB     00:00
+    SVT Server: (72/100): pango-1.28.1-11.el6.x86_64.rpm                 | 351 kB     00:00
+    SVT Server: (73/100): patch-2.6-6.el6.x86_64.rpm                     |  90 kB     00:00
+    SVT Server: (74/100): pax-3.4-10.1.el6.x86_64.rpm                    |  69 kB     00:00
+    SVT Server: (75/100): perl-5.10.1-144.el6.x86_64.rpm                 |  10 MB     00:01
+    SVT Server: (76/100): perl-CGI-3.51-144.el6.x86_64.rpm               | 210 kB     00:00
+    SVT Server: (77/100): perl-ExtUtils-MakeMaker-6.55-144.el6.x86_64.rp | 294 kB     00:00
+    SVT Server: (78/100): perl-ExtUtils-ParseXS-2.2003.0-144.el6.x86_64. |  46 kB     00:00
+    SVT Server: (79/100): perl-Module-Pluggable-3.90-144.el6.x86_64.rpm  |  41 kB     00:00
+    SVT Server: (80/100): perl-Pod-Escapes-1.04-144.el6.x86_64.rpm       |  33 kB     00:00
+    SVT Server: (81/100): perl-Pod-Simple-3.13-144.el6.x86_64.rpm        | 213 kB     00:00
+    SVT Server: (82/100): perl-Test-Harness-3.17-144.el6.x86_64.rpm      | 232 kB     00:00
+    SVT Server: (83/100): perl-Test-Simple-0.92-144.el6.x86_64.rpm       | 113 kB     00:00
+    SVT Server: (84/100): perl-devel-5.10.1-144.el6.x86_64.rpm           | 424 kB     00:00
+    SVT Server: (85/100): perl-libs-5.10.1-144.el6.x86_64.rpm            | 579 kB     00:00
+    SVT Server: (86/100): perl-version-0.77-144.el6.x86_64.rpm           |  52 kB     00:00
+    SVT Server: (87/100): pixman-0.32.8-1.el6.x86_64.rpm                 | 243 kB     00:00
+    SVT Server: (88/100): redhat-lsb-core-4.0-7.el6.centos.x86_64.rpm    |  25 kB     00:00
+    SVT Server: (89/100): sinjdoc-0.5-9.1.el6.x86_64.rpm                 | 705 kB     00:00
+    SVT Server: (90/100): time-1.7-38.el6.x86_64.rpm                     |  26 kB     00:00
+    SVT Server: (91/100): tomcat-7.0.85-1.el6.noarch.rpm                 |  92 kB     00:00
+    SVT Server: (92/100): tomcat-el-2.2-api-7.0.85-1.el6.noarch.rpm      |  79 kB     00:00
+    SVT Server: (93/100): tomcat-jsp-2.2-api-7.0.85-1.el6.noarch.rpm     |  93 kB     00:00
+    SVT Server: (94/100): tomcat-lib-7.0.85-1.el6.noarch.rpm             | 3.8 MB     00:00
+    SVT Server: (95/100): tomcat-servlet-3.0-api-7.0.85-1.el6.noarch.rpm | 210 kB     00:00
+    SVT Server: (96/100): ttmkfdir-3.0.9-32.1.el6.x86_64.rpm             |  43 kB     00:00
+    SVT Server: (97/100): tzdata-java-2018d-1.el6.noarch.rpm             | 184 kB     00:00
+    SVT Server: (98/100): xorg-x11-font-utils-7.2-11.el6.x86_64.rpm      |  75 kB     00:00
+    SVT Server: (99/100): xorg-x11-fonts-Type1-7.2-11.el6.noarch.rpm     | 520 kB     00:00
+    SVT Server: (100/100): zip-3.0-1.el6_7.1.x86_64.rpm                  | 259 kB     00:00
+    SVT Server: --------------------------------------------------------------------------------
+    SVT Server: Total                                            11 MB/s | 120 MB     00:11
+    SVT Server: warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID 0608b895: NOKEY
+    SVT Server: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+    SVT Server: Importing GPG key 0x0608B895:
+    SVT Server:  Userid : EPEL (6) <epel@fedoraproject.org>
+    SVT Server:  Package: epel-release-6-8.noarch (@/epel-release-latest-6.noarch)
+    SVT Server:  From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+    SVT Server: warning: rpmts_HdrFromFdno: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY
+    SVT Server: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    SVT Server: Importing GPG key 0xC105B9DE:
+    SVT Server:  Userid : CentOS-6 Key (CentOS 6 Official Signing Key) <centos-6-key@centos.org>
+    SVT Server:  Package: centos-release-6-7.el6.centos.12.3.x86_64 (@anaconda-CentOS-201508042137.x86_64/6.7)
+    SVT Server:  From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+    SVT Server: Running rpm_check_debug
+    SVT Server: Running Transaction Test
+    SVT Server: Transaction Test Succeeded
+    SVT Server: Running Transaction
+    SVT Server:   Installing : jakarta-commons-collections-3.2.1-3.5.el6_7.noarch         1/110
+    SVT Server:   Updating   : glibc-2.12-1.209.el6_9.2.x86_64                            2/110
+    SVT Server:   Updating   : glibc-common-2.12-1.209.el6_9.2.x86_64                     3/110
+    SVT Server:   Installing : freetype-2.3.11-17.el6.x86_64                              4/110
+    SVT Server:   Installing : fontconfig-2.8.0-5.el6.x86_64                              5/110
+    SVT Server:   Updating   : nspr-4.13.1-1.el6.x86_64                                   6/110
+    SVT Server:   Installing : libjpeg-turbo-1.2.1-3.el6_5.x86_64                         7/110
+    SVT Server:   Updating   : nss-util-3.28.4-1.el6_9.x86_64                             8/110
+    SVT Server:   Updating   : nss-3.28.4-4.el6_9.x86_64                                  9/110
+    SVT Server:   Updating   : nss-sysinit-3.28.4-4.el6_9.x86_64                         10/110
+    SVT Server:   Installing : 2:libpng-1.2.49-2.el6_7.x86_64                            11/110
+    SVT Server:   Updating   : db4-4.7.25-22.el6.x86_64                                  12/110
+    SVT Server:   Installing : libICE-1.0.6-1.el6.x86_64                                 13/110
+    SVT Server:   Installing : libSM-1.2.1-2.el6.x86_64                                  14/110
+    SVT Server:   Installing : libtiff-3.9.4-21.el6_8.x86_64                             15/110
+    SVT Server:   Installing : atk-1.30.0-1.el6.x86_64                                   16/110
+    SVT Server:   Updating   : gdbm-1.8.0-39.el6.x86_64                                  17/110
+    SVT Server:   Installing : 1:perl-Pod-Escapes-1.04-144.el6.x86_64                    18/110
+    SVT Server:   Installing : 3:perl-version-0.77-144.el6.x86_64                        19/110
+    SVT Server:   Installing : 4:perl-libs-5.10.1-144.el6.x86_64                         20/110
+    SVT Server:   Installing : 1:perl-Pod-Simple-3.13-144.el6.x86_64                     21/110
+    SVT Server:   Installing : 1:perl-Module-Pluggable-3.90-144.el6.x86_64               22/110
+    SVT Server:   Installing : 4:perl-5.10.1-144.el6.x86_64                              23/110
+    SVT Server:   Installing : libfontenc-1.1.2-3.el6.x86_64                             24/110
+    SVT Server:   Installing : alsa-lib-1.1.0-4.el6.x86_64                               25/110
+    SVT Server:   Installing : jpackage-utils-1.7.5-3.16.el6.noarch                      26/110
+    SVT Server:   Installing : tomcat-el-2.2-api-7.0.85-1.el6.noarch                     27/110
+    SVT Server:   Installing : tomcat-servlet-3.0-api-7.0.85-1.el6.noarch                28/110
+    SVT Server:   Installing : tomcat-jsp-2.2-api-7.0.85-1.el6.noarch                    29/110
+    SVT Server:   Installing : libXfont-1.5.1-2.el6.x86_64                               30/110
+    SVT Server:   Installing : 1:xorg-x11-font-utils-7.2-11.el6.x86_64                   31/110
+    SVT Server:   Installing : cvs-1.11.23-16.el6.x86_64                                 32/110
+    SVT Server:   Installing : perl-CGI-3.51-144.el6.x86_64                              33/110
+    SVT Server:   Installing : gdbm-devel-1.8.0-39.el6.x86_64                            34/110
+    SVT Server:   Installing : mailx-12.4-8.el6_6.x86_64                                 35/110
+    SVT Server:   Installing : jasper-libs-1.900.1-21.el6_9.x86_64                       36/110
+    SVT Server:   Installing : ttmkfdir-3.0.9-32.1.el6.x86_64                            37/110
+    SVT Server:   Installing : xorg-x11-fonts-Type1-7.2-11.el6.noarch                    38/110
+    SVT Server:   Installing : gnutls-2.12.23-21.el6.x86_64                              39/110
+    SVT Server:   Installing : at-3.1.10-49.el6.x86_64                                   40/110
+    SVT Server:   Installing : avahi-libs-0.6.25-17.el6.x86_64                           41/110
+    SVT Server:   Installing : 1:cups-libs-1.4.2-78.el6_9.x86_64                         42/110
+    SVT Server:   Installing : ed-1.1-3.3.el6.x86_64                                     43/110
+    SVT Server:   Installing : time-1.7-38.el6.x86_64                                    44/110
+    SVT Server:   Installing : pixman-0.32.8-1.el6.x86_64                                45/110
+    SVT Server:   Installing : zip-3.0-1.el6_7.1.x86_64                                  46/110
+    SVT Server:   Installing : db4-cxx-4.7.25-22.el6.x86_64                              47/110
+    SVT Server:   Installing : db4-devel-4.7.25-22.el6.x86_64                            48/110
+    SVT Server:   Installing : libXau-1.0.6-4.el6.x86_64                                 49/110
+    SVT Server:   Installing : libxcb-1.12-4.el6.x86_64                                  50/110
+    SVT Server:   Installing : patch-2.6-6.el6.x86_64                                    51/110
+    SVT Server:   Installing : libgomp-4.4.7-18.el6_9.2.x86_64                           52/110
+    SVT Server:   Installing : gettext-0.17-18.el6.x86_64                                53/110
+    SVT Server:   Installing : pax-3.4-10.1.el6.x86_64                                   54/110
+    SVT Server:   Installing : libart_lgpl-2.3.20-5.1.el6.x86_64                         55/110
+    SVT Server:   Installing : libthai-0.1.12-3.el6.x86_64                               56/110
+    SVT Server:   Installing : kernel-headers-2.6.32-696.23.1.el6.x86_64                 57/110
+    SVT Server:   Installing : glibc-headers-2.12-1.209.el6_9.2.x86_64                   58/110
+    SVT Server:   Installing : glibc-devel-2.12-1.209.el6_9.2.x86_64                     59/110
+    SVT Server:   Installing : perl-ExtUtils-MakeMaker-6.55-144.el6.x86_64               60/110
+    SVT Server:   Installing : perl-Test-Harness-3.17-144.el6.x86_64                     61/110
+    SVT Server:   Installing : 1:perl-ExtUtils-ParseXS-2.2003.0-144.el6.x86_64           62/110
+    SVT Server:   Installing : 4:perl-devel-5.10.1-144.el6.x86_64                        63/110
+    SVT Server:   Installing : perl-Test-Simple-0.92-144.el6.x86_64                      64/110
+    SVT Server:   Installing : redhat-lsb-core-4.0-7.el6.centos.x86_64                   65/110
+    SVT Server:   Installing : libX11-common-1.6.4-3.el6.noarch                          66/110
+    SVT Server:   Installing : libX11-1.6.4-3.el6.x86_64                                 67/110
+    SVT Server:   Installing : libXrender-0.9.10-1.el6.x86_64                            68/110
+    SVT Server:   Installing : libXext-1.3.3-1.el6.x86_64                                69/110
+    SVT Server:   Installing : libXi-1.7.8-1.el6.x86_64                                  70/110
+    SVT Server:   Installing : cairo-1.8.8-6.el6_6.x86_64                                71/110
+    SVT Server:   Installing : libXfixes-5.0.3-1.el6.x86_64                              72/110
+    SVT Server:   Installing : libXtst-1.2.3-1.el6.x86_64                                73/110
+    SVT Server:   Installing : libXrandr-1.5.1-1.el6.x86_64                              74/110
+    SVT Server:   Installing : gdk-pixbuf2-2.24.1-6.el6_7.x86_64                         75/110
+    SVT Server:   Installing : libXdamage-1.1.3-4.el6.x86_64                             76/110
+    SVT Server:   Installing : libXcursor-1.1.14-2.1.el6.x86_64                          77/110
+    SVT Server:   Installing : libXinerama-1.1.3-2.1.el6.x86_64                          78/110
+    SVT Server:   Installing : libXft-2.3.2-1.el6.x86_64                                 79/110
+    SVT Server:   Installing : pango-1.28.1-11.el6.x86_64                                80/110
+    SVT Server:   Installing : giflib-4.1.6-3.1.el6.x86_64                               81/110
+    SVT Server:   Installing : libXcomposite-0.4.3-4.el6.x86_64                          82/110
+    SVT Server:   Installing : jakarta-commons-logging-1.0.4-10.el6.noarch               83/110
+    SVT Server:   Installing : hicolor-icon-theme-0.11-1.1.el6.noarch                    84/110
+    SVT Server:   Installing : gtk2-2.24.23-9.el6.x86_64                                 85/110
+    SVT Server:   Installing : libgcj-4.4.7-18.el6_9.2.x86_64                            86/110
+    SVT Server:   Installing : java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64                    87/110
+    SVT Server:   Installing : 1:java_cup-0.10k-5.el6.x86_64                             88/110
+    SVT Server:   Installing : sinjdoc-0.5-9.1.el6.x86_64                                89/110
+    SVT Server:   Installing : jakarta-commons-pool-1.3-12.7.el6.x86_64                  90/110
+    SVT Server:   Installing : jakarta-commons-dbcp-1.2.1-13.9.el6.noarch                91/110
+    SVT Server:   Installing : 1:ecj-4.5.2-3.el6.x86_64                                  92/110
+    SVT Server:   Installing : tomcat-lib-7.0.85-1.el6.noarch                            93/110
+    SVT Server:   Installing : 1:jakarta-commons-daemon-1.0.1-8.9.el6.x86_64             94/110
+    SVT Server:   Installing : tzdata-java-2018d-1.el6.noarch                            95/110
+    SVT Server:   Installing : 1:java-1.8.0-openjdk-headless-1.8.0.161-3.b14.el6_9.x8    96/110
+    SVT Server:   Installing : 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64         97/110
+    SVT Server:   Installing : tomcat-7.0.85-1.el6.noarch                                98/110
+    SVT Server:   Updating   : db4-utils-4.7.25-22.el6.x86_64                            99/110
+    SVT Server:   Updating   : nss-tools-3.28.4-4.el6_9.x86_64                          100/110
+    SVT Server:   Cleanup    : nss-tools-3.19.1-8.el6_7.x86_64                          101/110
+    SVT Server:   Cleanup    : nss-sysinit-3.19.1-8.el6_7.x86_64                        102/110
+    SVT Server:   Cleanup    : nss-3.19.1-8.el6_7.x86_64                                103/110
+    SVT Server:   Cleanup    : nss-util-3.19.1-2.el6_7.x86_64                           104/110
+    SVT Server:   Cleanup    : db4-utils-4.7.25-20.el6_7.x86_64                         105/110
+    SVT Server:   Cleanup    : db4-4.7.25-20.el6_7.x86_64                               106/110
+    SVT Server:   Cleanup    : nspr-4.10.8-2.el6_7.x86_64                               107/110
+    SVT Server:   Cleanup    : gdbm-1.8.0-38.el6.x86_64                                 108/110
+    SVT Server:   Cleanup    : glibc-common-2.12-1.166.el6_7.7.x86_64                   109/110
+    SVT Server:   Cleanup    : glibc-2.12-1.166.el6_7.7.x86_64                          110/110
+    SVT Server:   Verifying  : tomcat-servlet-3.0-api-7.0.85-1.el6.noarch                 1/110
+    SVT Server:   Verifying  : libXdamage-1.1.3-4.el6.x86_64                              2/110
+    SVT Server:   Verifying  : 1:java_cup-0.10k-5.el6.x86_64                              3/110
+    SVT Server:   Verifying  : libSM-1.2.1-2.el6.x86_64                                   4/110
+    SVT Server:   Verifying  : db4-utils-4.7.25-22.el6.x86_64                             5/110
+    SVT Server:   Verifying  : libXfont-1.5.1-2.el6.x86_64                                6/110
+    SVT Server:   Verifying  : tzdata-java-2018d-1.el6.noarch                             7/110
+    SVT Server:   Verifying  : nss-util-3.28.4-1.el6_9.x86_64                             8/110
+    SVT Server:   Verifying  : tomcat-el-2.2-api-7.0.85-1.el6.noarch                      9/110
+    SVT Server:   Verifying  : hicolor-icon-theme-0.11-1.1.el6.noarch                    10/110
+    SVT Server:   Verifying  : gnutls-2.12.23-21.el6.x86_64                              11/110
+    SVT Server:   Verifying  : libtiff-3.9.4-21.el6_8.x86_64                             12/110
+    SVT Server:   Verifying  : java-1.5.0-gcj-1.5.0.0-29.1.el6.x86_64                    13/110
+    SVT Server:   Verifying  : at-3.1.10-49.el6.x86_64                                   14/110
+    SVT Server:   Verifying  : gdbm-devel-1.8.0-39.el6.x86_64                            15/110
+    SVT Server:   Verifying  : libXrandr-1.5.1-1.el6.x86_64                              16/110
+    SVT Server:   Verifying  : nss-3.28.4-4.el6_9.x86_64                                 17/110
+    SVT Server:   Verifying  : avahi-libs-0.6.25-17.el6.x86_64                           18/110
+    SVT Server:   Verifying  : glibc-common-2.12-1.209.el6_9.2.x86_64                    19/110
+    SVT Server:   Verifying  : libXrender-0.9.10-1.el6.x86_64                            20/110
+    SVT Server:   Verifying  : jakarta-commons-collections-3.2.1-3.5.el6_7.noarch        21/110
+    SVT Server:   Verifying  : 1:ecj-4.5.2-3.el6.x86_64                                  22/110
+    SVT Server:   Verifying  : ed-1.1-3.3.el6.x86_64                                     23/110
+    SVT Server:   Verifying  : libXtst-1.2.3-1.el6.x86_64                                24/110
+    SVT Server:   Verifying  : time-1.7-38.el6.x86_64                                    25/110
+    SVT Server:   Verifying  : perl-Test-Simple-0.92-144.el6.x86_64                      26/110
+    SVT Server:   Verifying  : xorg-x11-fonts-Type1-7.2-11.el6.noarch                    27/110
+    SVT Server:   Verifying  : giflib-4.1.6-3.1.el6.x86_64                               28/110
+    SVT Server:   Verifying  : 3:perl-version-0.77-144.el6.x86_64                        29/110
+    SVT Server:   Verifying  : glibc-headers-2.12-1.209.el6_9.2.x86_64                   30/110
+    SVT Server:   Verifying  : perl-ExtUtils-MakeMaker-6.55-144.el6.x86_64               31/110
+    SVT Server:   Verifying  : redhat-lsb-core-4.0-7.el6.centos.x86_64                   32/110
+    SVT Server:   Verifying  : freetype-2.3.11-17.el6.x86_64                             33/110
+    SVT Server:   Verifying  : pixman-0.32.8-1.el6.x86_64                                34/110
+    SVT Server:   Verifying  : libxcb-1.12-4.el6.x86_64                                  35/110
+    SVT Server:   Verifying  : 4:perl-libs-5.10.1-144.el6.x86_64                         36/110
+    SVT Server:   Verifying  : jakarta-commons-pool-1.3-12.7.el6.x86_64                  37/110
+    SVT Server:   Verifying  : libXfixes-5.0.3-1.el6.x86_64                              38/110
+    SVT Server:   Verifying  : glibc-devel-2.12-1.209.el6_9.2.x86_64                     39/110
+    SVT Server:   Verifying  : 1:perl-Pod-Escapes-1.04-144.el6.x86_64                    40/110
+    SVT Server:   Verifying  : zip-3.0-1.el6_7.1.x86_64                                  41/110
+    SVT Server:   Verifying  : libgcj-4.4.7-18.el6_9.2.x86_64                            42/110
+    SVT Server:   Verifying  : nss-tools-3.28.4-4.el6_9.x86_64                           43/110
+    SVT Server:   Verifying  : gtk2-2.24.23-9.el6.x86_64                                 44/110
+    SVT Server:   Verifying  : db4-cxx-4.7.25-22.el6.x86_64                              45/110
+    SVT Server:   Verifying  : 1:jakarta-commons-daemon-1.0.1-8.9.el6.x86_64             46/110
+    SVT Server:   Verifying  : pango-1.28.1-11.el6.x86_64                                47/110
+    SVT Server:   Verifying  : libXcursor-1.1.14-2.1.el6.x86_64                          48/110
+    SVT Server:   Verifying  : libXau-1.0.6-4.el6.x86_64                                 49/110
+    SVT Server:   Verifying  : patch-2.6-6.el6.x86_64                                    50/110
+    SVT Server:   Verifying  : 1:java-1.8.0-openjdk-1.8.0.161-3.b14.el6_9.x86_64         51/110
+    SVT Server:   Verifying  : libgomp-4.4.7-18.el6_9.2.x86_64                           52/110
+    SVT Server:   Verifying  : sinjdoc-0.5-9.1.el6.x86_64                                53/110
+    SVT Server:   Verifying  : pax-3.4-10.1.el6.x86_64                                   54/110
+    SVT Server:   Verifying  : perl-Test-Harness-3.17-144.el6.x86_64                     55/110
+    SVT Server:   Verifying  : libart_lgpl-2.3.20-5.1.el6.x86_64                         56/110
+    SVT Server:   Verifying  : libjpeg-turbo-1.2.1-3.el6_5.x86_64                        57/110
+    SVT Server:   Verifying  : cairo-1.8.8-6.el6_6.x86_64                                58/110
+    SVT Server:   Verifying  : 4:perl-5.10.1-144.el6.x86_64                              59/110
+    SVT Server:   Verifying  : jakarta-commons-logging-1.0.4-10.el6.noarch               60/110
+    SVT Server:   Verifying  : jasper-libs-1.900.1-21.el6_9.x86_64                       61/110
+    SVT Server:   Verifying  : libX11-common-1.6.4-3.el6.noarch                          62/110
+    SVT Server:   Verifying  : gdk-pixbuf2-2.24.1-6.el6_7.x86_64                         63/110
+    SVT Server:   Verifying  : libX11-1.6.4-3.el6.x86_64                                 64/110
+    SVT Server:   Verifying  : db4-devel-4.7.25-22.el6.x86_64                            65/110
+    SVT Server:   Verifying  : glibc-2.12-1.209.el6_9.2.x86_64                           66/110
+    SVT Server:   Verifying  : gettext-0.17-18.el6.x86_64                                67/110
+    SVT Server:   Verifying  : kernel-headers-2.6.32-696.23.1.el6.x86_64                 68/110
+    SVT Server:   Verifying  : 1:cups-libs-1.4.2-78.el6_9.x86_64                         69/110
+    SVT Server:   Verifying  : tomcat-lib-7.0.85-1.el6.noarch                            70/110
+    SVT Server:   Verifying  : 4:perl-devel-5.10.1-144.el6.x86_64                        71/110
+    SVT Server:   Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.161-3.b14.el6_9.x8    72/110
+    SVT Server:   Verifying  : tomcat-jsp-2.2-api-7.0.85-1.el6.noarch                    73/110
+    SVT Server:   Verifying  : atk-1.30.0-1.el6.x86_64                                   74/110
+    SVT Server:   Verifying  : cvs-1.11.23-16.el6.x86_64                                 75/110
+    SVT Server:   Verifying  : libXcomposite-0.4.3-4.el6.x86_64                          76/110
+    SVT Server:   Verifying  : tomcat-7.0.85-1.el6.noarch                                77/110
+    SVT Server:   Verifying  : fontconfig-2.8.0-5.el6.x86_64                             78/110
+    SVT Server:   Verifying  : libthai-0.1.12-3.el6.x86_64                               79/110
+    SVT Server:   Verifying  : gdbm-1.8.0-39.el6.x86_64                                  80/110
+    SVT Server:   Verifying  : 2:libpng-1.2.49-2.el6_7.x86_64                            81/110
+    SVT Server:   Verifying  : ttmkfdir-3.0.9-32.1.el6.x86_64                            82/110
+    SVT Server:   Verifying  : jakarta-commons-dbcp-1.2.1-13.9.el6.noarch                83/110
+    SVT Server:   Verifying  : perl-CGI-3.51-144.el6.x86_64                              84/110
+    SVT Server:   Verifying  : jpackage-utils-1.7.5-3.16.el6.noarch                      85/110
+    SVT Server:   Verifying  : nspr-4.13.1-1.el6.x86_64                                  86/110
+    SVT Server:   Verifying  : 1:xorg-x11-font-utils-7.2-11.el6.x86_64                   87/110
+    SVT Server:   Verifying  : libfontenc-1.1.2-3.el6.x86_64                             88/110
+    SVT Server:   Verifying  : alsa-lib-1.1.0-4.el6.x86_64                               89/110
+    SVT Server:   Verifying  : 1:perl-Pod-Simple-3.13-144.el6.x86_64                     90/110
+    SVT Server:   Verifying  : 1:perl-ExtUtils-ParseXS-2.2003.0-144.el6.x86_64           91/110
+    SVT Server:   Verifying  : libXi-1.7.8-1.el6.x86_64                                  92/110
+    SVT Server:   Verifying  : libXinerama-1.1.3-2.1.el6.x86_64                          93/110
+    SVT Server:   Verifying  : libXext-1.3.3-1.el6.x86_64                                94/110
+    SVT Server:   Verifying  : db4-4.7.25-22.el6.x86_64                                  95/110
+    SVT Server:   Verifying  : 1:perl-Module-Pluggable-3.90-144.el6.x86_64               96/110
+    SVT Server:   Verifying  : mailx-12.4-8.el6_6.x86_64                                 97/110
+    SVT Server:   Verifying  : libXft-2.3.2-1.el6.x86_64                                 98/110
+    SVT Server:   Verifying  : libICE-1.0.6-1.el6.x86_64                                 99/110
+    SVT Server:   Verifying  : nss-sysinit-3.28.4-4.el6_9.x86_64                        100/110
+    SVT Server:   Verifying  : gdbm-1.8.0-38.el6.x86_64                                 101/110
+    SVT Server:   Verifying  : glibc-common-2.12-1.166.el6_7.7.x86_64                   102/110
+    SVT Server:   Verifying  : db4-4.7.25-20.el6_7.x86_64                               103/110
+    SVT Server:   Verifying  : nspr-4.10.8-2.el6_7.x86_64                               104/110
+    SVT Server:   Verifying  : glibc-2.12-1.166.el6_7.7.x86_64                          105/110
+    SVT Server:   Verifying  : nss-sysinit-3.19.1-8.el6_7.x86_64                        106/110
+    SVT Server:   Verifying  : db4-utils-4.7.25-20.el6_7.x86_64                         107/110
+    SVT Server:   Verifying  : nss-util-3.19.1-2.el6_7.x86_64                           108/110
+    SVT Server:   Verifying  : nss-3.19.1-8.el6_7.x86_64                                109/110
+    SVT Server:   Verifying  : nss-tools-3.19.1-8.el6_7.x86_64                          110/110
+    SVT Server:
+    SVT Server: Installed:
+    SVT Server:   tomcat.noarch 0:7.0.85-1.el6
+    SVT Server:
+    SVT Server: Dependency Installed:
+    SVT Server:   alsa-lib.x86_64 0:1.1.0-4.el6
+    SVT Server:   at.x86_64 0:3.1.10-49.el6
+    SVT Server:   atk.x86_64 0:1.30.0-1.el6
+    SVT Server:   avahi-libs.x86_64 0:0.6.25-17.el6
+    SVT Server:   cairo.x86_64 0:1.8.8-6.el6_6
+    SVT Server:   cups-libs.x86_64 1:1.4.2-78.el6_9
+    SVT Server:   cvs.x86_64 0:1.11.23-16.el6
+    SVT Server:   db4-cxx.x86_64 0:4.7.25-22.el6
+    SVT Server:   db4-devel.x86_64 0:4.7.25-22.el6
+    SVT Server:   ecj.x86_64 1:4.5.2-3.el6
+    SVT Server:   ed.x86_64 0:1.1-3.3.el6
+    SVT Server:   fontconfig.x86_64 0:2.8.0-5.el6
+    SVT Server:   freetype.x86_64 0:2.3.11-17.el6
+    SVT Server:   gdbm-devel.x86_64 0:1.8.0-39.el6
+    SVT Server:   gdk-pixbuf2.x86_64 0:2.24.1-6.el6_7
+    SVT Server:   gettext.x86_64 0:0.17-18.el6
+    SVT Server:   giflib.x86_64 0:4.1.6-3.1.el6
+    SVT Server:   glibc-devel.x86_64 0:2.12-1.209.el6_9.2
+    SVT Server:   glibc-headers.x86_64 0:2.12-1.209.el6_9.2
+    SVT Server:   gnutls.x86_64 0:2.12.23-21.el6
+    SVT Server:   gtk2.x86_64 0:2.24.23-9.el6
+    SVT Server:   hicolor-icon-theme.noarch 0:0.11-1.1.el6
+    SVT Server:   jakarta-commons-collections.noarch 0:3.2.1-3.5.el6_7
+    SVT Server:   jakarta-commons-daemon.x86_64 1:1.0.1-8.9.el6
+    SVT Server:   jakarta-commons-dbcp.noarch 0:1.2.1-13.9.el6
+    SVT Server:   jakarta-commons-logging.noarch 0:1.0.4-10.el6
+    SVT Server:   jakarta-commons-pool.x86_64 0:1.3-12.7.el6
+    SVT Server:   jasper-libs.x86_64 0:1.900.1-21.el6_9
+    SVT Server:   java-1.5.0-gcj.x86_64 0:1.5.0.0-29.1.el6
+    SVT Server:   java-1.8.0-openjdk.x86_64 1:1.8.0.161-3.b14.el6_9
+    SVT Server:   java-1.8.0-openjdk-headless.x86_64 1:1.8.0.161-3.b14.el6_9
+    SVT Server:   java_cup.x86_64 1:0.10k-5.el6
+    SVT Server:   jpackage-utils.noarch 0:1.7.5-3.16.el6
+    SVT Server:   kernel-headers.x86_64 0:2.6.32-696.23.1.el6
+    SVT Server:   libICE.x86_64 0:1.0.6-1.el6
+    SVT Server:   libSM.x86_64 0:1.2.1-2.el6
+    SVT Server:   libX11.x86_64 0:1.6.4-3.el6
+    SVT Server:   libX11-common.noarch 0:1.6.4-3.el6
+    SVT Server:   libXau.x86_64 0:1.0.6-4.el6
+    SVT Server:   libXcomposite.x86_64 0:0.4.3-4.el6
+    SVT Server:   libXcursor.x86_64 0:1.1.14-2.1.el6
+    SVT Server:   libXdamage.x86_64 0:1.1.3-4.el6
+    SVT Server:   libXext.x86_64 0:1.3.3-1.el6
+    SVT Server:   libXfixes.x86_64 0:5.0.3-1.el6
+    SVT Server:   libXfont.x86_64 0:1.5.1-2.el6
+    SVT Server:   libXft.x86_64 0:2.3.2-1.el6
+    SVT Server:   libXi.x86_64 0:1.7.8-1.el6
+    SVT Server:   libXinerama.x86_64 0:1.1.3-2.1.el6
+    SVT Server:   libXrandr.x86_64 0:1.5.1-1.el6
+    SVT Server:   libXrender.x86_64 0:0.9.10-1.el6
+    SVT Server:   libXtst.x86_64 0:1.2.3-1.el6
+    SVT Server:   libart_lgpl.x86_64 0:2.3.20-5.1.el6
+    SVT Server:   libfontenc.x86_64 0:1.1.2-3.el6
+    SVT Server:   libgcj.x86_64 0:4.4.7-18.el6_9.2
+    SVT Server:   libgomp.x86_64 0:4.4.7-18.el6_9.2
+    SVT Server:   libjpeg-turbo.x86_64 0:1.2.1-3.el6_5
+    SVT Server:   libpng.x86_64 2:1.2.49-2.el6_7
+    SVT Server:   libthai.x86_64 0:0.1.12-3.el6
+    SVT Server:   libtiff.x86_64 0:3.9.4-21.el6_8
+    SVT Server:   libxcb.x86_64 0:1.12-4.el6
+    SVT Server:   mailx.x86_64 0:12.4-8.el6_6
+    SVT Server:   pango.x86_64 0:1.28.1-11.el6
+    SVT Server:   patch.x86_64 0:2.6-6.el6
+    SVT Server:   pax.x86_64 0:3.4-10.1.el6
+    SVT Server:   perl.x86_64 4:5.10.1-144.el6
+    SVT Server:   perl-CGI.x86_64 0:3.51-144.el6
+    SVT Server:   perl-ExtUtils-MakeMaker.x86_64 0:6.55-144.el6
+    SVT Server:   perl-ExtUtils-ParseXS.x86_64 1:2.2003.0-144.el6
+    SVT Server:   perl-Module-Pluggable.x86_64 1:3.90-144.el6
+    SVT Server:   perl-Pod-Escapes.x86_64 1:1.04-144.el6
+    SVT Server:   perl-Pod-Simple.x86_64 1:3.13-144.el6
+    SVT Server:   perl-Test-Harness.x86_64 0:3.17-144.el6
+    SVT Server:   perl-Test-Simple.x86_64 0:0.92-144.el6
+    SVT Server:   perl-devel.x86_64 4:5.10.1-144.el6
+    SVT Server:   perl-libs.x86_64 4:5.10.1-144.el6
+    SVT Server:   perl-version.x86_64 3:0.77-144.el6
+    SVT Server:   pixman.x86_64 0:0.32.8-1.el6
+    SVT Server:   redhat-lsb-core.x86_64 0:4.0-7.el6.centos
+    SVT Server:   sinjdoc.x86_64 0:0.5-9.1.el6
+    SVT Server:   time.x86_64 0:1.7-38.el6
+    SVT Server:   tomcat-el-2.2-api.noarch 0:7.0.85-1.el6
+    SVT Server:   tomcat-jsp-2.2-api.noarch 0:7.0.85-1.el6
+    SVT Server:   tomcat-lib.noarch 0:7.0.85-1.el6
+    SVT Server:   tomcat-servlet-3.0-api.noarch 0:7.0.85-1.el6
+    SVT Server:   ttmkfdir.x86_64 0:3.0.9-32.1.el6
+    SVT Server:   tzdata-java.noarch 0:2018d-1.el6
+    SVT Server:   xorg-x11-font-utils.x86_64 1:7.2-11.el6
+    SVT Server:   xorg-x11-fonts-Type1.noarch 0:7.2-11.el6
+    SVT Server:   zip.x86_64 0:3.0-1.el6_7.1
+    SVT Server:
+    SVT Server: Dependency Updated:
+    SVT Server:   db4.x86_64 0:4.7.25-22.el6                db4-utils.x86_64 0:4.7.25-22.el6
+    SVT Server:   gdbm.x86_64 0:1.8.0-39.el6                glibc.x86_64 0:2.12-1.209.el6_9.2
+    SVT Server:   glibc-common.x86_64 0:2.12-1.209.el6_9.2  nspr.x86_64 0:4.13.1-1.el6
+    SVT Server:   nss.x86_64 0:3.28.4-4.el6_9               nss-sysinit.x86_64 0:3.28.4-4.el6_9
+    SVT Server:   nss-tools.x86_64 0:3.28.4-4.el6_9         nss-util.x86_64 0:3.28.4-1.el6_9
+    SVT Server:
+    SVT Server: Complete!
+    SVT Server: Loaded plugins: fastestmirror, presto
+    SVT Server: Setting up Install Process
+    SVT Server: Loading mirror speeds from cached hostfile
+    SVT Server:  * base: mirrors.cat.pdx.edu
+    SVT Server:  * epel: mirror.sfo12.us.leaseweb.net
+    SVT Server:  * extras: mirrors.sonic.net
+    SVT Server:  * updates: mirror.sjc02.svwh.net
+    SVT Server: Package cloud-init-0.7.5-10.el6.centos.2.x86_64 already installed and latest version
+    SVT Server: Resolving Dependencies
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package cloud-utils-growpart.x86_64 0:0.27-10.el6 will be installed
+    SVT Server: ---> Package dracut-modules-growroot.noarch 0:0.20-2.el6 will be installed
+    SVT Server: --> Finished Dependency Resolution
+    SVT Server:
+    SVT Server: Dependencies Resolved
+    SVT Server:
+    SVT Server: ================================================================================
+    SVT Server:  Package                       Arch         Version            Repository  Size
+    SVT Server: ================================================================================
+    SVT Server: Installing:
+    SVT Server:  cloud-utils-growpart          x86_64       0.27-10.el6        epel        25 k
+    SVT Server:  dracut-modules-growroot       noarch       0.20-2.el6         epel        20 k
+    SVT Server:
+    SVT Server: Transaction Summary
+    SVT Server: ================================================================================
+    SVT Server: Install       2 Package(s)
+    SVT Server:
+    SVT Server: Total download size: 45 k
+    SVT Server: Installed size: 96 k
+    SVT Server: Downloading Packages:
+    SVT Server: Setting up and reading Presto delta metadata
+    SVT Server: Processing delta metadata
+    SVT Server: Package(s) data still to download: 45 k
+    SVT Server: (1/2): cloud-utils-growpart-0.27-10.el6.x86_64.rpm       |  25 kB     00:00
+    SVT Server: (2/2): dracut-modules-growroot-0.20-2.el6.noarch.rpm     |  20 kB     00:00
+    SVT Server: --------------------------------------------------------------------------------
+    SVT Server: Total                                           202 kB/s |  45 kB     00:00
+    SVT Server: Running rpm_check_debug
+    SVT Server: Running Transaction Test
+    SVT Server: Transaction Test Succeeded
+    SVT Server: Running Transaction
+    SVT Server:   Installing : cloud-utils-growpart-0.27-10.el6.x86_64                      1/2
+    SVT Server:   Installing : dracut-modules-growroot-0.20-2.el6.noarch                    2/2
+    SVT Server:   Verifying  : dracut-modules-growroot-0.20-2.el6.noarch                    1/2
+    SVT Server:   Verifying  : cloud-utils-growpart-0.27-10.el6.x86_64                      2/2
+    SVT Server:
+    SVT Server: Installed:
+    SVT Server:   cloud-utils-growpart.x86_64 0:0.27-10.el6
+    SVT Server:   dracut-modules-growroot.noarch 0:0.20-2.el6
+    SVT Server:
+    SVT Server: Complete!
+    SVT Server: Loaded plugins: fastestmirror, presto
+    SVT Server: Setting up Update Process
+    SVT Server: Loading mirror speeds from cached hostfile
+    SVT Server:  * base: mirrors.cat.pdx.edu
+    SVT Server:  * epel: mirror.sfo12.us.leaseweb.net
+    SVT Server:  * extras: mirrors.sonic.net
+    SVT Server:  * updates: mirror.sjc02.svwh.net
+    SVT Server: Resolving Dependencies
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package acl.x86_64 0:2.2.49-6.el6 will be updated
+    SVT Server: ---> Package acl.x86_64 0:2.2.49-7.el6_9.1 will be an update
+    SVT Server: ---> Package acpid.x86_64 0:1.0.10-2.1.el6 will be updated
+    SVT Server: ---> Package acpid.x86_64 0:1.0.10-3.el6 will be an update
+    SVT Server: ---> Package audit.x86_64 0:2.3.7-5.el6 will be updated
+    SVT Server: ---> Package audit.x86_64 0:2.4.5-6.el6 will be an update
+    SVT Server: ---> Package audit-libs.x86_64 0:2.3.7-5.el6 will be updated
+    SVT Server: ---> Package audit-libs.x86_64 0:2.4.5-6.el6 will be an update
+    SVT Server: ---> Package audit-libs-python.x86_64 0:2.3.7-5.el6 will be updated
+    SVT Server: ---> Package audit-libs-python.x86_64 0:2.4.5-6.el6 will be an update
+    SVT Server: ---> Package bash.x86_64 0:4.1.2-33.el6_7.1 will be updated
+    SVT Server: ---> Package bash.x86_64 0:4.1.2-48.el6 will be an update
+    SVT Server: ---> Package binutils.x86_64 0:2.20.51.0.2-5.43.el6 will be updated
+    SVT Server: ---> Package binutils.x86_64 0:2.20.51.0.2-5.47.el6_9.1 will be an update
+    SVT Server: ---> Package ca-certificates.noarch 0:2015.2.4-65.0.1.el6_6 will be updated
+    SVT Server: ---> Package ca-certificates.noarch 0:2017.2.14-65.0.1.el6_9 will be an update
+    SVT Server: ---> Package centos-release.x86_64 0:6-7.el6.centos.12.3 will be updated
+    SVT Server: ---> Package centos-release.x86_64 0:6-9.el6.12.3 will be an update
+    SVT Server: ---> Package chkconfig.x86_64 0:1.3.49.3-5.el6_7.2 will be updated
+    SVT Server: ---> Package chkconfig.x86_64 0:1.3.49.5-1.el6 will be an update
+    SVT Server: ---> Package coreutils.x86_64 0:8.4-37.el6_7.3 will be updated
+    SVT Server: ---> Package coreutils.x86_64 0:8.4-46.el6 will be an update
+    SVT Server: ---> Package coreutils-libs.x86_64 0:8.4-37.el6_7.3 will be updated
+    SVT Server: ---> Package coreutils-libs.x86_64 0:8.4-46.el6 will be an update
+    SVT Server: ---> Package cpio.x86_64 0:2.10-12.el6_5 will be updated
+    SVT Server: ---> Package cpio.x86_64 0:2.10-13.el6 will be an update
+    SVT Server: ---> Package cronie.x86_64 0:1.4.4-15.el6_7.1 will be updated
+    SVT Server: ---> Package cronie.x86_64 0:1.4.4-16.el6_8.2 will be an update
+    SVT Server: ---> Package cronie-anacron.x86_64 0:1.4.4-15.el6_7.1 will be updated
+    SVT Server: ---> Package cronie-anacron.x86_64 0:1.4.4-16.el6_8.2 will be an update
+    SVT Server: ---> Package curl.x86_64 0:7.19.7-46.el6 will be updated
+    SVT Server: ---> Package curl.x86_64 0:7.19.7-53.el6_9 will be an update
+    SVT Server: ---> Package device-mapper.x86_64 0:1.02.95-3.el6_7.4 will be updated
+    SVT Server: ---> Package device-mapper.x86_64 0:1.02.117-12.el6_9.1 will be an update
+    SVT Server: ---> Package device-mapper-libs.x86_64 0:1.02.95-3.el6_7.4 will be updated
+    SVT Server: ---> Package device-mapper-libs.x86_64 0:1.02.117-12.el6_9.1 will be an update
+    SVT Server: ---> Package dhclient.x86_64 12:4.1.1-49.P1.el6.centos will be updated
+    SVT Server: ---> Package dhclient.x86_64 12:4.1.1-53.P1.el6.centos.3 will be an update
+    SVT Server: ---> Package dhcp-common.x86_64 12:4.1.1-49.P1.el6.centos will be updated
+    SVT Server: ---> Package dhcp-common.x86_64 12:4.1.1-53.P1.el6.centos.3 will be an update
+    SVT Server: ---> Package dmidecode.x86_64 1:2.12-6.el6 will be updated
+    SVT Server: ---> Package dmidecode.x86_64 1:2.12-7.el6 will be an update
+    SVT Server: ---> Package dracut.noarch 0:004-388.el6 will be updated
+    SVT Server: ---> Package dracut.noarch 0:004-409.el6_8.2 will be an update
+    SVT Server: ---> Package dracut-kernel.noarch 0:004-388.el6 will be updated
+    SVT Server: ---> Package dracut-kernel.noarch 0:004-409.el6_8.2 will be an update
+    SVT Server: ---> Package e2fsprogs.x86_64 0:1.41.12-22.el6 will be updated
+    SVT Server: ---> Package e2fsprogs.x86_64 0:1.41.12-23.el6 will be an update
+    SVT Server: ---> Package e2fsprogs-libs.x86_64 0:1.41.12-22.el6 will be updated
+    SVT Server: ---> Package e2fsprogs-libs.x86_64 0:1.41.12-23.el6 will be an update
+    SVT Server: ---> Package efibootmgr.x86_64 0:0.5.4-13.el6 will be updated
+    SVT Server: ---> Package efibootmgr.x86_64 0:0.5.4-15.el6 will be an update
+    SVT Server: ---> Package elfutils-libelf.x86_64 0:0.161-3.el6 will be updated
+    SVT Server: ---> Package elfutils-libelf.x86_64 0:0.164-2.el6 will be an update
+    SVT Server: ---> Package elfutils-libs.x86_64 0:0.161-3.el6 will be updated
+    SVT Server: ---> Package elfutils-libs.x86_64 0:0.164-2.el6 will be an update
+    SVT Server: ---> Package expat.x86_64 0:2.0.1-11.el6_2 will be updated
+    SVT Server: ---> Package expat.x86_64 0:2.0.1-13.el6_8 will be an update
+    SVT Server: ---> Package file.x86_64 0:5.04-21.el6 will be updated
+    SVT Server: ---> Package file.x86_64 0:5.04-30.el6 will be an update
+    SVT Server: ---> Package file-libs.x86_64 0:5.04-21.el6 will be updated
+    SVT Server: ---> Package file-libs.x86_64 0:5.04-30.el6 will be an update
+    SVT Server: ---> Package findutils.x86_64 1:4.4.2-6.el6 will be updated
+    SVT Server: ---> Package findutils.x86_64 1:4.4.2-9.el6 will be an update
+    SVT Server: ---> Package glib2.x86_64 0:2.28.8-4.el6 will be updated
+    SVT Server: ---> Package glib2.x86_64 0:2.28.8-9.el6 will be an update
+    SVT Server: ---> Package gmp.x86_64 0:4.3.1-7.el6_2.2 will be updated
+    SVT Server: ---> Package gmp.x86_64 0:4.3.1-12.el6 will be an update
+    SVT Server: ---> Package grep.x86_64 0:2.20-3.el6_7.1 will be updated
+    SVT Server: ---> Package grep.x86_64 0:2.20-6.el6 will be an update
+    SVT Server: ---> Package grub.x86_64 1:0.97-94.el6 will be updated
+    SVT Server: ---> Package grub.x86_64 1:0.97-99.el6 will be an update
+    SVT Server: ---> Package gzip.x86_64 0:1.3.12-22.el6 will be updated
+    SVT Server: ---> Package gzip.x86_64 0:1.3.12-24.el6 will be an update
+    SVT Server: ---> Package hwdata.noarch 0:0.233-14.1.el6 will be updated
+    SVT Server: ---> Package hwdata.noarch 0:0.233-18.1.el6 will be an update
+    SVT Server: ---> Package initscripts.x86_64 0:9.03.49-1.el6.centos.4 will be updated
+    SVT Server: ---> Package initscripts.x86_64 0:9.03.58-1.el6.centos.2 will be an update
+    SVT Server: ---> Package iproute.x86_64 0:2.6.32-45.el6 will be updated
+    SVT Server: ---> Package iproute.x86_64 0:2.6.32-54.el6 will be an update
+    SVT Server: ---> Package iputils.x86_64 0:20071127-20.el6 will be updated
+    SVT Server: ---> Package iputils.x86_64 0:20071127-24.el6 will be an update
+    SVT Server: ---> Package kernel.x86_64 0:2.6.32-696.23.1.el6 will be installed
+    SVT Server: ---> Package kernel-firmware.noarch 0:2.6.32-573.18.1.el6 will be updated
+    SVT Server: ---> Package kernel-firmware.noarch 0:2.6.32-696.23.1.el6 will be an update
+    SVT Server: ---> Package kexec-tools.x86_64 0:2.0.0-286.el6_7.1 will be updated
+    SVT Server: ---> Package kexec-tools.x86_64 0:2.0.0-307.el6_9.1 will be an update
+    SVT Server: ---> Package kpartx.x86_64 0:0.4.9-87.el6 will be updated
+    SVT Server: ---> Package kpartx.x86_64 0:0.4.9-100.el6_9.1 will be an update
+    SVT Server: ---> Package krb5-libs.x86_64 0:1.10.3-42.el6 will be updated
+    SVT Server: ---> Package krb5-libs.x86_64 0:1.10.3-65.el6 will be an update
+    SVT Server: ---> Package libacl.x86_64 0:2.2.49-6.el6 will be updated
+    SVT Server: ---> Package libacl.x86_64 0:2.2.49-7.el6_9.1 will be an update
+    SVT Server: ---> Package libblkid.x86_64 0:2.17.2-12.18.el6 will be updated
+    SVT Server: ---> Package libblkid.x86_64 0:2.17.2-12.28.el6_9.2 will be an update
+    SVT Server: ---> Package libcgroup.x86_64 0:0.40.rc1-16.el6 will be updated
+    SVT Server: ---> Package libcgroup.x86_64 0:0.40.rc1-24.el6_9 will be an update
+    SVT Server: ---> Package libcom_err.x86_64 0:1.41.12-22.el6 will be updated
+    SVT Server: ---> Package libcom_err.x86_64 0:1.41.12-23.el6 will be an update
+    SVT Server: ---> Package libcurl.x86_64 0:7.19.7-46.el6 will be updated
+    SVT Server: ---> Package libcurl.x86_64 0:7.19.7-53.el6_9 will be an update
+    SVT Server: ---> Package libdrm.x86_64 0:2.4.59-2.el6 will be updated
+    SVT Server: ---> Package libdrm.x86_64 0:2.4.65-2.el6 will be an update
+    SVT Server: ---> Package libgcc.x86_64 0:4.4.7-16.el6 will be updated
+    SVT Server: ---> Package libgcc.x86_64 0:4.4.7-18.el6_9.2 will be an update
+    SVT Server: ---> Package libgcrypt.x86_64 0:1.4.5-11.el6_4 will be updated
+    SVT Server: ---> Package libgcrypt.x86_64 0:1.4.5-12.el6_8 will be an update
+    SVT Server: ---> Package libpciaccess.x86_64 0:0.13.3-0.1.el6 will be updated
+    SVT Server: ---> Package libpciaccess.x86_64 0:0.13.4-1.el6 will be an update
+    SVT Server: ---> Package libselinux.x86_64 0:2.0.94-5.8.el6 will be updated
+    SVT Server: ---> Package libselinux.x86_64 0:2.0.94-7.el6 will be an update
+    SVT Server: ---> Package libselinux-python.x86_64 0:2.0.94-5.8.el6 will be updated
+    SVT Server: ---> Package libselinux-python.x86_64 0:2.0.94-7.el6 will be an update
+    SVT Server: ---> Package libselinux-utils.x86_64 0:2.0.94-5.8.el6 will be updated
+    SVT Server: ---> Package libselinux-utils.x86_64 0:2.0.94-7.el6 will be an update
+    SVT Server: ---> Package libss.x86_64 0:1.41.12-22.el6 will be updated
+    SVT Server: ---> Package libss.x86_64 0:1.41.12-23.el6 will be an update
+    SVT Server: ---> Package libssh2.x86_64 0:1.4.2-1.el6_6.1 will be updated
+    SVT Server: ---> Package libssh2.x86_64 0:1.4.2-2.el6_7.1 will be an update
+    SVT Server: ---> Package libstdc++.x86_64 0:4.4.7-16.el6 will be updated
+    SVT Server: ---> Package libstdc++.x86_64 0:4.4.7-18.el6_9.2 will be an update
+    SVT Server: ---> Package libudev.x86_64 0:147-2.63.el6_7.1 will be updated
+    SVT Server: ---> Package libudev.x86_64 0:147-2.73.el6_8.2 will be an update
+    SVT Server: ---> Package libuuid.x86_64 0:2.17.2-12.18.el6 will be updated
+    SVT Server: ---> Package libuuid.x86_64 0:2.17.2-12.28.el6_9.2 will be an update
+    SVT Server: ---> Package libxml2.x86_64 0:2.7.6-20.el6_7.1 will be updated
+    SVT Server: ---> Package libxml2.x86_64 0:2.7.6-21.el6_8.1 will be an update
+    SVT Server: ---> Package logrotate.x86_64 0:3.7.8-26.el6_7 will be updated
+    SVT Server: ---> Package logrotate.x86_64 0:3.7.8-28.el6 will be an update
+    SVT Server: ---> Package make.x86_64 1:3.81-20.el6 will be updated
+    SVT Server: ---> Package make.x86_64 1:3.81-23.el6 will be an update
+    SVT Server: ---> Package man.x86_64 0:1.6f-32.el6 will be updated
+    SVT Server: ---> Package man.x86_64 0:1.6f-39.el6 will be an update
+    SVT Server: ---> Package mdadm.x86_64 0:3.3.2-5.el6 will be updated
+    SVT Server: ---> Package mdadm.x86_64 0:3.3.4-8.el6 will be an update
+    SVT Server: ---> Package module-init-tools.x86_64 0:3.9-25.el6 will be updated
+    SVT Server: ---> Package module-init-tools.x86_64 0:3.9-26.el6 will be an update
+    SVT Server: ---> Package mysql-libs.x86_64 0:5.1.73-5.el6_6 will be updated
+    SVT Server: ---> Package mysql-libs.x86_64 0:5.1.73-8.el6_8 will be an update
+    SVT Server: ---> Package net-tools.x86_64 0:1.60-110.el6_2 will be updated
+    SVT Server: ---> Package net-tools.x86_64 0:1.60-114.el6 will be an update
+    SVT Server: ---> Package newt.x86_64 0:0.52.11-3.el6 will be updated
+    SVT Server: ---> Package newt.x86_64 0:0.52.11-4.el6 will be an update
+    SVT Server: ---> Package newt-python.x86_64 0:0.52.11-3.el6 will be updated
+    SVT Server: ---> Package newt-python.x86_64 0:0.52.11-4.el6 will be an update
+    SVT Server: ---> Package nss-softokn.x86_64 0:3.14.3-23.el6_7 will be updated
+    SVT Server: ---> Package nss-softokn.x86_64 0:3.14.3-23.3.el6_8 will be an update
+    SVT Server: ---> Package nss-softokn-freebl.x86_64 0:3.14.3-23.el6_7 will be updated
+    SVT Server: ---> Package nss-softokn-freebl.x86_64 0:3.14.3-23.3.el6_8 will be an update
+    SVT Server: ---> Package openldap.x86_64 0:2.4.40-7.el6_7 will be updated
+    SVT Server: ---> Package openldap.x86_64 0:2.4.40-16.el6 will be an update
+    SVT Server: ---> Package openssh.x86_64 0:5.3p1-112.el6_7 will be updated
+    SVT Server: ---> Package openssh.x86_64 0:5.3p1-123.el6_9 will be an update
+    SVT Server: ---> Package openssh-clients.x86_64 0:5.3p1-112.el6_7 will be updated
+    SVT Server: ---> Package openssh-clients.x86_64 0:5.3p1-123.el6_9 will be an update
+    SVT Server: ---> Package openssh-server.x86_64 0:5.3p1-112.el6_7 will be updated
+    SVT Server: ---> Package openssh-server.x86_64 0:5.3p1-123.el6_9 will be an update
+    SVT Server: ---> Package openssl.x86_64 0:1.0.1e-42.el6_7.2 will be updated
+    SVT Server: ---> Package openssl.x86_64 0:1.0.1e-57.el6 will be an update
+    SVT Server: ---> Package pam.x86_64 0:1.1.1-20.el6_7.1 will be updated
+    SVT Server: ---> Package pam.x86_64 0:1.1.1-24.el6 will be an update
+    SVT Server: ---> Package passwd.x86_64 0:0.77-4.el6_2.2 will be updated
+    SVT Server: ---> Package passwd.x86_64 0:0.77-7.el6 will be an update
+    SVT Server: ---> Package plymouth.x86_64 0:0.8.3-27.el6.centos.1 will be updated
+    SVT Server: ---> Package plymouth.x86_64 0:0.8.3-29.el6.centos will be an update
+    SVT Server: ---> Package plymouth-core-libs.x86_64 0:0.8.3-27.el6.centos.1 will be updated
+    SVT Server: ---> Package plymouth-core-libs.x86_64 0:0.8.3-29.el6.centos will be an update
+    SVT Server: ---> Package plymouth-scripts.x86_64 0:0.8.3-27.el6.centos.1 will be updated
+    SVT Server: ---> Package plymouth-scripts.x86_64 0:0.8.3-29.el6.centos will be an update
+    SVT Server: ---> Package policycoreutils.x86_64 0:2.0.83-24.el6 will be updated
+    SVT Server: ---> Package policycoreutils.x86_64 0:2.0.83-30.1.el6_8 will be an update
+    SVT Server: ---> Package policycoreutils-python.x86_64 0:2.0.83-24.el6 will be updated
+    SVT Server: ---> Package policycoreutils-python.x86_64 0:2.0.83-30.1.el6_8 will be an update
+    SVT Server: ---> Package postfix.x86_64 2:2.6.6-6.el6_7.1 will be updated
+    SVT Server: ---> Package postfix.x86_64 2:2.6.6-8.el6 will be an update
+    SVT Server: ---> Package procps.x86_64 0:3.2.8-35.el6_7 will be updated
+    SVT Server: ---> Package procps.x86_64 0:3.2.8-45.el6_9.1 will be an update
+    SVT Server: ---> Package psmisc.x86_64 0:22.6-19.el6_5 will be updated
+    SVT Server: ---> Package psmisc.x86_64 0:22.6-24.el6 will be an update
+    SVT Server: ---> Package python.x86_64 0:2.6.6-64.el6 will be updated
+    SVT Server: ---> Package python.x86_64 0:2.6.6-66.el6_8 will be an update
+    SVT Server: ---> Package python-backports-ssl_match_hostname.noarch 0:3.4.0.2-4.el6.centos will be updated
+    SVT Server: ---> Package python-backports-ssl_match_hostname.noarch 0:3.4.0.2-5.el6 will be an update
+    SVT Server: ---> Package python-boto.noarch 0:2.32.1-1.el6.centos will be obsoleted
+    SVT Server: ---> Package python-boto.noarch 1:2.34.0-6.el6 will be obsoleting
+    SVT Server: --> Processing Dependency: m2crypto for package: 1:python-boto-2.34.0-6.el6.noarch
+    SVT Server: ---> Package python-jsonpatch.noarch 0:1.2-2.el6.centos will be updated
+    SVT Server: ---> Package python-jsonpatch.noarch 0:1.2-4.el6 will be an update
+    SVT Server: ---> Package python-jsonpointer.noarch 0:1.0-3.el6.centos will be updated
+    SVT Server: ---> Package python-jsonpointer.noarch 0:1.0-4.el6 will be an update
+    SVT Server: ---> Package python-libs.x86_64 0:2.6.6-64.el6 will be updated
+    SVT Server: ---> Package python-libs.x86_64 0:2.6.6-66.el6_8 will be an update
+    SVT Server: ---> Package python-markdown.noarch 0:2.0.1-3.1.el6 will be updated
+    SVT Server: ---> Package python-markdown.noarch 0:2.0.1-4.el6 will be an update
+    SVT Server: ---> Package python-prettytable.noarch 0:0.7.2-1.el6.centos will be updated
+    SVT Server: ---> Package python-prettytable.noarch 0:0.7.2-11.el6 will be an update
+    SVT Server: ---> Package python-pycurl.x86_64 0:7.19.0-8.el6 will be updated
+    SVT Server: ---> Package python-pycurl.x86_64 0:7.19.0-9.el6 will be an update
+    SVT Server: ---> Package python-pygments.noarch 0:1.1.1-1.el6 will be updated
+    SVT Server: ---> Package python-pygments.noarch 0:1.1.1-2.el6 will be an update
+    SVT Server: ---> Package python-requests.noarch 0:2.6.0-3.el6 will be updated
+    SVT Server: ---> Package python-requests.noarch 0:2.6.0-4.el6 will be an update
+    SVT Server: ---> Package python-setuptools.noarch 0:0.6.10-3.el6 will be updated
+    SVT Server: ---> Package python-setuptools.noarch 0:0.6.10-4el6_9 will be an update
+    SVT Server: ---> Package python-urlgrabber.noarch 0:3.9.1-9.el6 will be updated
+    SVT Server: ---> Package python-urlgrabber.noarch 0:3.9.1-11.el6 will be an update
+    SVT Server: ---> Package python-urllib3.noarch 0:1.10.2-1.el6 will be updated
+    SVT Server: ---> Package python-urllib3.noarch 0:1.10.2-3.el6 will be an update
+    SVT Server: ---> Package rpm.x86_64 0:4.8.0-47.el6 will be updated
+    SVT Server: ---> Package rpm.x86_64 0:4.8.0-55.el6 will be an update
+    SVT Server: ---> Package rpm-libs.x86_64 0:4.8.0-47.el6 will be updated
+    SVT Server: ---> Package rpm-libs.x86_64 0:4.8.0-55.el6 will be an update
+    SVT Server: ---> Package rpm-python.x86_64 0:4.8.0-47.el6 will be updated
+    SVT Server: ---> Package rpm-python.x86_64 0:4.8.0-55.el6 will be an update
+    SVT Server: ---> Package selinux-policy.noarch 0:3.7.19-279.el6_7.8 will be updated
+    SVT Server: ---> Package selinux-policy.noarch 0:3.7.19-307el6_9.3 will be an update
+    SVT Server: ---> Package selinux-policy-targeted.noarch 0:3.7.19-279.el6_7.8 will be updated
+    SVT Server: ---> Package selinux-policy-targeted.noarch 0:3.7.19-307el6_9.3 will be an update
+    SVT Server: ---> Package setup.noarch 0:2.8.14-20.el6_4.1 will be updated
+    SVT Server: ---> Package setup.noarch 0:2.8.14-23.el6 will be an update
+    SVT Server: ---> Package shadow-utils.x86_64 2:4.1.4.2-19.el6_6.1 will be updated
+    SVT Server: ---> Package shadow-utils.x86_64 2:4.1.5.1-5.el6 will be an update
+    SVT Server: ---> Package sudo.x86_64 0:1.8.6p3-20.el6_7 will be updated
+    SVT Server: ---> Package sudo.x86_64 0:1.8.6p3-29.el6_9 will be an update
+    SVT Server: ---> Package tar.x86_64 2:1.23-13.el6 will be updated
+    SVT Server: ---> Package tar.x86_64 2:1.23-15.el6_8 will be an update
+    SVT Server: ---> Package tcp_wrappers-libs.x86_64 0:7.6-57.el6 will be updated
+    SVT Server: ---> Package tcp_wrappers-libs.x86_64 0:7.6-58.el6 will be an update
+    SVT Server: ---> Package tzdata.noarch 0:2016a-2.el6 will be updated
+    SVT Server: ---> Package tzdata.noarch 0:2018d-1.el6 will be an update
+    SVT Server: ---> Package udev.x86_64 0:147-2.63.el6_7.1 will be updated
+    SVT Server: ---> Package udev.x86_64 0:147-2.73.el6_8.2 will be an update
+    SVT Server: ---> Package upstart.x86_64 0:0.6.5-13.el6_5.3 will be updated
+    SVT Server: ---> Package upstart.x86_64 0:0.6.5-16.el6 will be an update
+    SVT Server: ---> Package util-linux-ng.x86_64 0:2.17.2-12.18.el6 will be updated
+    SVT Server: ---> Package util-linux-ng.x86_64 0:2.17.2-12.28.el6_9.2 will be an update
+    SVT Server: ---> Package vim-minimal.x86_64 2:7.4.629-5.el6 will be updated
+    SVT Server: ---> Package vim-minimal.x86_64 2:7.4.629-5.el6_8.1 will be an update
+    SVT Server: ---> Package yum.noarch 0:3.2.29-69.el6.centos will be updated
+    SVT Server: ---> Package yum.noarch 0:3.2.29-81.el6.centos will be an update
+    SVT Server: ---> Package yum-plugin-fastestmirror.noarch 0:1.1.30-30.el6 will be updated
+    SVT Server: ---> Package yum-plugin-fastestmirror.noarch 0:1.1.30-40.el6 will be an update
+    SVT Server: --> Running transaction check
+    SVT Server: ---> Package m2crypto.x86_64 0:0.20.2-9.el6 will be installed
+    SVT Server: --> Finished Dependency Resolution
+    SVT Server:
+    SVT Server: Dependencies Resolved
+    SVT Server:
+    SVT Server: ================================================================================
+    SVT Server:  Package                       Arch   Version                     Repository
+    SVT Server:                                                                            Size
+    SVT Server: ================================================================================
+    SVT Server: Installing:
+    SVT Server:  kernel                        x86_64 2.6.32-696.23.1.el6         updates  32 M
+    SVT Server:  python-boto                   noarch 1:2.34.0-6.el6              base    1.7 M
+    SVT Server:      replacing  python-boto.noarch 2.32.1-1.el6.centos
+    SVT Server: Updating:
+    SVT Server:  acl                           x86_64 2.2.49-7.el6_9.1            updates  76 k
+    SVT Server:  acpid                         x86_64 1.0.10-3.el6                base     37 k
+    SVT Server:  audit                         x86_64 2.4.5-6.el6                 base    204 k
+    SVT Server:  audit-libs                    x86_64 2.4.5-6.el6                 base     74 k
+    SVT Server:  audit-libs-python             x86_64 2.4.5-6.el6                 base     64 k
+    SVT Server:  bash                          x86_64 4.1.2-48.el6                base    910 k
+    SVT Server:  binutils                      x86_64 2.20.51.0.2-5.47.el6_9.1    updates 2.8 M
+    SVT Server:  ca-certificates               noarch 2017.2.14-65.0.1.el6_9      updates 1.3 M
+    SVT Server:  centos-release                x86_64 6-9.el6.12.3                base     22 k
+    SVT Server:  chkconfig                     x86_64 1.3.49.5-1.el6              base    160 k
+    SVT Server:  coreutils                     x86_64 8.4-46.el6                  base    3.0 M
+    SVT Server:  coreutils-libs                x86_64 8.4-46.el6                  base     52 k
+    SVT Server:  cpio                          x86_64 2.10-13.el6                 base    192 k
+    SVT Server:  cronie                        x86_64 1.4.4-16.el6_8.2            base     75 k
+    SVT Server:  cronie-anacron                x86_64 1.4.4-16.el6_8.2            base     31 k
+    SVT Server:  curl                          x86_64 7.19.7-53.el6_9             updates 197 k
+    SVT Server:  device-mapper                 x86_64 1.02.117-12.el6_9.1         updates 218 k
+    SVT Server:  device-mapper-libs            x86_64 1.02.117-12.el6_9.1         updates 257 k
+    SVT Server:  dhclient                      x86_64 12:4.1.1-53.P1.el6.centos.3 updates 322 k
+    SVT Server:  dhcp-common                   x86_64 12:4.1.1-53.P1.el6.centos.3 updates 145 k
+    SVT Server:  dmidecode                     x86_64 1:2.12-7.el6                base     74 k
+    SVT Server:  dracut                        noarch 004-409.el6_8.2             base    127 k
+    SVT Server:  dracut-kernel                 noarch 004-409.el6_8.2             base     28 k
+    SVT Server:  e2fsprogs                     x86_64 1.41.12-23.el6              base    554 k
+    SVT Server:  e2fsprogs-libs                x86_64 1.41.12-23.el6              base    121 k
+    SVT Server:  efibootmgr                    x86_64 0.5.4-15.el6                base     38 k
+    SVT Server:  elfutils-libelf               x86_64 0.164-2.el6                 base    197 k
+    SVT Server:  elfutils-libs                 x86_64 0.164-2.el6                 base    230 k
+    SVT Server:  expat                         x86_64 2.0.1-13.el6_8              base     77 k
+    SVT Server:  file                          x86_64 5.04-30.el6                 base     49 k
+    SVT Server:  file-libs                     x86_64 5.04-30.el6                 base    317 k
+    SVT Server:  findutils                     x86_64 1:4.4.2-9.el6               base    447 k
+    SVT Server:  glib2                         x86_64 2.28.8-9.el6                base    1.7 M
+    SVT Server:  gmp                           x86_64 4.3.1-12.el6                base    207 k
+    SVT Server:  grep                          x86_64 2.20-6.el6                  base    345 k
+    SVT Server:  grub                          x86_64 1:0.97-99.el6               base    939 k
+    SVT Server:  gzip                          x86_64 1.3.12-24.el6               base    116 k
+    SVT Server:  hwdata                        noarch 0.233-18.1.el6              base    1.3 M
+    SVT Server:  initscripts                   x86_64 9.03.58-1.el6.centos.2      updates 949 k
+    SVT Server:  iproute                       x86_64 2.6.32-54.el6               base    389 k
+    SVT Server:  iputils                       x86_64 20071127-24.el6             base    121 k
+    SVT Server:  kernel-firmware               noarch 2.6.32-696.23.1.el6         updates  29 M
+    SVT Server:  kexec-tools                   x86_64 2.0.0-307.el6_9.1           updates 351 k
+    SVT Server:  kpartx                        x86_64 0.4.9-100.el6_9.1           updates  70 k
+    SVT Server:  krb5-libs                     x86_64 1.10.3-65.el6               base    675 k
+    SVT Server:  libacl                        x86_64 2.2.49-7.el6_9.1            updates  24 k
+    SVT Server:  libblkid                      x86_64 2.17.2-12.28.el6_9.2        updates 119 k
+    SVT Server:  libcgroup                     x86_64 0.40.rc1-24.el6_9           updates 131 k
+    SVT Server:  libcom_err                    x86_64 1.41.12-23.el6              base     38 k
+    SVT Server:  libcurl                       x86_64 7.19.7-53.el6_9             updates 169 k
+    SVT Server:  libdrm                        x86_64 2.4.65-2.el6                base    136 k
+    SVT Server:  libgcc                        x86_64 4.4.7-18.el6_9.2            updates 103 k
+    SVT Server:  libgcrypt                     x86_64 1.4.5-12.el6_8              base    229 k
+    SVT Server:  libpciaccess                  x86_64 0.13.4-1.el6                base     24 k
+    SVT Server:  libselinux                    x86_64 2.0.94-7.el6                base    109 k
+    SVT Server:  libselinux-python             x86_64 2.0.94-7.el6                base    203 k
+    SVT Server:  libselinux-utils              x86_64 2.0.94-7.el6                base     82 k
+    SVT Server:  libss                         x86_64 1.41.12-23.el6              base     42 k
+    SVT Server:  libssh2                       x86_64 1.4.2-2.el6_7.1             base    123 k
+    SVT Server:  libstdc++                     x86_64 4.4.7-18.el6_9.2            updates 296 k
+    SVT Server:  libudev                       x86_64 147-2.73.el6_8.2            base     78 k
+    SVT Server:  libuuid                       x86_64 2.17.2-12.28.el6_9.2        updates  72 k
+    SVT Server:  libxml2                       x86_64 2.7.6-21.el6_8.1            base    805 k
+    SVT Server:  logrotate                     x86_64 3.7.8-28.el6                base     59 k
+    SVT Server:  make                          x86_64 1:3.81-23.el6               base    389 k
+    SVT Server:  man                           x86_64 1.6f-39.el6                 base    265 k
+    SVT Server:  mdadm                         x86_64 3.3.4-8.el6                 base    348 k
+    SVT Server:  module-init-tools             x86_64 3.9-26.el6                  base    467 k
+    SVT Server:  mysql-libs                    x86_64 5.1.73-8.el6_8              base    1.2 M
+    SVT Server:  net-tools                     x86_64 1.60-114.el6                base    269 k
+    SVT Server:  newt                          x86_64 0.52.11-4.el6               base     97 k
+    SVT Server:  newt-python                   x86_64 0.52.11-4.el6               base     48 k
+    SVT Server:  nss-softokn                   x86_64 3.14.3-23.3.el6_8           base    262 k
+    SVT Server:  nss-softokn-freebl            x86_64 3.14.3-23.3.el6_8           base    168 k
+    SVT Server:  openldap                      x86_64 2.4.40-16.el6               base    285 k
+    SVT Server:  openssh                       x86_64 5.3p1-123.el6_9             updates 277 k
+    SVT Server:  openssh-clients               x86_64 5.3p1-123.el6_9             updates 444 k
+    SVT Server:  openssh-server                x86_64 5.3p1-123.el6_9             updates 329 k
+    SVT Server:  openssl                       x86_64 1.0.1e-57.el6               base    1.5 M
+    SVT Server:  pam                           x86_64 1.1.1-24.el6                base    659 k
+    SVT Server:  passwd                        x86_64 0.77-7.el6                  base     89 k
+    SVT Server:  plymouth                      x86_64 0.8.3-29.el6.centos         base     89 k
+    SVT Server:  plymouth-core-libs            x86_64 0.8.3-29.el6.centos         base     88 k
+    SVT Server:  plymouth-scripts              x86_64 0.8.3-29.el6.centos         base     31 k
+    SVT Server:  policycoreutils               x86_64 2.0.83-30.1.el6_8           base    663 k
+    SVT Server:  policycoreutils-python        x86_64 2.0.83-30.1.el6_8           base    437 k
+    SVT Server:  postfix                       x86_64 2:2.6.6-8.el6               base    2.0 M
+    SVT Server:  procps                        x86_64 3.2.8-45.el6_9.1            updates 219 k
+    SVT Server:  psmisc                        x86_64 22.6-24.el6                 base     82 k
+    SVT Server:  python                        x86_64 2.6.6-66.el6_8              base     76 k
+    SVT Server:  python-backports-ssl_match_hostname
+    SVT Server:                                noarch 3.4.0.2-5.el6               base     12 k
+    SVT Server:  python-jsonpatch              noarch 1.2-4.el6                   base     15 k
+    SVT Server:  python-jsonpointer            noarch 1.0-4.el6                   base    9.4 k
+    SVT Server:  python-libs                   x86_64 2.6.6-66.el6_8              base    5.3 M
+    SVT Server:  python-markdown               noarch 2.0.1-4.el6                 base    118 k
+    SVT Server:  python-prettytable            noarch 0.7.2-11.el6                base     37 k
+    SVT Server:  python-pycurl                 x86_64 7.19.0-9.el6                base     77 k
+    SVT Server:  python-pygments               noarch 1.1.1-2.el6                 base    562 k
+    SVT Server:  python-requests               noarch 2.6.0-4.el6                 base     96 k
+    SVT Server:  python-setuptools             noarch 0.6.10-4el6_9               updates 336 k
+    SVT Server:  python-urlgrabber             noarch 3.9.1-11.el6                base     86 k
+    SVT Server:  python-urllib3                noarch 1.10.2-3.el6                base    103 k
+    SVT Server:  rpm                           x86_64 4.8.0-55.el6                base    906 k
+    SVT Server:  rpm-libs                      x86_64 4.8.0-55.el6                base    318 k
+    SVT Server:  rpm-python                    x86_64 4.8.0-55.el6                base     60 k
+    SVT Server:  selinux-policy                noarch 3.7.19-307el6_9.3           updates 895 k
+    SVT Server:  selinux-policy-targeted       noarch 3.7.19-307el6_9.3           updates 3.1 M
+    SVT Server:  setup                         noarch 2.8.14-23.el6               base    151 k
+    SVT Server:  shadow-utils                  x86_64 2:4.1.5.1-5.el6             base    1.0 M
+    SVT Server:  sudo                          x86_64 1.8.6p3-29.el6_9            updates 711 k
+    SVT Server:  tar                           x86_64 2:1.23-15.el6_8             base    810 k
+    SVT Server:  tcp_wrappers-libs             x86_64 7.6-58.el6                  base     62 k
+    SVT Server:  tzdata                        noarch 2018d-1.el6                 updates 494 k
+    SVT Server:  udev                          x86_64 147-2.73.el6_8.2            base    358 k
+    SVT Server:  upstart                       x86_64 0.6.5-16.el6                base    177 k
+    SVT Server:  util-linux-ng                 x86_64 2.17.2-12.28.el6_9.2        updates 1.6 M
+    SVT Server:  vim-minimal                   x86_64 2:7.4.629-5.el6_8.1         base    422 k
+    SVT Server:  yum                           noarch 3.2.29-81.el6.centos        base    1.0 M
+    SVT Server:  yum-plugin-fastestmirror      noarch 1.1.30-40.el6               base     33 k
+    SVT Server: Installing for dependencies:
+    SVT Server:  m2crypto                      x86_64 0.20.2-9.el6                base    471 k
+    SVT Server:
+    SVT Server: Transaction Summary
+    SVT Server: ================================================================================
+    SVT Server: Install       3 Package(s)
+    SVT Server: Upgrade     119 Package(s)
+    SVT Server:
+    SVT Server: Total download size: 115 M
+    SVT Server: Downloading Packages:
+    SVT Server: Setting up and reading Presto delta metadata
+    SVT Server: Processing delta metadata
+    SVT Server: Package(s) data still to download: 115 M
+    SVT Server: (1/122): acl-2.2.49-7.el6_9.1.x86_64.rpm                 |  76 kB     00:00
+    SVT Server: (2/122): acpid-1.0.10-3.el6.x86_64.rpm                   |  37 kB     00:00
+    SVT Server: (3/122): audit-2.4.5-6.el6.x86_64.rpm                    | 204 kB     00:00
+    SVT Server: (4/122): audit-libs-2.4.5-6.el6.x86_64.rpm               |  74 kB     00:00
+    SVT Server: (5/122): audit-libs-python-2.4.5-6.el6.x86_64.rpm        |  64 kB     00:00
+    SVT Server: (6/122): bash-4.1.2-48.el6.x86_64.rpm                    | 910 kB     00:00
+    SVT Server: (7/122): binutils-2.20.51.0.2-5.47.el6_9.1.x86_64.rpm    | 2.8 MB     00:00
+    SVT Server: (8/122): ca-certificates-2017.2.14-65.0.1.el6_9.noarch.r | 1.3 MB     00:00
+    SVT Server: (9/122): centos-release-6-9.el6.12.3.x86_64.rpm          |  22 kB     00:00
+    SVT Server: (10/122): chkconfig-1.3.49.5-1.el6.x86_64.rpm            | 160 kB     00:00
+    SVT Server: (11/122): coreutils-8.4-46.el6.x86_64.rpm                | 3.0 MB     00:00
+    SVT Server: (12/122): coreutils-libs-8.4-46.el6.x86_64.rpm           |  52 kB     00:00
+    SVT Server: (13/122): cpio-2.10-13.el6.x86_64.rpm                    | 192 kB     00:00
+    SVT Server: (14/122): cronie-1.4.4-16.el6_8.2.x86_64.rpm             |  75 kB     00:00
+    SVT Server: (15/122): cronie-anacron-1.4.4-16.el6_8.2.x86_64.rpm     |  31 kB     00:00
+    SVT Server: (16/122): curl-7.19.7-53.el6_9.x86_64.rpm                | 197 kB     00:00
+    SVT Server: (17/122): device-mapper-1.02.117-12.el6_9.1.x86_64.rpm   | 218 kB     00:00
+    SVT Server: (18/122): device-mapper-libs-1.02.117-12.el6_9.1.x86_64. | 257 kB     00:00
+    SVT Server: (19/122): dhclient-4.1.1-53.P1.el6.centos.3.x86_64.rpm   | 322 kB     00:00
+    SVT Server: (20/122): dhcp-common-4.1.1-53.P1.el6.centos.3.x86_64.rp | 145 kB     00:00
+    SVT Server: (21/122): dmidecode-2.12-7.el6.x86_64.rpm                |  74 kB     00:00
+    SVT Server: (22/122): dracut-004-409.el6_8.2.noarch.rpm              | 127 kB     00:00
+    SVT Server: (23/122): dracut-kernel-004-409.el6_8.2.noarch.rpm       |  28 kB     00:00
+    SVT Server: (24/122): e2fsprogs-1.41.12-23.el6.x86_64.rpm            | 554 kB     00:00
+    SVT Server: (25/122): e2fsprogs-libs-1.41.12-23.el6.x86_64.rpm       | 121 kB     00:00
+    SVT Server: (26/122): efibootmgr-0.5.4-15.el6.x86_64.rpm             |  38 kB     00:00
+    SVT Server: (27/122): elfutils-libelf-0.164-2.el6.x86_64.rpm         | 197 kB     00:00
+    SVT Server: (28/122): elfutils-libs-0.164-2.el6.x86_64.rpm           | 230 kB     00:00
+    SVT Server: (29/122): expat-2.0.1-13.el6_8.x86_64.rpm                |  77 kB     00:00
+    SVT Server: (30/122): file-5.04-30.el6.x86_64.rpm                    |  49 kB     00:00
+    SVT Server: (31/122): file-libs-5.04-30.el6.x86_64.rpm               | 317 kB     00:00
+    SVT Server: (32/122): findutils-4.4.2-9.el6.x86_64.rpm               | 447 kB     00:00
+    SVT Server: (33/122): glib2-2.28.8-9.el6.x86_64.rpm                  | 1.7 MB     00:00
+    SVT Server: (34/122): gmp-4.3.1-12.el6.x86_64.rpm                    | 207 kB     00:00
+    SVT Server: (35/122): grep-2.20-6.el6.x86_64.rpm                     | 345 kB     00:00
+    SVT Server: (36/122): grub-0.97-99.el6.x86_64.rpm                    | 939 kB     00:00
+    SVT Server: (37/122): gzip-1.3.12-24.el6.x86_64.rpm                  | 116 kB     00:00
+    SVT Server: (38/122): hwdata-0.233-18.1.el6.noarch.rpm               | 1.3 MB     00:00
+    SVT Server: (39/122): initscripts-9.03.58-1.el6.centos.2.x86_64.rpm  | 949 kB     00:00
+    SVT Server: (40/122): iproute-2.6.32-54.el6.x86_64.rpm               | 389 kB     00:00
+    SVT Server: (41/122): iputils-20071127-24.el6.x86_64.rpm             | 121 kB     00:00
+    SVT Server: (42/122): kernel-2.6.32-696.23.1.el6.x86_64.rpm          |  32 MB     00:00
+    SVT Server: (43/122): kernel-firmware-2.6.32-696.23.1.el6.noarch.rpm |  29 MB     00:00
+    SVT Server: (44/122): kexec-tools-2.0.0-307.el6_9.1.x86_64.rpm       | 351 kB     00:00
+    SVT Server: (45/122): kpartx-0.4.9-100.el6_9.1.x86_64.rpm            |  70 kB     00:00
+    SVT Server: (46/122): krb5-libs-1.10.3-65.el6.x86_64.rpm             | 675 kB     00:00
+    SVT Server: (47/122): libacl-2.2.49-7.el6_9.1.x86_64.rpm             |  24 kB     00:00
+    SVT Server: (48/122): libblkid-2.17.2-12.28.el6_9.2.x86_64.rpm       | 119 kB     00:00
+    SVT Server: (49/122): libcgroup-0.40.rc1-24.el6_9.x86_64.rpm         | 131 kB     00:00
+    SVT Server: (50/122): libcom_err-1.41.12-23.el6.x86_64.rpm           |  38 kB     00:00
+    SVT Server: (51/122): libcurl-7.19.7-53.el6_9.x86_64.rpm             | 169 kB     00:00
+    SVT Server: (52/122): libdrm-2.4.65-2.el6.x86_64.rpm                 | 136 kB     00:00
+    SVT Server: (53/122): libgcc-4.4.7-18.el6_9.2.x86_64.rpm             | 103 kB     00:00
+    SVT Server: (54/122): libgcrypt-1.4.5-12.el6_8.x86_64.rpm            | 229 kB     00:00
+    SVT Server: (55/122): libpciaccess-0.13.4-1.el6.x86_64.rpm           |  24 kB     00:00
+    SVT Server: (56/122): libselinux-2.0.94-7.el6.x86_64.rpm             | 109 kB     00:00
+    SVT Server: (57/122): libselinux-python-2.0.94-7.el6.x86_64.rpm      | 203 kB     00:00
+    SVT Server: (58/122): libselinux-utils-2.0.94-7.el6.x86_64.rpm       |  82 kB     00:00
+    SVT Server: (59/122): libss-1.41.12-23.el6.x86_64.rpm                |  42 kB     00:00
+    SVT Server: (60/122): libssh2-1.4.2-2.el6_7.1.x86_64.rpm             | 123 kB     00:00
+    SVT Server: (61/122): libstdc++-4.4.7-18.el6_9.2.x86_64.rpm          | 296 kB     00:00
+    SVT Server: (62/122): libudev-147-2.73.el6_8.2.x86_64.rpm            |  78 kB     00:00
+    SVT Server: (63/122): libuuid-2.17.2-12.28.el6_9.2.x86_64.rpm        |  72 kB     00:00
+    SVT Server: (64/122): libxml2-2.7.6-21.el6_8.1.x86_64.rpm            | 805 kB     00:00
+    SVT Server: (65/122): logrotate-3.7.8-28.el6.x86_64.rpm              |  59 kB     00:00
+    SVT Server: (66/122): m2crypto-0.20.2-9.el6.x86_64.rpm               | 471 kB     00:00
+    SVT Server: (67/122): make-3.81-23.el6.x86_64.rpm                    | 389 kB     00:00
+    SVT Server: (68/122): man-1.6f-39.el6.x86_64.rpm                     | 265 kB     00:00
+    SVT Server: (69/122): mdadm-3.3.4-8.el6.x86_64.rpm                   | 348 kB     00:00
+    SVT Server: (70/122): module-init-tools-3.9-26.el6.x86_64.rpm        | 467 kB     00:00
+    SVT Server: (71/122): mysql-libs-5.1.73-8.el6_8.x86_64.rpm           | 1.2 MB     00:00
+    SVT Server: (72/122): net-tools-1.60-114.el6.x86_64.rpm              | 269 kB     00:00
+    SVT Server: (73/122): newt-0.52.11-4.el6.x86_64.rpm                  |  97 kB     00:00
+    SVT Server: (74/122): newt-python-0.52.11-4.el6.x86_64.rpm           |  48 kB     00:00
+    SVT Server: (75/122): nss-softokn-3.14.3-23.3.el6_8.x86_64.rpm       | 262 kB     00:00
+    SVT Server: (76/122): nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64.rp | 168 kB     00:00
+    SVT Server: (77/122): openldap-2.4.40-16.el6.x86_64.rpm              | 285 kB     00:00
+    SVT Server: (78/122): openssh-5.3p1-123.el6_9.x86_64.rpm             | 277 kB     00:00
+    SVT Server: (79/122): openssh-clients-5.3p1-123.el6_9.x86_64.rpm     | 444 kB     00:00
+    SVT Server: (80/122): openssh-server-5.3p1-123.el6_9.x86_64.rpm      | 329 kB     00:00
+    SVT Server: (81/122): openssl-1.0.1e-57.el6.x86_64.rpm               | 1.5 MB     00:00
+    SVT Server: (82/122): pam-1.1.1-24.el6.x86_64.rpm                    | 659 kB     00:00
+    SVT Server: (83/122): passwd-0.77-7.el6.x86_64.rpm                   |  89 kB     00:00
+    SVT Server: (84/122): plymouth-0.8.3-29.el6.centos.x86_64.rpm        |  89 kB     00:00
+    SVT Server: (85/122): plymouth-core-libs-0.8.3-29.el6.centos.x86_64. |  88 kB     00:00
+    SVT Server: (86/122): plymouth-scripts-0.8.3-29.el6.centos.x86_64.rp |  31 kB     00:00
+    SVT Server: (87/122): policycoreutils-2.0.83-30.1.el6_8.x86_64.rpm   | 663 kB     00:00
+    SVT Server: (88/122): policycoreutils-python-2.0.83-30.1.el6_8.x86_6 | 437 kB     00:00
+    SVT Server: (89/122): postfix-2.6.6-8.el6.x86_64.rpm                 | 2.0 MB     00:00
+    SVT Server: (90/122): procps-3.2.8-45.el6_9.1.x86_64.rpm             | 219 kB     00:00
+    SVT Server: (91/122): psmisc-22.6-24.el6.x86_64.rpm                  |  82 kB     00:00
+    SVT Server: (92/122): python-2.6.6-66.el6_8.x86_64.rpm               |  76 kB     00:00
+    SVT Server: (93/122): python-backports-ssl_match_hostname-3.4.0.2-5. |  12 kB     00:00
+    SVT Server: (94/122): python-boto-2.34.0-6.el6.noarch.rpm            | 1.7 MB     00:00
+    SVT Server: (95/122): python-jsonpatch-1.2-4.el6.noarch.rpm          |  15 kB     00:00
+    SVT Server: (96/122): python-jsonpointer-1.0-4.el6.noarch.rpm        | 9.4 kB     00:00
+    SVT Server: (97/122): python-libs-2.6.6-66.el6_8.x86_64.rpm          | 5.3 MB     00:00
+    SVT Server: (98/122): python-markdown-2.0.1-4.el6.noarch.rpm         | 118 kB     00:00
+    SVT Server: (99/122): python-prettytable-0.7.2-11.el6.noarch.rpm     |  37 kB     00:00
+    SVT Server: (100/122): python-pycurl-7.19.0-9.el6.x86_64.rpm         |  77 kB     00:00
+    SVT Server: (101/122): python-pygments-1.1.1-2.el6.noarch.rpm        | 562 kB     00:00
+    SVT Server: (102/122): python-requests-2.6.0-4.el6.noarch.rpm        |  96 kB     00:00
+    SVT Server: (103/122): python-setuptools-0.6.10-4el6_9.noarch.rpm    | 336 kB     00:00
+    SVT Server: (104/122): python-urlgrabber-3.9.1-11.el6.noarch.rpm     |  86 kB     00:00
+    SVT Server: (105/122): python-urllib3-1.10.2-3.el6.noarch.rpm        | 103 kB     00:00
+    SVT Server: (106/122): rpm-4.8.0-55.el6.x86_64.rpm                   | 906 kB     00:00
+    SVT Server: (107/122): rpm-libs-4.8.0-55.el6.x86_64.rpm              | 318 kB     00:00
+    SVT Server: (108/122): rpm-python-4.8.0-55.el6.x86_64.rpm            |  60 kB     00:00
+    SVT Server: (109/122): selinux-policy-3.7.19-307el6_9.3.noarch.rpm   | 895 kB     00:00
+    SVT Server: (110/122): selinux-policy-targeted-3.7.19-307el6_9.3.noa | 3.1 MB     00:00
+    SVT Server: (111/122): setup-2.8.14-23.el6.noarch.rpm                | 151 kB     00:00
+    SVT Server: (112/122): shadow-utils-4.1.5.1-5.el6.x86_64.rpm         | 1.0 MB     00:00
+    SVT Server: (113/122): sudo-1.8.6p3-29.el6_9.x86_64.rpm              | 711 kB     00:00
+    SVT Server: (114/122): tar-1.23-15.el6_8.x86_64.rpm                  | 810 kB     00:00
+    SVT Server: (115/122): tcp_wrappers-libs-7.6-58.el6.x86_64.rpm       |  62 kB     00:00
+    SVT Server: (116/122): tzdata-2018d-1.el6.noarch.rpm                 | 494 kB     00:00
+    SVT Server: (117/122): udev-147-2.73.el6_8.2.x86_64.rpm              | 358 kB     00:00
+    SVT Server: (118/122): upstart-0.6.5-16.el6.x86_64.rpm               | 177 kB     00:00
+    SVT Server: (119/122): util-linux-ng-2.17.2-12.28.el6_9.2.x86_64.rpm | 1.6 MB     00:00
+    SVT Server: (120/122): vim-minimal-7.4.629-5.el6_8.1.x86_64.rpm      | 422 kB     00:00
+    SVT Server: (121/122): yum-3.2.29-81.el6.centos.noarch.rpm           | 1.0 MB     00:00
+    SVT Server: (122/122): yum-plugin-fastestmirror-1.1.30-40.el6.noarch |  33 kB     00:00
+    SVT Server: --------------------------------------------------------------------------------
+    SVT Server: Total                                            11 MB/s | 115 MB     00:10
+    SVT Server: Running rpm_check_debug
+    SVT Server: Running Transaction Test
+    SVT Server: Transaction Test Succeeded
+    SVT Server: Running Transaction
+    SVT Server:   Updating   : bash-4.1.2-48.el6.x86_64                                   1/242
+    SVT Server:   Updating   : libselinux-2.0.94-7.el6.x86_64                             2/242
+    SVT Server:   Updating   : audit-libs-2.4.5-6.el6.x86_64                              3/242
+    SVT Server:   Updating   : chkconfig-1.3.49.5-1.el6.x86_64                            4/242
+    SVT Server:   Updating   : libacl-2.2.49-7.el6_9.1.x86_64                             5/242
+    SVT Server:   Updating   : libcom_err-1.41.12-23.el6.x86_64                           6/242
+    SVT Server:   Updating   : krb5-libs-1.10.3-65.el6.x86_64                             7/242
+    SVT Server:   Updating   : grep-2.20-6.el6.x86_64                                     8/242
+    SVT Server:   Updating   : elfutils-libelf-0.164-2.el6.x86_64                         9/242
+    SVT Server:   Updating   : glib2-2.28.8-9.el6.x86_64                                 10/242
+    SVT Server:   Updating   : libgcc-4.4.7-18.el6_9.2.x86_64                            11/242
+    SVT Server:   Updating   : file-libs-5.04-30.el6.x86_64                              12/242
+    SVT Server:   Updating   : 1:findutils-4.4.2-9.el6.x86_64                            13/242
+    SVT Server:   Updating   : libuuid-2.17.2-12.28.el6_9.2.x86_64                       14/242
+    SVT Server:   Updating   : libblkid-2.17.2-12.28.el6_9.2.x86_64                      15/242
+    SVT Server:   Updating   : cpio-2.10-13.el6.x86_64                                   16/242
+    SVT Server:   Updating   : 1:make-3.81-23.el6.x86_64                                 17/242
+    SVT Server:   Updating   : setup-2.8.14-23.el6.noarch                                18/242
+    SVT Server: warning: /etc/shadow created as /etc/shadow.rpmnew
+    SVT Server:   Updating   : libudev-147-2.73.el6_8.2.x86_64                           19/242
+    SVT Server:   Updating   : tcp_wrappers-libs-7.6-58.el6.x86_64                       20/242
+    SVT Server:   Updating   : file-5.04-30.el6.x86_64                                   21/242
+    SVT Server:   Updating   : upstart-0.6.5-16.el6.x86_64                               22/242
+    SVT Server:   Updating   : libstdc++-4.4.7-18.el6_9.2.x86_64                         23/242
+    SVT Server:   Updating   : gmp-4.3.1-12.el6.x86_64                                   24/242
+    SVT Server:   Updating   : coreutils-libs-8.4-46.el6.x86_64                          25/242
+    SVT Server:   Updating   : coreutils-8.4-46.el6.x86_64                               26/242
+    SVT Server:   Updating   : pam-1.1.1-24.el6.x86_64                                   27/242
+    SVT Server:   Updating   : 2:shadow-utils-4.1.5.1-5.el6.x86_64                       28/242
+    SVT Server:   Updating   : ca-certificates-2017.2.14-65.0.1.el6_9.noarch             29/242
+    SVT Server:   Updating   : openssl-1.0.1e-57.el6.x86_64                              30/242
+    SVT Server:   Updating   : libssh2-1.4.2-2.el6_7.1.x86_64                            31/242
+    SVT Server:   Updating   : libcurl-7.19.7-53.el6_9.x86_64                            32/242
+    SVT Server:   Updating   : rpm-libs-4.8.0-55.el6.x86_64                              33/242
+    SVT Server:   Updating   : curl-7.19.7-53.el6_9.x86_64                               34/242
+    SVT Server:   Updating   : rpm-4.8.0-55.el6.x86_64                                   35/242
+    SVT Server:   Updating   : openldap-2.4.40-16.el6.x86_64                             36/242
+    SVT Server:   Updating   : plymouth-scripts-0.8.3-29.el6.centos.x86_64               37/242
+    SVT Server:   Updating   : gzip-1.3.12-24.el6.x86_64                                 38/242
+    SVT Server:   Updating   : mysql-libs-5.1.73-8.el6_8.x86_64                          39/242
+    SVT Server:   Updating   : elfutils-libs-0.164-2.el6.x86_64                          40/242
+    SVT Server:   Updating   : libss-1.41.12-23.el6.x86_64                               41/242
+    SVT Server:   Updating   : e2fsprogs-libs-1.41.12-23.el6.x86_64                      42/242
+    SVT Server:   Updating   : 2:tar-1.23-15.el6_8.x86_64                                43/242
+    SVT Server:   Updating   : 2:vim-minimal-7.4.629-5.el6_8.1.x86_64                    44/242
+    SVT Server:   Updating   : psmisc-22.6-24.el6.x86_64                                 45/242
+    SVT Server:   Updating   : procps-3.2.8-45.el6_9.1.x86_64                            46/242
+    SVT Server:   Updating   : net-tools-1.60-114.el6.x86_64                             47/242
+    SVT Server:   Updating   : libselinux-utils-2.0.94-7.el6.x86_64                      48/242
+    SVT Server:   Updating   : nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64               49/242
+    SVT Server:   Updating   : binutils-2.20.51.0.2-5.47.el6_9.1.x86_64                  50/242
+    SVT Server:   Updating   : module-init-tools-3.9-26.el6.x86_64                       51/242
+    SVT Server:   Updating   : hwdata-0.233-18.1.el6.noarch                              52/242
+    SVT Server:   Updating   : libpciaccess-0.13.4-1.el6.x86_64                          53/242
+    SVT Server:   Updating   : iproute-2.6.32-54.el6.x86_64                              54/242
+    SVT Server:   Updating   : centos-release-6-9.el6.12.3.x86_64                        55/242
+    SVT Server:   Updating   : plymouth-core-libs-0.8.3-29.el6.centos.x86_64             56/242
+    SVT Server:   Updating   : libdrm-2.4.65-2.el6.x86_64                                57/242
+    SVT Server:   Updating   : plymouth-0.8.3-29.el6.centos.x86_64                       58/242
+    SVT Server:   Updating   : iputils-20071127-24.el6.x86_64                            59/242
+    SVT Server:   Updating   : util-linux-ng-2.17.2-12.28.el6_9.2.x86_64                 60/242
+    SVT Server:   Updating   : initscripts-9.03.58-1.el6.centos.2.x86_64                 61/242
+    SVT Server:   Updating   : udev-147-2.73.el6_8.2.x86_64                              62/242
+    SVT Server: udevd[1742]: can not read '/etc/udev/rules.d/75-persistent-net-generator.rules'
+    SVT Server:   Updating   : policycoreutils-2.0.83-30.1.el6_8.x86_64                  63/242
+    SVT Server:   Updating   : dracut-004-409.el6_8.2.noarch                             64/242
+    SVT Server:   Updating   : openssh-5.3p1-123.el6_9.x86_64                            65/242
+    SVT Server:   Updating   : dracut-kernel-004-409.el6_8.2.noarch                      66/242
+    SVT Server:   Updating   : selinux-policy-3.7.19-307el6_9.3.noarch                   67/242
+    SVT Server:   Updating   : device-mapper-libs-1.02.117-12.el6_9.1.x86_64             68/242
+    SVT Server:   Updating   : device-mapper-1.02.117-12.el6_9.1.x86_64                  69/242
+    SVT Server:   Updating   : kpartx-0.4.9-100.el6_9.1.x86_64                           70/242
+    SVT Server:   Updating   : mdadm-3.3.4-8.el6.x86_64                                  71/242
+    SVT Server:   Updating   : libcgroup-0.40.rc1-24.el6_9.x86_64                        72/242
+    SVT Server:   Updating   : 2:postfix-2.6.6-8.el6.x86_64                              73/242
+    SVT Server:   Updating   : cronie-anacron-1.4.4-16.el6_8.2.x86_64                    74/242
+    SVT Server:   Updating   : cronie-1.4.4-16.el6_8.2.x86_64                            75/242
+    SVT Server:   Updating   : kernel-firmware-2.6.32-696.23.1.el6.noarch                76/242
+    SVT Server:   Updating   : expat-2.0.1-13.el6_8.x86_64                               77/242
+    SVT Server:   Updating   : python-2.6.6-66.el6_8.x86_64                              78/242
+    SVT Server:   Updating   : python-libs-2.6.6-66.el6_8.x86_64                         79/242
+    SVT Server:   Installing : m2crypto-0.20.2-9.el6.x86_64                              80/242
+    SVT Server:   Updating   : python-pycurl-7.19.0-9.el6.x86_64                         81/242
+    SVT Server:   Updating   : python-urlgrabber-3.9.1-11.el6.noarch                     82/242
+    SVT Server:   Updating   : rpm-python-4.8.0-55.el6.x86_64                            83/242
+    SVT Server:   Updating   : yum-plugin-fastestmirror-1.1.30-40.el6.noarch             84/242
+    SVT Server:   Updating   : yum-3.2.29-81.el6.centos.noarch                           85/242
+    SVT Server:   Updating   : libselinux-python-2.0.94-7.el6.x86_64                     86/242
+    SVT Server:   Updating   : python-jsonpointer-1.0-4.el6.noarch                       87/242
+    SVT Server:   Updating   : python-setuptools-0.6.10-4el6_9.noarch                    88/242
+    SVT Server:   Updating   : audit-libs-python-2.4.5-6.el6.x86_64                      89/242
+    SVT Server:   Updating   : python-backports-ssl_match_hostname-3.4.0.2-5.el6.noar    90/242
+    SVT Server:   Updating   : python-urllib3-1.10.2-3.el6.noarch                        91/242
+    SVT Server:   Updating   : python-requests-2.6.0-4.el6.noarch                        92/242
+    SVT Server:   Updating   : 12:dhcp-common-4.1.1-53.P1.el6.centos.3.x86_64            93/242
+    SVT Server:   Updating   : newt-0.52.11-4.el6.x86_64                                 94/242
+    SVT Server:   Updating   : newt-python-0.52.11-4.el6.x86_64                          95/242
+    SVT Server:   Updating   : 12:dhclient-4.1.1-53.P1.el6.centos.3.x86_64               96/242
+    SVT Server:   Installing : 1:python-boto-2.34.0-6.el6.noarch                         97/242
+    SVT Server:   Updating   : policycoreutils-python-2.0.83-30.1.el6_8.x86_64           98/242
+    SVT Server:   Updating   : python-pygments-1.1.1-2.el6.noarch                        99/242
+    SVT Server:   Updating   : python-jsonpatch-1.2-4.el6.noarch                        100/242
+    SVT Server:   Updating   : 1:grub-0.97-99.el6.x86_64                                101/242
+    SVT Server:   Updating   : python-prettytable-0.7.2-11.el6.noarch                   102/242
+    SVT Server:   Updating   : python-markdown-2.0.1-4.el6.noarch                       103/242
+    SVT Server:   Installing : kernel-2.6.32-696.23.1.el6.x86_64                        104/242
+    SVT Server:   Updating   : kexec-tools-2.0.0-307.el6_9.1.x86_64                     105/242
+    SVT Server:   Updating   : selinux-policy-targeted-3.7.19-307el6_9.3.noarch         106/242
+    SVT Server:   Updating   : openssh-clients-5.3p1-123.el6_9.x86_64                   107/242
+    SVT Server:   Updating   : openssh-server-5.3p1-123.el6_9.x86_64                    108/242
+    SVT Server:   Updating   : acpid-1.0.10-3.el6.x86_64                                109/242
+    SVT Server:   Updating   : nss-softokn-3.14.3-23.3.el6_8.x86_64                     110/242
+    SVT Server:   Updating   : sudo-1.8.6p3-29.el6_9.x86_64                             111/242
+    SVT Server:   Updating   : e2fsprogs-1.41.12-23.el6.x86_64                          112/242
+    SVT Server:   Updating   : man-1.6f-39.el6.x86_64                                   113/242
+    SVT Server:   Updating   : passwd-0.77-7.el6.x86_64                                 114/242
+    SVT Server:   Updating   : audit-2.4.5-6.el6.x86_64                                 115/242
+    SVT Server:   Updating   : logrotate-3.7.8-28.el6.x86_64                            116/242
+    SVT Server:   Updating   : acl-2.2.49-7.el6_9.1.x86_64                              117/242
+    SVT Server:   Updating   : libgcrypt-1.4.5-12.el6_8.x86_64                          118/242
+    SVT Server:   Updating   : libxml2-2.7.6-21.el6_8.1.x86_64                          119/242
+    SVT Server:   Updating   : 1:dmidecode-2.12-7.el6.x86_64                            120/242
+    SVT Server:   Updating   : efibootmgr-0.5.4-15.el6.x86_64                           121/242
+    SVT Server:   Updating   : tzdata-2018d-1.el6.noarch                                122/242
+    SVT Server:   Cleanup    : selinux-policy-targeted-3.7.19-279.el6_7.8.noarch        123/242
+    SVT Server:   Cleanup    : python-requests-2.6.0-3.el6.noarch                       124/242
+    SVT Server:   Cleanup    : python-urllib3-1.10.2-1.el6.noarch                       125/242
+    SVT Server:   Cleanup    : selinux-policy-3.7.19-279.el6_7.8.noarch                 126/242
+    SVT Server:   Cleanup    : 1:grub-0.97-94.el6.x86_64                                127/242
+    SVT Server:   Cleanup    : python-jsonpatch-1.2-2.el6.centos.noarch                 128/242
+    SVT Server:   Cleanup    : python-pygments-1.1.1-1.el6.noarch                       129/242
+    SVT Server:   Cleanup    : python-setuptools-0.6.10-3.el6.noarch                    130/242
+    SVT Server:   Cleanup    : python-jsonpointer-1.0-3.el6.centos.noarch               131/242
+    SVT Server:   Cleanup    : python-backports-ssl_match_hostname-3.4.0.2-4.el6.cent   132/242
+    SVT Server:   Cleanup    : yum-3.2.29-69.el6.centos.noarch                          133/242
+    SVT Server:   Cleanup    : yum-plugin-fastestmirror-1.1.30-30.el6.noarch            134/242
+    SVT Server:   Cleanup    : python-urlgrabber-3.9.1-9.el6.noarch                     135/242
+    SVT Server:   Cleanup    : python-markdown-2.0.1-3.1.el6.noarch                     136/242
+    SVT Server:   Cleanup    : python-prettytable-0.7.2-1.el6.centos.noarch             137/242
+    SVT Server:   Cleanup    : dracut-kernel-004-388.el6.noarch                         138/242
+    SVT Server:   Cleanup    : python-boto-2.32.1-1.el6.centos.noarch                   139/242
+    SVT Server:   Cleanup    : kernel-firmware-2.6.32-573.18.1.el6.noarch               140/242
+    SVT Server:   Cleanup    : tzdata-2016a-2.el6.noarch                                141/242
+    SVT Server:   Cleanup    : openssh-server-5.3p1-112.el6_7.x86_64                    142/242
+    SVT Server:   Cleanup    : cronie-anacron-1.4.4-15.el6_7.1.x86_64                   143/242
+    SVT Server:   Cleanup    : cronie-1.4.4-15.el6_7.1.x86_64                           144/242
+    SVT Server:   Cleanup    : 2:postfix-2.6.6-6.el6_7.1.x86_64                         145/242
+    SVT Server:   Cleanup    : policycoreutils-python-2.0.83-24.el6.x86_64              146/242
+    SVT Server:   Cleanup    : policycoreutils-2.0.83-24.el6.x86_64                     147/242
+    SVT Server:   Cleanup    : rpm-python-4.8.0-47.el6.x86_64                           148/242
+    SVT Server:   Cleanup    : kexec-tools-2.0.0-286.el6_7.1.x86_64                     149/242
+    SVT Server:   Cleanup    : dracut-004-388.el6.noarch                                150/242
+    SVT Server:   Cleanup    : sudo-1.8.6p3-20.el6_7.x86_64                             151/242
+    SVT Server:   Cleanup    : man-1.6f-32.el6.x86_64                                   152/242
+    SVT Server:   Cleanup    : e2fsprogs-1.41.12-22.el6.x86_64                          153/242
+    SVT Server:   Cleanup    : openssh-clients-5.3p1-112.el6_7.x86_64                   154/242
+    SVT Server:   Cleanup    : openssh-5.3p1-112.el6_7.x86_64                           155/242
+    SVT Server:   Cleanup    : audit-2.3.7-5.el6.x86_64                                 156/242
+    SVT Server:   Cleanup    : passwd-0.77-4.el6_2.2.x86_64                             157/242
+    SVT Server:   Cleanup    : plymouth-0.8.3-27.el6.centos.1.x86_64                    158/242
+    SVT Server:   Cleanup    : libcgroup-0.40.rc1-16.el6.x86_64                         159/242
+    SVT Server:   Cleanup    : 12:dhclient-4.1.1-49.P1.el6.centos.x86_64                160/242
+    SVT Server:   Cleanup    : mdadm-3.3.2-5.el6.x86_64                                 161/242
+    SVT Server:   Cleanup    : logrotate-3.7.8-26.el6_7.x86_64                          162/242
+    SVT Server:   Cleanup    : plymouth-scripts-0.8.3-27.el6.centos.1.x86_64            163/242
+    SVT Server:   Cleanup    : 2:tar-1.23-13.el6.x86_64                                 164/242
+    SVT Server:   Cleanup    : python-pycurl-7.19.0-8.el6.x86_64                        165/242
+    SVT Server:   Cleanup    : libcurl-7.19.7-46.el6.x86_64                             166/242
+    SVT Server:   Cleanup    : openldap-2.4.40-7.el6_7.x86_64                           167/242
+    SVT Server:   Cleanup    : curl-7.19.7-46.el6.x86_64                                168/242
+    SVT Server:   Cleanup    : rpm-libs-4.8.0-47.el6.x86_64                             169/242
+    SVT Server:   Cleanup    : rpm-4.8.0-47.el6.x86_64                                  170/242
+    SVT Server:   Cleanup    : acpid-1.0.10-2.1.el6.x86_64                              171/242
+    SVT Server:   Cleanup    : libdrm-2.4.59-2.el6.x86_64                               172/242
+    SVT Server:   Cleanup    : gzip-1.3.12-22.el6.x86_64                                173/242
+    SVT Server:   Cleanup    : 2:vim-minimal-7.4.629-5.el6.x86_64                       174/242
+    SVT Server:   Cleanup    : audit-libs-python-2.3.7-5.el6.x86_64                     175/242
+    SVT Server:   Cleanup    : libselinux-python-2.0.94-5.8.el6.x86_64                  176/242
+    SVT Server:   Cleanup    : mysql-libs-5.1.73-5.el6_6.x86_64                         177/242
+    SVT Server:   Cleanup    : newt-python-0.52.11-3.el6.x86_64                         178/242
+    SVT Server:   Cleanup    : python-libs-2.6.6-64.el6.x86_64                          179/242
+    SVT Server:   Cleanup    : python-2.6.6-64.el6.x86_64                               180/242
+    SVT Server:   Cleanup    : libpciaccess-0.13.3-0.1.el6.x86_64                       181/242
+    SVT Server:   Cleanup    : libssh2-1.4.2-1.el6_6.1.x86_64                           182/242
+    SVT Server:   Cleanup    : openssl-1.0.1e-42.el6_7.2.x86_64                         183/242
+    SVT Server:   Cleanup    : ca-certificates-2015.2.4-65.0.1.el6_6.noarch             184/242
+    SVT Server:   Cleanup    : krb5-libs-1.10.3-42.el6.x86_64                           185/242
+    SVT Server:   Cleanup    : 1:make-3.81-20.el6.x86_64                                186/242
+    SVT Server:   Cleanup    : e2fsprogs-libs-1.41.12-22.el6.x86_64                     187/242
+    SVT Server:   Cleanup    : libss-1.41.12-22.el6.x86_64                              188/242
+    SVT Server:   Cleanup    : file-5.04-21.el6.x86_64                                  189/242
+    SVT Server:   Cleanup    : kpartx-0.4.9-87.el6.x86_64                               190/242
+    SVT Server:   Cleanup    : device-mapper-1.02.95-3.el6_7.4.x86_64                   191/242
+    SVT Server:   Cleanup    : device-mapper-libs-1.02.95-3.el6_7.4.x86_64              192/242
+    SVT Server:   Cleanup    : util-linux-ng-2.17.2-12.18.el6.x86_64                    193/242
+    SVT Server:   Cleanup    : iputils-20071127-20.el6.x86_64                           194/242
+    SVT Server:   Cleanup    : udev-147-2.63.el6_7.1.x86_64                             195/242
+    SVT Server:   Cleanup    : initscripts-9.03.49-1.el6.centos.4.x86_64                196/242
+    SVT Server:   Cleanup    : 2:shadow-utils-4.1.4.2-19.el6_6.1.x86_64                 197/242
+    SVT Server:   Cleanup    : 1:findutils-4.4.2-6.el6.x86_64                           198/242
+    SVT Server:   Cleanup    : glib2-2.28.8-4.el6.x86_64                                199/242
+    SVT Server:   Cleanup    : upstart-0.6.5-13.el6_5.3.x86_64                          200/242
+    SVT Server:   Cleanup    : libblkid-2.17.2-12.18.el6.x86_64                         201/242
+    SVT Server:   Cleanup    : hwdata-0.233-14.1.el6.noarch                             202/242
+    SVT Server:   Cleanup    : module-init-tools-3.9-25.el6.x86_64                      203/242
+    SVT Server:   Cleanup    : coreutils-libs-8.4-37.el6_7.3.x86_64                     204/242
+    SVT Server:   Cleanup    : pam-1.1.1-20.el6_7.1.x86_64                              205/242
+    SVT Server:   Cleanup    : coreutils-8.4-37.el6_7.3.x86_64                          206/242
+    SVT Server:   Cleanup    : gmp-4.3.1-7.el6_2.2.x86_64                               207/242
+    SVT Server:   Cleanup    : libstdc++-4.4.7-16.el6.x86_64                            208/242
+    SVT Server:   Cleanup    : grep-2.20-3.el6_7.1.x86_64                               209/242
+    SVT Server:   Cleanup    : binutils-2.20.51.0.2-5.43.el6.x86_64                     210/242
+    SVT Server:   Cleanup    : chkconfig-1.3.49.3-5.el6_7.2.x86_64                      211/242
+    SVT Server:   Cleanup    : psmisc-22.6-19.el6_5.x86_64                              212/242
+    SVT Server:   Cleanup    : iproute-2.6.32-45.el6.x86_64                             213/242
+    SVT Server:   Cleanup    : procps-3.2.8-35.el6_7.x86_64                             214/242
+    SVT Server:   Cleanup    : cpio-2.10-12.el6_5.x86_64                                215/242
+    SVT Server:   Cleanup    : net-tools-1.60-110.el6_2.x86_64                          216/242
+    SVT Server:   Cleanup    : elfutils-libs-0.161-3.el6.x86_64                         217/242
+    SVT Server:   Cleanup    : libselinux-utils-2.0.94-5.8.el6.x86_64                   218/242
+    SVT Server:   Cleanup    : libselinux-2.0.94-5.8.el6.x86_64                         219/242
+    SVT Server:   Cleanup    : nss-softokn-3.14.3-23.el6_7.x86_64                       220/242
+    SVT Server:   Cleanup    : nss-softokn-freebl-3.14.3-23.el6_7.x86_64                221/242
+    SVT Server:   Cleanup    : acl-2.2.49-6.el6.x86_64                                  222/242
+    SVT Server:   Cleanup    : setup-2.8.14-20.el6_4.1.noarch                           223/242
+    SVT Server:   Cleanup    : centos-release-6-7.el6.centos.12.3.x86_64                224/242
+    SVT Server:   Cleanup    : 12:dhcp-common-4.1.1-49.P1.el6.centos.x86_64             225/242
+    SVT Server:   Cleanup    : libacl-2.2.49-6.el6.x86_64                               226/242
+    SVT Server:   Cleanup    : bash-4.1.2-33.el6_7.1.x86_64                             227/242
+    SVT Server:   Cleanup    : elfutils-libelf-0.161-3.el6.x86_64                       228/242
+    SVT Server:   Cleanup    : libgcc-4.4.7-16.el6.x86_64                               229/242
+    SVT Server:   Cleanup    : audit-libs-2.3.7-5.el6.x86_64                            230/242
+    SVT Server:   Cleanup    : libuuid-2.17.2-12.18.el6.x86_64                          231/242
+    SVT Server:   Cleanup    : libudev-147-2.63.el6_7.1.x86_64                          232/242
+    SVT Server:   Cleanup    : file-libs-5.04-21.el6.x86_64                             233/242
+    SVT Server:   Cleanup    : libcom_err-1.41.12-22.el6.x86_64                         234/242
+    SVT Server:   Cleanup    : expat-2.0.1-11.el6_2.x86_64                              235/242
+    SVT Server:   Cleanup    : newt-0.52.11-3.el6.x86_64                                236/242
+    SVT Server:   Cleanup    : plymouth-core-libs-0.8.3-27.el6.centos.1.x86_64          237/242
+    SVT Server:   Cleanup    : tcp_wrappers-libs-7.6-57.el6.x86_64                      238/242
+    SVT Server:   Cleanup    : libgcrypt-1.4.5-11.el6_4.x86_64                          239/242
+    SVT Server:   Cleanup    : libxml2-2.7.6-20.el6_7.1.x86_64                          240/242
+    SVT Server:   Cleanup    : 1:dmidecode-2.12-6.el6.x86_64                            241/242
+    SVT Server:   Cleanup    : efibootmgr-0.5.4-13.el6.x86_64                           242/242
+    SVT Server:   Verifying  : libssh2-1.4.2-2.el6_7.1.x86_64                             1/242
+    SVT Server:   Verifying  : mysql-libs-5.1.73-8.el6_8.x86_64                           2/242
+    SVT Server:   Verifying  : tzdata-2018d-1.el6.noarch                                  3/242
+    SVT Server:   Verifying  : 2:tar-1.23-15.el6_8.x86_64                                 4/242
+    SVT Server:   Verifying  : bash-4.1.2-48.el6.x86_64                                   5/242
+    SVT Server:   Verifying  : efibootmgr-0.5.4-15.el6.x86_64                             6/242
+    SVT Server:   Verifying  : kpartx-0.4.9-100.el6_9.1.x86_64                            7/242
+    SVT Server:   Verifying  : acpid-1.0.10-3.el6.x86_64                                  8/242
+    SVT Server:   Verifying  : newt-0.52.11-4.el6.x86_64                                  9/242
+    SVT Server:   Verifying  : file-libs-5.04-30.el6.x86_64                              10/242
+    SVT Server:   Verifying  : udev-147-2.73.el6_8.2.x86_64                              11/242
+    SVT Server:   Verifying  : initscripts-9.03.58-1.el6.centos.2.x86_64                 12/242
+    SVT Server:   Verifying  : 1:dmidecode-2.12-7.el6.x86_64                             13/242
+    SVT Server:   Verifying  : yum-plugin-fastestmirror-1.1.30-40.el6.noarch             14/242
+    SVT Server:   Verifying  : 12:dhcp-common-4.1.1-53.P1.el6.centos.3.x86_64            15/242
+    SVT Server:   Verifying  : cronie-1.4.4-16.el6_8.2.x86_64                            16/242
+    SVT Server:   Verifying  : m2crypto-0.20.2-9.el6.x86_64                              17/242
+    SVT Server:   Verifying  : python-urlgrabber-3.9.1-11.el6.noarch                     18/242
+    SVT Server:   Verifying  : python-urllib3-1.10.2-3.el6.noarch                        19/242
+    SVT Server:   Verifying  : pam-1.1.1-24.el6.x86_64                                   20/242
+    SVT Server:   Verifying  : libselinux-python-2.0.94-7.el6.x86_64                     21/242
+    SVT Server:   Verifying  : libss-1.41.12-23.el6.x86_64                               22/242
+    SVT Server:   Verifying  : 2:shadow-utils-4.1.5.1-5.el6.x86_64                       23/242
+    SVT Server:   Verifying  : device-mapper-libs-1.02.117-12.el6_9.1.x86_64             24/242
+    SVT Server:   Verifying  : grep-2.20-6.el6.x86_64                                    25/242
+    SVT Server:   Verifying  : nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64               26/242
+    SVT Server:   Verifying  : device-mapper-1.02.117-12.el6_9.1.x86_64                  27/242
+    SVT Server:   Verifying  : file-5.04-30.el6.x86_64                                   28/242
+    SVT Server:   Verifying  : audit-libs-2.4.5-6.el6.x86_64                             29/242
+    SVT Server:   Verifying  : passwd-0.77-7.el6.x86_64                                  30/242
+    SVT Server:   Verifying  : python-2.6.6-66.el6_8.x86_64                              31/242
+    SVT Server:   Verifying  : policycoreutils-python-2.0.83-30.1.el6_8.x86_64           32/242
+    SVT Server:   Verifying  : hwdata-0.233-18.1.el6.noarch                              33/242
+    SVT Server:   Verifying  : plymouth-scripts-0.8.3-29.el6.centos.x86_64               34/242
+    SVT Server:   Verifying  : libblkid-2.17.2-12.28.el6_9.2.x86_64                      35/242
+    SVT Server:   Verifying  : rpm-4.8.0-55.el6.x86_64                                   36/242
+    SVT Server:   Verifying  : python-pycurl-7.19.0-9.el6.x86_64                         37/242
+    SVT Server:   Verifying  : selinux-policy-3.7.19-307el6_9.3.noarch                   38/242
+    SVT Server:   Verifying  : psmisc-22.6-24.el6.x86_64                                 39/242
+    SVT Server:   Verifying  : 1:findutils-4.4.2-9.el6.x86_64                            40/242
+    SVT Server:   Verifying  : libgcc-4.4.7-18.el6_9.2.x86_64                            41/242
+    SVT Server:   Verifying  : 1:python-boto-2.34.0-6.el6.noarch                         42/242
+    SVT Server:   Verifying  : procps-3.2.8-45.el6_9.1.x86_64                            43/242
+    SVT Server:   Verifying  : gmp-4.3.1-12.el6.x86_64                                   44/242
+    SVT Server:   Verifying  : libcurl-7.19.7-53.el6_9.x86_64                            45/242
+    SVT Server:   Verifying  : 2:vim-minimal-7.4.629-5.el6_8.1.x86_64                    46/242
+    SVT Server:   Verifying  : tcp_wrappers-libs-7.6-58.el6.x86_64                       47/242
+    SVT Server:   Verifying  : policycoreutils-2.0.83-30.1.el6_8.x86_64                  48/242
+    SVT Server:   Verifying  : dracut-004-409.el6_8.2.noarch                             49/242
+    SVT Server:   Verifying  : libselinux-2.0.94-7.el6.x86_64                            50/242
+    SVT Server:   Verifying  : glib2-2.28.8-9.el6.x86_64                                 51/242
+    SVT Server:   Verifying  : module-init-tools-3.9-26.el6.x86_64                       52/242
+    SVT Server:   Verifying  : binutils-2.20.51.0.2-5.47.el6_9.1.x86_64                  53/242
+    SVT Server:   Verifying  : python-jsonpointer-1.0-4.el6.noarch                       54/242
+    SVT Server:   Verifying  : python-pygments-1.1.1-2.el6.noarch                        55/242
+    SVT Server:   Verifying  : upstart-0.6.5-16.el6.x86_64                               56/242
+    SVT Server:   Verifying  : net-tools-1.60-114.el6.x86_64                             57/242
+    SVT Server:   Verifying  : python-jsonpatch-1.2-4.el6.noarch                         58/242
+    SVT Server:   Verifying  : 1:grub-0.97-99.el6.x86_64                                 59/242
+    SVT Server:   Verifying  : libpciaccess-0.13.4-1.el6.x86_64                          60/242
+    SVT Server:   Verifying  : expat-2.0.1-13.el6_8.x86_64                               61/242
+    SVT Server:   Verifying  : libcom_err-1.41.12-23.el6.x86_64                          62/242
+    SVT Server:   Verifying  : krb5-libs-1.10.3-65.el6.x86_64                            63/242
+    SVT Server:   Verifying  : kexec-tools-2.0.0-307.el6_9.1.x86_64                      64/242
+    SVT Server:   Verifying  : gzip-1.3.12-24.el6.x86_64                                 65/242
+    SVT Server:   Verifying  : dracut-kernel-004-409.el6_8.2.noarch                      66/242
+    SVT Server:   Verifying  : audit-2.4.5-6.el6.x86_64                                  67/242
+    SVT Server:   Verifying  : libcgroup-0.40.rc1-24.el6_9.x86_64                        68/242
+    SVT Server:   Verifying  : openldap-2.4.40-16.el6.x86_64                             69/242
+    SVT Server:   Verifying  : rpm-libs-4.8.0-55.el6.x86_64                              70/242
+    SVT Server:   Verifying  : curl-7.19.7-53.el6_9.x86_64                               71/242
+    SVT Server:   Verifying  : elfutils-libelf-0.164-2.el6.x86_64                        72/242
+    SVT Server:   Verifying  : kernel-firmware-2.6.32-696.23.1.el6.noarch                73/242
+    SVT Server:   Verifying  : python-prettytable-0.7.2-11.el6.noarch                    74/242
+    SVT Server:   Verifying  : libuuid-2.17.2-12.28.el6_9.2.x86_64                       75/242
+    SVT Server:   Verifying  : libxml2-2.7.6-21.el6_8.1.x86_64                           76/242
+    SVT Server:   Verifying  : plymouth-core-libs-0.8.3-29.el6.centos.x86_64             77/242
+    SVT Server:   Verifying  : cpio-2.10-13.el6.x86_64                                   78/242
+    SVT Server:   Verifying  : newt-python-0.52.11-4.el6.x86_64                          79/242
+    SVT Server:   Verifying  : util-linux-ng-2.17.2-12.28.el6_9.2.x86_64                 80/242
+    SVT Server:   Verifying  : libstdc++-4.4.7-18.el6_9.2.x86_64                         81/242
+    SVT Server:   Verifying  : acl-2.2.49-7.el6_9.1.x86_64                               82/242
+    SVT Server:   Verifying  : coreutils-libs-8.4-46.el6.x86_64                          83/242
+    SVT Server:   Verifying  : kernel-2.6.32-696.23.1.el6.x86_64                         84/242
+    SVT Server:   Verifying  : libdrm-2.4.65-2.el6.x86_64                                85/242
+    SVT Server:   Verifying  : python-markdown-2.0.1-4.el6.noarch                        86/242
+    SVT Server:   Verifying  : openssl-1.0.1e-57.el6.x86_64                              87/242
+    SVT Server:   Verifying  : 2:postfix-2.6.6-8.el6.x86_64                              88/242
+    SVT Server:   Verifying  : python-requests-2.6.0-4.el6.noarch                        89/242
+    SVT Server:   Verifying  : logrotate-3.7.8-28.el6.x86_64                             90/242
+    SVT Server:   Verifying  : selinux-policy-targeted-3.7.19-307el6_9.3.noarch          91/242
+    SVT Server:   Verifying  : openssh-clients-5.3p1-123.el6_9.x86_64                    92/242
+    SVT Server:   Verifying  : python-libs-2.6.6-66.el6_8.x86_64                         93/242
+    SVT Server:   Verifying  : sudo-1.8.6p3-29.el6_9.x86_64                              94/242
+    SVT Server:   Verifying  : 12:dhclient-4.1.1-53.P1.el6.centos.3.x86_64               95/242
+    SVT Server:   Verifying  : python-setuptools-0.6.10-4el6_9.noarch                    96/242
+    SVT Server:   Verifying  : yum-3.2.29-81.el6.centos.noarch                           97/242
+    SVT Server:   Verifying  : e2fsprogs-libs-1.41.12-23.el6.x86_64                      98/242
+    SVT Server:   Verifying  : plymouth-0.8.3-29.el6.centos.x86_64                       99/242
+    SVT Server:   Verifying  : libudev-147-2.73.el6_8.2.x86_64                          100/242
+    SVT Server:   Verifying  : rpm-python-4.8.0-55.el6.x86_64                           101/242
+    SVT Server:   Verifying  : e2fsprogs-1.41.12-23.el6.x86_64                          102/242
+    SVT Server:   Verifying  : libgcrypt-1.4.5-12.el6_8.x86_64                          103/242
+    SVT Server:   Verifying  : 1:make-3.81-23.el6.x86_64                                104/242
+    SVT Server:   Verifying  : chkconfig-1.3.49.5-1.el6.x86_64                          105/242
+    SVT Server:   Verifying  : centos-release-6-9.el6.12.3.x86_64                       106/242
+    SVT Server:   Verifying  : openssh-5.3p1-123.el6_9.x86_64                           107/242
+    SVT Server:   Verifying  : openssh-server-5.3p1-123.el6_9.x86_64                    108/242
+    SVT Server:   Verifying  : ca-certificates-2017.2.14-65.0.1.el6_9.noarch            109/242
+    SVT Server:   Verifying  : libacl-2.2.49-7.el6_9.1.x86_64                           110/242
+    SVT Server:   Verifying  : mdadm-3.3.4-8.el6.x86_64                                 111/242
+    SVT Server:   Verifying  : cronie-anacron-1.4.4-16.el6_8.2.x86_64                   112/242
+    SVT Server:   Verifying  : libselinux-utils-2.0.94-7.el6.x86_64                     113/242
+    SVT Server:   Verifying  : audit-libs-python-2.4.5-6.el6.x86_64                     114/242
+    SVT Server:   Verifying  : nss-softokn-3.14.3-23.3.el6_8.x86_64                     115/242
+    SVT Server:   Verifying  : coreutils-8.4-46.el6.x86_64                              116/242
+    SVT Server:   Verifying  : iputils-20071127-24.el6.x86_64                           117/242
+    SVT Server:   Verifying  : setup-2.8.14-23.el6.noarch                               118/242
+    SVT Server:   Verifying  : iproute-2.6.32-54.el6.x86_64                             119/242
+    SVT Server:   Verifying  : man-1.6f-39.el6.x86_64                                   120/242
+    SVT Server:   Verifying  : python-backports-ssl_match_hostname-3.4.0.2-5.el6.noar   121/242
+    SVT Server:   Verifying  : elfutils-libs-0.164-2.el6.x86_64                         122/242
+    SVT Server:   Verifying  : kpartx-0.4.9-87.el6.x86_64                               123/242
+    SVT Server:   Verifying  : acl-2.2.49-6.el6.x86_64                                  124/242
+    SVT Server:   Verifying  : 12:dhcp-common-4.1.1-49.P1.el6.centos.x86_64             125/242
+    SVT Server:   Verifying  : logrotate-3.7.8-26.el6_7.x86_64                          126/242
+    SVT Server:   Verifying  : libpciaccess-0.13.3-0.1.el6.x86_64                       127/242
+    SVT Server:   Verifying  : pam-1.1.1-20.el6_7.1.x86_64                              128/242
+    SVT Server:   Verifying  : python-2.6.6-64.el6.x86_64                               129/242
+    SVT Server:   Verifying  : newt-0.52.11-3.el6.x86_64                                130/242
+    SVT Server:   Verifying  : binutils-2.20.51.0.2-5.43.el6.x86_64                     131/242
+    SVT Server:   Verifying  : libblkid-2.17.2-12.18.el6.x86_64                         132/242
+    SVT Server:   Verifying  : net-tools-1.60-110.el6_2.x86_64                          133/242
+    SVT Server:   Verifying  : 1:dmidecode-2.12-6.el6.x86_64                            134/242
+    SVT Server:   Verifying  : python-libs-2.6.6-64.el6.x86_64                          135/242
+    SVT Server:   Verifying  : glib2-2.28.8-4.el6.x86_64                                136/242
+    SVT Server:   Verifying  : module-init-tools-3.9-25.el6.x86_64                      137/242
+    SVT Server:   Verifying  : procps-3.2.8-35.el6_7.x86_64                             138/242
+    SVT Server:   Verifying  : mysql-libs-5.1.73-5.el6_6.x86_64                         139/242
+    SVT Server:   Verifying  : hwdata-0.233-14.1.el6.noarch                             140/242
+    SVT Server:   Verifying  : libcom_err-1.41.12-22.el6.x86_64                         141/242
+    SVT Server:   Verifying  : python-urlgrabber-3.9.1-9.el6.noarch                     142/242
+    SVT Server:   Verifying  : coreutils-8.4-37.el6_7.3.x86_64                          143/242
+    SVT Server:   Verifying  : tzdata-2016a-2.el6.noarch                                144/242
+    SVT Server:   Verifying  : dracut-004-388.el6.noarch                                145/242
+    SVT Server:   Verifying  : util-linux-ng-2.17.2-12.18.el6.x86_64                    146/242
+    SVT Server:   Verifying  : grep-2.20-3.el6_7.1.x86_64                               147/242
+    SVT Server:   Verifying  : gmp-4.3.1-7.el6_2.2.x86_64                               148/242
+    SVT Server:   Verifying  : initscripts-9.03.49-1.el6.centos.4.x86_64                149/242
+    SVT Server:   Verifying  : mdadm-3.3.2-5.el6.x86_64                                 150/242
+    SVT Server:   Verifying  : python-pycurl-7.19.0-8.el6.x86_64                        151/242
+    SVT Server:   Verifying  : plymouth-core-libs-0.8.3-27.el6.centos.1.x86_64          152/242
+    SVT Server:   Verifying  : libcgroup-0.40.rc1-16.el6.x86_64                         153/242
+    SVT Server:   Verifying  : passwd-0.77-4.el6_2.2.x86_64                             154/242
+    SVT Server:   Verifying  : kexec-tools-2.0.0-286.el6_7.1.x86_64                     155/242
+    SVT Server:   Verifying  : newt-python-0.52.11-3.el6.x86_64                         156/242
+    SVT Server:   Verifying  : upstart-0.6.5-13.el6_5.3.x86_64                          157/242
+    SVT Server:   Verifying  : python-requests-2.6.0-3.el6.noarch                       158/242
+    SVT Server:   Verifying  : iputils-20071127-20.el6.x86_64                           159/242
+    SVT Server:   Verifying  : openssl-1.0.1e-42.el6_7.2.x86_64                         160/242
+    SVT Server:   Verifying  : libgcrypt-1.4.5-11.el6_4.x86_64                          161/242
+    SVT Server:   Verifying  : yum-plugin-fastestmirror-1.1.30-30.el6.noarch            162/242
+    SVT Server:   Verifying  : kernel-firmware-2.6.32-573.18.1.el6.noarch               163/242
+    SVT Server:   Verifying  : 2:vim-minimal-7.4.629-5.el6.x86_64                       164/242
+    SVT Server:   Verifying  : 12:dhclient-4.1.1-49.P1.el6.centos.x86_64                165/242
+    SVT Server:   Verifying  : elfutils-libs-0.161-3.el6.x86_64                         166/242
+    SVT Server:   Verifying  : curl-7.19.7-46.el6.x86_64                                167/242
+    SVT Server:   Verifying  : python-jsonpointer-1.0-3.el6.centos.noarch               168/242
+    SVT Server:   Verifying  : sudo-1.8.6p3-20.el6_7.x86_64                             169/242
+    SVT Server:   Verifying  : cronie-1.4.4-15.el6_7.1.x86_64                           170/242
+    SVT Server:   Verifying  : nss-softokn-3.14.3-23.el6_7.x86_64                       171/242
+    SVT Server:   Verifying  : nss-softokn-freebl-3.14.3-23.el6_7.x86_64                172/242
+    SVT Server:   Verifying  : ca-certificates-2015.2.4-65.0.1.el6_6.noarch             173/242
+    SVT Server:   Verifying  : dracut-kernel-004-388.el6.noarch                         174/242
+    SVT Server:   Verifying  : bash-4.1.2-33.el6_7.1.x86_64                             175/242
+    SVT Server:   Verifying  : e2fsprogs-1.41.12-22.el6.x86_64                          176/242
+    SVT Server:   Verifying  : libss-1.41.12-22.el6.x86_64                              177/242
+    SVT Server:   Verifying  : 2:shadow-utils-4.1.4.2-19.el6_6.1.x86_64                 178/242
+    SVT Server:   Verifying  : krb5-libs-1.10.3-42.el6.x86_64                           179/242
+    SVT Server:   Verifying  : libselinux-2.0.94-5.8.el6.x86_64                         180/242
+    SVT Server:   Verifying  : libssh2-1.4.2-1.el6_6.1.x86_64                           181/242
+    SVT Server:   Verifying  : rpm-python-4.8.0-47.el6.x86_64                           182/242
+    SVT Server:   Verifying  : python-urllib3-1.10.2-1.el6.noarch                       183/242
+    SVT Server:   Verifying  : udev-147-2.63.el6_7.1.x86_64                             184/242
+    SVT Server:   Verifying  : libacl-2.2.49-6.el6.x86_64                               185/242
+    SVT Server:   Verifying  : elfutils-libelf-0.161-3.el6.x86_64                       186/242
+    SVT Server:   Verifying  : centos-release-6-7.el6.centos.12.3.x86_64                187/242
+    SVT Server:   Verifying  : device-mapper-libs-1.02.95-3.el6_7.4.x86_64              188/242
+    SVT Server:   Verifying  : libdrm-2.4.59-2.el6.x86_64                               189/242
+    SVT Server:   Verifying  : python-setuptools-0.6.10-3.el6.noarch                    190/242
+    SVT Server:   Verifying  : expat-2.0.1-11.el6_2.x86_64                              191/242
+    SVT Server:   Verifying  : libcurl-7.19.7-46.el6.x86_64                             192/242
+    SVT Server:   Verifying  : psmisc-22.6-19.el6_5.x86_64                              193/242
+    SVT Server:   Verifying  : openssh-clients-5.3p1-112.el6_7.x86_64                   194/242
+    SVT Server:   Verifying  : policycoreutils-python-2.0.83-24.el6.x86_64              195/242
+    SVT Server:   Verifying  : selinux-policy-targeted-3.7.19-279.el6_7.8.noarch        196/242
+    SVT Server:   Verifying  : man-1.6f-32.el6.x86_64                                   197/242
+    SVT Server:   Verifying  : python-pygments-1.1.1-1.el6.noarch                       198/242
+    SVT Server:   Verifying  : libuuid-2.17.2-12.18.el6.x86_64                          199/242
+    SVT Server:   Verifying  : 1:make-3.81-20.el6.x86_64                                200/242
+    SVT Server:   Verifying  : audit-libs-python-2.3.7-5.el6.x86_64                     201/242
+    SVT Server:   Verifying  : libgcc-4.4.7-16.el6.x86_64                               202/242
+    SVT Server:   Verifying  : audit-2.3.7-5.el6.x86_64                                 203/242
+    SVT Server:   Verifying  : libstdc++-4.4.7-16.el6.x86_64                            204/242
+    SVT Server:   Verifying  : setup-2.8.14-20.el6_4.1.noarch                           205/242
+    SVT Server:   Verifying  : python-prettytable-0.7.2-1.el6.centos.noarch             206/242
+    SVT Server:   Verifying  : yum-3.2.29-69.el6.centos.noarch                          207/242
+    SVT Server:   Verifying  : python-markdown-2.0.1-3.1.el6.noarch                     208/242
+    SVT Server:   Verifying  : openssh-5.3p1-112.el6_7.x86_64                           209/242
+    SVT Server:   Verifying  : efibootmgr-0.5.4-13.el6.x86_64                           210/242
+    SVT Server:   Verifying  : 2:postfix-2.6.6-6.el6_7.1.x86_64                         211/242
+    SVT Server:   Verifying  : openssh-server-5.3p1-112.el6_7.x86_64                    212/242
+    SVT Server:   Verifying  : plymouth-0.8.3-27.el6.centos.1.x86_64                    213/242
+    SVT Server:   Verifying  : cronie-anacron-1.4.4-15.el6_7.1.x86_64                   214/242
+    SVT Server:   Verifying  : python-backports-ssl_match_hostname-3.4.0.2-4.el6.cent   215/242
+    SVT Server:   Verifying  : libudev-147-2.63.el6_7.1.x86_64                          216/242
+    SVT Server:   Verifying  : chkconfig-1.3.49.3-5.el6_7.2.x86_64                      217/242
+    SVT Server:   Verifying  : 2:tar-1.23-13.el6.x86_64                                 218/242
+    SVT Server:   Verifying  : libselinux-python-2.0.94-5.8.el6.x86_64                  219/242
+    SVT Server:   Verifying  : e2fsprogs-libs-1.41.12-22.el6.x86_64                     220/242
+    SVT Server:   Verifying  : audit-libs-2.3.7-5.el6.x86_64                            221/242
+    SVT Server:   Verifying  : selinux-policy-3.7.19-279.el6_7.8.noarch                 222/242
+    SVT Server:   Verifying  : device-mapper-1.02.95-3.el6_7.4.x86_64                   223/242
+    SVT Server:   Verifying  : openldap-2.4.40-7.el6_7.x86_64                           224/242
+    SVT Server:   Verifying  : rpm-libs-4.8.0-47.el6.x86_64                             225/242
+    SVT Server:   Verifying  : acpid-1.0.10-2.1.el6.x86_64                              226/242
+    SVT Server:   Verifying  : python-jsonpatch-1.2-2.el6.centos.noarch                 227/242
+    SVT Server:   Verifying  : iproute-2.6.32-45.el6.x86_64                             228/242
+    SVT Server:   Verifying  : libselinux-utils-2.0.94-5.8.el6.x86_64                   229/242
+    SVT Server:   Verifying  : cpio-2.10-12.el6_5.x86_64                                230/242
+    SVT Server:   Verifying  : gzip-1.3.12-22.el6.x86_64                                231/242
+    SVT Server:   Verifying  : file-5.04-21.el6.x86_64                                  232/242
+    SVT Server:   Verifying  : python-boto-2.32.1-1.el6.centos.noarch                   233/242
+    SVT Server:   Verifying  : rpm-4.8.0-47.el6.x86_64                                  234/242
+    SVT Server:   Verifying  : 1:grub-0.97-94.el6.x86_64                                235/242
+    SVT Server:   Verifying  : policycoreutils-2.0.83-24.el6.x86_64                     236/242
+    SVT Server:   Verifying  : libxml2-2.7.6-20.el6_7.1.x86_64                          237/242
+    SVT Server:   Verifying  : tcp_wrappers-libs-7.6-57.el6.x86_64                      238/242
+    SVT Server:   Verifying  : coreutils-libs-8.4-37.el6_7.3.x86_64                     239/242
+    SVT Server:   Verifying  : file-libs-5.04-21.el6.x86_64                             240/242
+    SVT Server:   Verifying  : plymouth-scripts-0.8.3-27.el6.centos.1.x86_64            241/242
+    SVT Server:   Verifying  : 1:findutils-4.4.2-6.el6.x86_64                           242/242
+    SVT Server:
+    SVT Server: Installed:
+    SVT Server:   kernel.x86_64 0:2.6.32-696.23.1.el6     python-boto.noarch 1:2.34.0-6.el6
+    SVT Server:
+    SVT Server: Dependency Installed:
+    SVT Server:   m2crypto.x86_64 0:0.20.2-9.el6
+    SVT Server:
+    SVT Server: Updated:
+    SVT Server:   acl.x86_64 0:2.2.49-7.el6_9.1
+    SVT Server:   acpid.x86_64 0:1.0.10-3.el6
+    SVT Server:   audit.x86_64 0:2.4.5-6.el6
+    SVT Server:   audit-libs.x86_64 0:2.4.5-6.el6
+    SVT Server:   audit-libs-python.x86_64 0:2.4.5-6.el6
+    SVT Server:   bash.x86_64 0:4.1.2-48.el6
+    SVT Server:   binutils.x86_64 0:2.20.51.0.2-5.47.el6_9.1
+    SVT Server:   ca-certificates.noarch 0:2017.2.14-65.0.1.el6_9
+    SVT Server:   centos-release.x86_64 0:6-9.el6.12.3
+    SVT Server:   chkconfig.x86_64 0:1.3.49.5-1.el6
+    SVT Server:   coreutils.x86_64 0:8.4-46.el6
+    SVT Server:   coreutils-libs.x86_64 0:8.4-46.el6
+    SVT Server:   cpio.x86_64 0:2.10-13.el6
+    SVT Server:   cronie.x86_64 0:1.4.4-16.el6_8.2
+    SVT Server:   cronie-anacron.x86_64 0:1.4.4-16.el6_8.2
+    SVT Server:   curl.x86_64 0:7.19.7-53.el6_9
+    SVT Server:   device-mapper.x86_64 0:1.02.117-12.el6_9.1
+    SVT Server:   device-mapper-libs.x86_64 0:1.02.117-12.el6_9.1
+    SVT Server:   dhclient.x86_64 12:4.1.1-53.P1.el6.centos.3
+    SVT Server:   dhcp-common.x86_64 12:4.1.1-53.P1.el6.centos.3
+    SVT Server:   dmidecode.x86_64 1:2.12-7.el6
+    SVT Server:   dracut.noarch 0:004-409.el6_8.2
+    SVT Server:   dracut-kernel.noarch 0:004-409.el6_8.2
+    SVT Server:   e2fsprogs.x86_64 0:1.41.12-23.el6
+    SVT Server:   e2fsprogs-libs.x86_64 0:1.41.12-23.el6
+    SVT Server:   efibootmgr.x86_64 0:0.5.4-15.el6
+    SVT Server:   elfutils-libelf.x86_64 0:0.164-2.el6
+    SVT Server:   elfutils-libs.x86_64 0:0.164-2.el6
+    SVT Server:   expat.x86_64 0:2.0.1-13.el6_8
+    SVT Server:   file.x86_64 0:5.04-30.el6
+    SVT Server:   file-libs.x86_64 0:5.04-30.el6
+    SVT Server:   findutils.x86_64 1:4.4.2-9.el6
+    SVT Server:   glib2.x86_64 0:2.28.8-9.el6
+    SVT Server:   gmp.x86_64 0:4.3.1-12.el6
+    SVT Server:   grep.x86_64 0:2.20-6.el6
+    SVT Server:   grub.x86_64 1:0.97-99.el6
+    SVT Server:   gzip.x86_64 0:1.3.12-24.el6
+    SVT Server:   hwdata.noarch 0:0.233-18.1.el6
+    SVT Server:   initscripts.x86_64 0:9.03.58-1.el6.centos.2
+    SVT Server:   iproute.x86_64 0:2.6.32-54.el6
+    SVT Server:   iputils.x86_64 0:20071127-24.el6
+    SVT Server:   kernel-firmware.noarch 0:2.6.32-696.23.1.el6
+    SVT Server:   kexec-tools.x86_64 0:2.0.0-307.el6_9.1
+    SVT Server:   kpartx.x86_64 0:0.4.9-100.el6_9.1
+    SVT Server:   krb5-libs.x86_64 0:1.10.3-65.el6
+    SVT Server:   libacl.x86_64 0:2.2.49-7.el6_9.1
+    SVT Server:   libblkid.x86_64 0:2.17.2-12.28.el6_9.2
+    SVT Server:   libcgroup.x86_64 0:0.40.rc1-24.el6_9
+    SVT Server:   libcom_err.x86_64 0:1.41.12-23.el6
+    SVT Server:   libcurl.x86_64 0:7.19.7-53.el6_9
+    SVT Server:   libdrm.x86_64 0:2.4.65-2.el6
+    SVT Server:   libgcc.x86_64 0:4.4.7-18.el6_9.2
+    SVT Server:   libgcrypt.x86_64 0:1.4.5-12.el6_8
+    SVT Server:   libpciaccess.x86_64 0:0.13.4-1.el6
+    SVT Server:   libselinux.x86_64 0:2.0.94-7.el6
+    SVT Server:   libselinux-python.x86_64 0:2.0.94-7.el6
+    SVT Server:   libselinux-utils.x86_64 0:2.0.94-7.el6
+    SVT Server:   libss.x86_64 0:1.41.12-23.el6
+    SVT Server:   libssh2.x86_64 0:1.4.2-2.el6_7.1
+    SVT Server:   libstdc++.x86_64 0:4.4.7-18.el6_9.2
+    SVT Server:   libudev.x86_64 0:147-2.73.el6_8.2
+    SVT Server:   libuuid.x86_64 0:2.17.2-12.28.el6_9.2
+    SVT Server:   libxml2.x86_64 0:2.7.6-21.el6_8.1
+    SVT Server:   logrotate.x86_64 0:3.7.8-28.el6
+    SVT Server:   make.x86_64 1:3.81-23.el6
+    SVT Server:   man.x86_64 0:1.6f-39.el6
+    SVT Server:   mdadm.x86_64 0:3.3.4-8.el6
+    SVT Server:   module-init-tools.x86_64 0:3.9-26.el6
+    SVT Server:   mysql-libs.x86_64 0:5.1.73-8.el6_8
+    SVT Server:   net-tools.x86_64 0:1.60-114.el6
+    SVT Server:   newt.x86_64 0:0.52.11-4.el6
+    SVT Server:   newt-python.x86_64 0:0.52.11-4.el6
+    SVT Server:   nss-softokn.x86_64 0:3.14.3-23.3.el6_8
+    SVT Server:   nss-softokn-freebl.x86_64 0:3.14.3-23.3.el6_8
+    SVT Server:   openldap.x86_64 0:2.4.40-16.el6
+    SVT Server:   openssh.x86_64 0:5.3p1-123.el6_9
+    SVT Server:   openssh-clients.x86_64 0:5.3p1-123.el6_9
+    SVT Server:   openssh-server.x86_64 0:5.3p1-123.el6_9
+    SVT Server:   openssl.x86_64 0:1.0.1e-57.el6
+    SVT Server:   pam.x86_64 0:1.1.1-24.el6
+    SVT Server:   passwd.x86_64 0:0.77-7.el6
+    SVT Server:   plymouth.x86_64 0:0.8.3-29.el6.centos
+    SVT Server:   plymouth-core-libs.x86_64 0:0.8.3-29.el6.centos
+    SVT Server:   plymouth-scripts.x86_64 0:0.8.3-29.el6.centos
+    SVT Server:   policycoreutils.x86_64 0:2.0.83-30.1.el6_8
+    SVT Server:   policycoreutils-python.x86_64 0:2.0.83-30.1.el6_8
+    SVT Server:   postfix.x86_64 2:2.6.6-8.el6
+    SVT Server:   procps.x86_64 0:3.2.8-45.el6_9.1
+    SVT Server:   psmisc.x86_64 0:22.6-24.el6
+    SVT Server:   python.x86_64 0:2.6.6-66.el6_8
+    SVT Server:   python-backports-ssl_match_hostname.noarch 0:3.4.0.2-5.el6
+    SVT Server:   python-jsonpatch.noarch 0:1.2-4.el6
+    SVT Server:   python-jsonpointer.noarch 0:1.0-4.el6
+    SVT Server:   python-libs.x86_64 0:2.6.6-66.el6_8
+    SVT Server:   python-markdown.noarch 0:2.0.1-4.el6
+    SVT Server:   python-prettytable.noarch 0:0.7.2-11.el6
+    SVT Server:   python-pycurl.x86_64 0:7.19.0-9.el6
+    SVT Server:   python-pygments.noarch 0:1.1.1-2.el6
+    SVT Server:   python-requests.noarch 0:2.6.0-4.el6
+    SVT Server:   python-setuptools.noarch 0:0.6.10-4el6_9
+    SVT Server:   python-urlgrabber.noarch 0:3.9.1-11.el6
+    SVT Server:   python-urllib3.noarch 0:1.10.2-3.el6
+    SVT Server:   rpm.x86_64 0:4.8.0-55.el6
+    SVT Server:   rpm-libs.x86_64 0:4.8.0-55.el6
+    SVT Server:   rpm-python.x86_64 0:4.8.0-55.el6
+    SVT Server:   selinux-policy.noarch 0:3.7.19-307el6_9.3
+    SVT Server:   selinux-policy-targeted.noarch 0:3.7.19-307el6_9.3
+    SVT Server:   setup.noarch 0:2.8.14-23.el6
+    SVT Server:   shadow-utils.x86_64 2:4.1.5.1-5.el6
+    SVT Server:   sudo.x86_64 0:1.8.6p3-29.el6_9
+    SVT Server:   tar.x86_64 2:1.23-15.el6_8
+    SVT Server:   tcp_wrappers-libs.x86_64 0:7.6-58.el6
+    SVT Server:   tzdata.noarch 0:2018d-1.el6
+    SVT Server:   udev.x86_64 0:147-2.73.el6_8.2
+    SVT Server:   upstart.x86_64 0:0.6.5-16.el6
+    SVT Server:   util-linux-ng.x86_64 0:2.17.2-12.28.el6_9.2
+    SVT Server:   vim-minimal.x86_64 2:7.4.629-5.el6_8.1
+    SVT Server:   yum.noarch 0:3.2.29-81.el6.centos
+    SVT Server:   yum-plugin-fastestmirror.noarch 0:1.1.30-40.el6
+    SVT Server:
+    SVT Server: Replaced:
+    SVT Server:   python-boto.noarch 0:2.32.1-1.el6.centos
+    SVT Server:
+    SVT Server: Complete!
+    SVT Server: Starting tomcat: [60G[[0;32m  OK  [0;39m]
+    SVT Server: Loaded plugins: fastestmirror, presto
+    SVT Server: Cleaning repos: base epel extras updates
+    SVT Server: Cleaning up Everything
+    SVT Server: Cleaning up list of fastest mirrors
+    SVT Server: 0 delta-package files removed, by presto
+==> SVT Server: Stopping the source instance...
+    SVT Server: Stopping instance, attempt 1
+==> SVT Server: Waiting for the instance to stop...
+==> SVT Server: Creating the AMI: CentOS-6.71525072592
+    SVT Server: AMI: ami-c5fbe7a5
+==> SVT Server: Waiting for AMI to become ready...
+==> SVT Server: Modifying attributes on AMI (ami-c5fbe7a5)...
+    SVT Server: Modifying: description
+==> SVT Server: Modifying attributes on snapshot (snap-075543974225c47fe)...
+==> SVT Server: Terminating the source AWS instance...
+==> SVT Server: Cleaning up any extra volumes...
+==> SVT Server: Destroying volume (vol-01d5cbbed837333e2)...
+==> SVT Server: Deleting temporary security group...
+==> SVT Server: Deleting temporary keypair...
+Build 'SVT Server' finished.
+
+==> Builds finished. The artifacts of successful builds are:
+--> SVT Server: AMIs were created:
+us-west-1: ami-c5fbe7a5
