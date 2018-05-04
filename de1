@@ -1,0 +1,79 @@
+cat instance.tf
+resource "aws_key_pair" "mykey" {
+  key_name = "mykey"
+  public_key = "${file("${var.PATH_TO_PUBLIC_KEY}")}"
+}
+
+resource "aws_instance" "example" {
+  ami = "${lookup(var.AMIS, var.AWS_REGION)}"
+  instance_type = "t2.micro"
+  key_name = "${aws_key_pair.mykey.key_name}"
+
+  provisioner "file" {
+    source = "script.sh"
+    destination = "/tmp/script.sh"
+  }
+  provisioner "remote-exec" {
+    inline = [
+      "chmod +x /tmp/script.sh",
+      "sudo /tmp/script.sh"
+    ]
+  }
+  connection {
+    user = "${var.INSTANCE_USERNAME}"
+    private_key = "${file("${var.PATH_TO_PRIVATE_KEY}")}"
+  }
+}
+
+
+-----------------------------
+
+
+vagrant@ubuntu-xenial:~/terraform-course/demo-2$ cat script.sh
+#!/bin/bash
+
+# sleep until instance is ready
+until [[ -f /var/lib/cloud/instance/boot-finished ]]; do
+  sleep 1
+done
+
+# install nginx
+apt-get update
+apt-get -y install nginx
+
+# make sure nginx is started
+service nginx start
+
+-------------
+=============
+cat provider.tf
+provider "aws" {
+    access_key = "${var.AWS_ACCESS_KEY}"
+    secret_key = "${var.AWS_SECRET_KEY}"
+    region = "${var.AWS_REGION}"
+}
+
+cat vars.tf
+variable "AWS_ACCESS_KEY" {}
+variable "AWS_SECRET_KEY" {}
+variable "AWS_REGION" {
+  default = "eu-west-1"
+}
+variable "AMIS" {
+  type = "map"
+  default = {
+    us-east-1 = "ami-13be557e"
+    us-west-2 = "ami-06b94666"
+    eu-west-1 = "ami-844e0bf7"
+  }
+}
+
+variable "PATH_TO_PRIVATE_KEY" {
+  default = "mykey"
+}
+variable "PATH_TO_PUBLIC_KEY" {
+  default = "mykey.pub"
+}
+variable "INSTANCE_USERNAME" {
+  default = "ubuntu"
+}
